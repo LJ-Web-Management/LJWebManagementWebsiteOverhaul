@@ -386,6 +386,22 @@
     align-items: center;
   }
 
+  /* entrance animation on page load — same pattern as ljwebmanagement.com's
+     hero: headline fades in from the left, supporting elements fade up,
+     each on its own duration so they settle in a light cascade */
+  @keyframes mpa-fadeInLeft {
+    from { opacity: 0; transform: translate3d(-70px, 0, 0); }
+    to   { opacity: 1; transform: translate3d(0, 0, 0); }
+  }
+  @keyframes mpa-fadeInUp {
+    from { opacity: 0; transform: translate3d(0, 34px, 0); }
+    to   { opacity: 1; transform: translate3d(0, 0, 0); }
+  }
+  .mpa-hero__title    { animation: mpa-fadeInLeft 2s ease-in-out both; }
+  .mpa-hero__subtitle { animation: mpa-fadeInUp 1.5s ease-in-out both; }
+  .mpa-hero__cta       { animation: mpa-fadeInUp 2s ease-in-out both; }
+  .mpa-stats           { animation: mpa-fadeInUp 2.2s ease-in-out both; }
+
   /* ---------- copy column ---------- */
   .mpa-hero__title {
     font-family: 'Sora', 'Inter', sans-serif;
@@ -489,6 +505,7 @@
   /* respect users who don't want motion */
   @media (prefers-reduced-motion: reduce) {
     .mpa-frame { animation: none; box-shadow: 0 0 18px 1px var(--c3); }
+    .mpa-hero__title, .mpa-hero__subtitle, .mpa-hero__cta, .mpa-stats { animation: none; opacity: 1; transform: none; }
   }
 
   /* ---------- tablet ---------- */
@@ -639,6 +656,22 @@
     align-items: center;
   }
 
+  /* entrance animation on page load — same pattern as ljwebmanagement.com's
+     hero: headline fades in from the left, supporting elements fade up,
+     each on its own duration so they settle in a light cascade */
+  @keyframes mpa-fadeInLeft {
+    from { opacity: 0; transform: translate3d(-70px, 0, 0); }
+    to   { opacity: 1; transform: translate3d(0, 0, 0); }
+  }
+  @keyframes mpa-fadeInUp {
+    from { opacity: 0; transform: translate3d(0, 34px, 0); }
+    to   { opacity: 1; transform: translate3d(0, 0, 0); }
+  }
+  .mpa-hero__title    { animation: mpa-fadeInLeft 2s ease-in-out both; }
+  .mpa-hero__subtitle { animation: mpa-fadeInUp 1.5s ease-in-out both; }
+  .mpa-hero__cta       { animation: mpa-fadeInUp 2s ease-in-out both; }
+  .mpa-stats           { animation: mpa-fadeInUp 2.2s ease-in-out both; }
+
   /* ---------- copy column ---------- */
   .mpa-hero__title {
     font-family: 'Sora', 'Inter', sans-serif;
@@ -742,6 +775,7 @@
   /* respect users who don't want motion */
   @media (prefers-reduced-motion: reduce) {
     .mpa-frame { animation: none; box-shadow: 0 0 18px 1px var(--c3); }
+    .mpa-hero__title, .mpa-hero__subtitle, .mpa-hero__cta, .mpa-stats { animation: none; opacity: 1; transform: none; }
   }
 
   /* ---------- tablet ---------- */
