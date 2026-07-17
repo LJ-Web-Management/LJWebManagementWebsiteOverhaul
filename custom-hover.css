@@ -1,0 +1,42 @@
+/* Global button hover: subtle blue glow (added across the site) */
+.btn:hover {
+  box-shadow: 0 0 0 4px rgba(59, 111, 234, 0.22), 0 10px 26px rgba(59, 111, 234, 0.28);
+  transform: translateY(-2px);
+  transition: box-shadow 0.25s ease, transform 0.2s ease;
+}
+
+/* LJ Web forms (Contact Us + product page leads) — lj-forms.js hooks */
+.lj-hp-field {
+  position: absolute !important;
+  left: -9999px !important;
+  top: -9999px !important;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.lj-field-error {
+  color: #c0392b;
+  font-size: 13px;
+  margin-top: 4px;
+}
+
+.lj-input-error {
+  border-color: #c0392b !important;
+  box-shadow: 0 0 0 2px rgba(192, 57, 43, 0.15) !important;
+}
+
+.lj-form-msg {
+  display: inline-block;
+  font-weight: 600;
+  font-size: 14px;
+  margin-right: 12px;
+}
+
+.lj-form-msg-success { color: #1e7e34; }
+.lj-form-msg-error { color: #c0392b; }
+
+.lj-submit-btn:disabled {
+  opacity: 0.7;
+  cursor: wait;
+}

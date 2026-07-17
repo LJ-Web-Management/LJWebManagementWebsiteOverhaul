@@ -1,0 +1,843 @@
+<!--
+  MrPress Automation — Appointment Booking Embed
+  ------------------------------------------------
+  Self-contained booking widget matching the LJ-Web-Site aesthetic
+  (Sora / Playfair Display / Quicksand, #38383B charcoal, pill CTAs,
+  4px card radius, blue hover glow from custom-hover.css).
+
+  HOW TO EMBED:
+    Drop this whole file on your server and embed it with an iframe:
+      <iframe src="/appointment-booking-embed.html" style="width:100%;
+        max-width:960px; height:760px; border:0;" title="Book an appointment"></iframe>
+    The widget auto-resizes its internal content and posts its height via
+    postMessage (see bottom of file) if you want a JS-driven auto-height iframe.
+
+  BACKEND:
+    Business hours are fixed at 8:00 AM - 5:00 PM America/Chicago (Central
+    Time), Monday-Friday, regardless of the visitor's own timezone. Available
+    slots are fetched live from the get-availability Supabase Edge Function;
+    bookings are submitted to the submit-appointment function, which
+    re-validates the slot server-side, saves it, and emails
+    info@ljwebmanagement.com. Set SUPABASE_FUNCTIONS_BASE below (see
+    SETUP.md) before going live — until then this file still renders and
+    lets you click through the flow, it just can't reach a real backend.
+-->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Book an Appointment | MrPress Automation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Playfair+Display:wght@500;600&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  .ljb-widget, .ljb-widget * { box-sizing: border-box; }
+  .ljb-widget {
+    --ljb-primary: #38383B;
+    --ljb-primary-dark: #202022;
+    --ljb-secondary: #a1a1a1;
+    --ljb-light: #f2f2f3;
+    --ljb-white: #FFFFFF;
+    --ljb-text: #212529;
+    --ljb-muted: rgba(33, 37, 41, 0.7);
+    --ljb-border: rgba(33, 37, 41, 0.15);
+    --ljb-glow: rgba(59, 111, 234, 0.28);
+    --ljb-glow-ring: rgba(59, 111, 234, 0.22);
+    --ljb-radius-card: 4px;
+    --ljb-radius-pill: 999px;
+    --ljb-font-display: "Sora", sans-serif;
+    --ljb-font-heading: "Playfair Display", serif;
+    --ljb-font-body: "Quicksand", sans-serif;
+
+    font-family: var(--ljb-font-body);
+    color: var(--ljb-text);
+    background: var(--ljb-white);
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 8px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .ljb-widget h1, .ljb-widget h2, .ljb-widget h3 {
+    font-family: var(--ljb-font-heading);
+    font-weight: 500;
+    margin: 0;
+    color: var(--ljb-text);
+  }
+
+  .ljb-eyebrow {
+    font-family: var(--ljb-font-display);
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ljb-secondary);
+    margin-bottom: 6px;
+  }
+
+  .ljb-head {
+    text-align: center;
+    padding: 20px 12px 28px;
+  }
+  .ljb-head h1 { font-size: 32px; }
+  .ljb-head p { color: var(--ljb-muted); margin-top: 8px; font-size: 15px; }
+
+  /* ---------- Buttons ---------- */
+  .ljb-btn {
+    font-family: var(--ljb-font-body);
+    font-weight: 600;
+    font-size: 15px;
+    background: var(--ljb-primary);
+    color: var(--ljb-white);
+    border: none;
+    border-radius: var(--ljb-radius-pill);
+    padding: 11px 22px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: box-shadow 0.25s ease, transform 0.2s ease, background 0.2s ease;
+  }
+  .ljb-btn:hover:not(:disabled) {
+    box-shadow: 0 0 0 4px var(--ljb-glow-ring), 0 10px 26px var(--ljb-glow);
+    transform: translateY(-2px);
+  }
+  .ljb-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+  .ljb-btn.ljb-btn-block { width: 100%; }
+  .ljb-btn.ljb-btn-ghost {
+    background: transparent;
+    color: var(--ljb-text);
+    border: 1px solid var(--ljb-border);
+  }
+  .ljb-btn.ljb-btn-ghost:hover:not(:disabled) {
+    box-shadow: 0 0 0 4px var(--ljb-glow-ring), 0 6px 18px rgba(59,111,234,0.18);
+    transform: translateY(-2px);
+  }
+
+  .ljb-link-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: none;
+    border: none;
+    color: var(--ljb-muted);
+    font-family: var(--ljb-font-body);
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    padding: 6px 4px;
+    margin-bottom: 14px;
+  }
+  .ljb-link-back:hover { color: var(--ljb-text); }
+  .ljb-link-back svg { width: 14px; height: 14px; }
+
+  /* ---------- Step 1: type cards ---------- */
+  .ljb-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 18px;
+  }
+  .ljb-card {
+    border: 1px solid var(--ljb-border);
+    border-radius: var(--ljb-radius-card);
+    background: var(--ljb-white);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    transition: box-shadow 0.25s ease, transform 0.2s ease;
+  }
+  .ljb-card:hover {
+    box-shadow: 0 0 0 4px var(--ljb-glow-ring), 0 14px 30px rgba(33,37,41,0.12);
+    transform: translateY(-3px);
+  }
+  .ljb-card-art {
+    height: 108px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--ljb-primary-dark), var(--ljb-primary));
+  }
+  .ljb-card-art svg { width: 38px; height: 38px; stroke: var(--ljb-white); }
+  .ljb-card-body {
+    padding: 18px 18px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 1;
+  }
+  .ljb-card-body h3 { font-size: 19px; line-height: 1.3; }
+  .ljb-meta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+  .ljb-meta {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: 600;
+    font-size: 13px;
+    color: var(--ljb-muted);
+  }
+  .ljb-meta svg { width: 14px; height: 14px; flex-shrink: 0; }
+  .ljb-card-desc {
+    color: var(--ljb-muted);
+    font-size: 14.5px;
+    line-height: 1.5;
+    flex: 1;
+  }
+  .ljb-card-body .ljb-btn { margin-top: 6px; }
+
+  /* ---------- Step 2: date + time ---------- */
+  .ljb-summary-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+    background: var(--ljb-light);
+    border-radius: var(--ljb-radius-card);
+    padding: 14px 18px;
+    margin-bottom: 22px;
+  }
+  .ljb-summary-bar h2 { font-size: 20px; }
+  .ljb-summary-meta { display: flex; gap: 16px; margin-top: 4px; flex-wrap: wrap; }
+
+  .ljb-section-label {
+    font-family: var(--ljb-font-display);
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ljb-secondary);
+    margin-bottom: 12px;
+  }
+
+  .ljb-day-scroller {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    padding-bottom: 8px;
+    margin-bottom: 26px;
+    scrollbar-width: thin;
+  }
+  .ljb-day {
+    flex: 0 0 auto;
+    width: 74px;
+    border: 1px solid var(--ljb-border);
+    border-radius: var(--ljb-radius-card);
+    background: var(--ljb-white);
+    padding: 10px 6px;
+    text-align: center;
+    cursor: pointer;
+    font-family: var(--ljb-font-body);
+    transition: box-shadow 0.2s ease, transform 0.2s ease, background 0.2s ease, color 0.2s ease;
+  }
+  .ljb-day .ljb-day-dow { font-size: 11px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; color: var(--ljb-secondary); }
+  .ljb-day .ljb-day-num { font-family: var(--ljb-font-heading); font-size: 20px; margin-top: 2px; }
+  .ljb-day .ljb-day-mon { font-size: 10.5px; color: var(--ljb-muted); margin-top: 2px; }
+  .ljb-day:hover { box-shadow: 0 0 0 3px var(--ljb-glow-ring); transform: translateY(-2px); }
+  .ljb-day.is-selected {
+    background: var(--ljb-primary);
+    border-color: var(--ljb-primary);
+  }
+  .ljb-day.is-selected .ljb-day-dow,
+  .ljb-day.is-selected .ljb-day-mon { color: rgba(255,255,255,0.7); }
+  .ljb-day.is-selected .ljb-day-num { color: var(--ljb-white); }
+
+  .ljb-slot-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(96px, 1fr));
+    gap: 10px;
+    margin-bottom: 8px;
+  }
+  .ljb-slot {
+    border: 1px solid var(--ljb-border);
+    border-radius: var(--ljb-radius-pill);
+    background: var(--ljb-white);
+    padding: 9px 10px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 13.5px;
+    cursor: pointer;
+    transition: box-shadow 0.2s ease, transform 0.2s ease, background 0.2s ease, color 0.2s ease;
+  }
+  .ljb-slot:hover { box-shadow: 0 0 0 3px var(--ljb-glow-ring); transform: translateY(-2px); }
+  .ljb-slot.is-selected { background: var(--ljb-primary); border-color: var(--ljb-primary); color: var(--ljb-white); }
+  .ljb-empty-note { color: var(--ljb-muted); font-size: 14px; padding: 10px 2px 4px; }
+
+  .ljb-step2-actions { margin-top: 26px; display: flex; justify-content: flex-end; }
+
+  /* ---------- Step 3: form ---------- */
+  .ljb-form { display: flex; flex-direction: column; gap: 16px; max-width: 520px; }
+  .ljb-field { display: flex; flex-direction: column; gap: 6px; }
+  .ljb-field label { font-size: 13px; font-weight: 700; color: var(--ljb-text); }
+  .ljb-field label .ljb-opt { font-weight: 500; color: var(--ljb-secondary); text-transform: none; }
+  .ljb-field input, .ljb-field textarea {
+    font-family: var(--ljb-font-body);
+    font-size: 15px;
+    padding: 11px 13px;
+    border: 1px solid var(--ljb-border);
+    border-radius: var(--ljb-radius-card);
+    background: var(--ljb-light);
+    color: var(--ljb-text);
+    outline: none;
+    transition: box-shadow 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+  }
+  .ljb-field input:focus, .ljb-field textarea:focus {
+    background: var(--ljb-white);
+    border-color: var(--ljb-primary);
+    box-shadow: 0 0 0 3px var(--ljb-glow-ring);
+  }
+  .ljb-field textarea { resize: vertical; min-height: 90px; }
+  .ljb-field.has-error input, .ljb-field.has-error textarea { border-color: #c0392b; }
+  .ljb-error-text { font-size: 12.5px; color: #c0392b; display: none; }
+  .ljb-field.has-error .ljb-error-text { display: block; }
+
+  .ljb-step3-actions { display: flex; align-items: center; justify-content: flex-end; gap: 14px; margin-top: 4px; flex-wrap: wrap; }
+  .ljb-form-msg { font-size: 13.5px; font-weight: 600; }
+  .ljb-form-msg-error { color: #c0392b; }
+  .ljb-form-msg-success { color: #1e7e34; }
+  .ljb-hp-field { position: absolute !important; left: -9999px !important; top: -9999px !important; width: 1px; height: 1px; overflow: hidden; }
+
+  /* ---------- Step 4: confirmation ---------- */
+  .ljb-confirm {
+    text-align: center;
+    padding: 30px 16px 10px;
+    max-width: 460px;
+    margin: 0 auto;
+  }
+  .ljb-confirm-check {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: var(--ljb-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 18px;
+  }
+  .ljb-confirm-check svg { width: 26px; height: 26px; stroke: var(--ljb-white); }
+  .ljb-confirm h2 { font-size: 24px; margin-bottom: 8px; }
+  .ljb-confirm p { color: var(--ljb-muted); font-size: 15px; }
+  .ljb-confirm-card {
+    text-align: left;
+    border: 1px solid var(--ljb-border);
+    border-radius: var(--ljb-radius-card);
+    padding: 16px 18px;
+    margin: 20px 0;
+    background: var(--ljb-light);
+  }
+  .ljb-confirm-card div { display: flex; gap: 10px; align-items: center; font-size: 14.5px; padding: 5px 0; }
+  .ljb-confirm-card svg { width: 15px; height: 15px; flex-shrink: 0; color: var(--ljb-muted); }
+
+  /* ---------- Steps visibility ---------- */
+  .ljb-step { display: none; }
+  .ljb-step.is-active { display: block; animation: ljb-fade 0.25s ease; }
+  @keyframes ljb-fade { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+
+  @media (max-width: 480px) {
+    .ljb-head h1 { font-size: 26px; }
+    .ljb-day { width: 64px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="ljb-widget" id="ljbWidget">
+
+  <div class="ljb-head">
+    <div class="ljb-eyebrow">MrPress Automation</div>
+    <h1>Book an Appointment</h1>
+    <p>Pick the meeting that fits, choose a time, and we'll take it from there.</p>
+  </div>
+
+  <!-- STEP 1: choose type -->
+  <section class="ljb-step is-active" data-step="1">
+    <div class="ljb-grid" id="ljbTypeGrid"></div>
+  </section>
+
+  <!-- STEP 2: choose date & time -->
+  <section class="ljb-step" data-step="2">
+    <button type="button" class="ljb-link-back" data-action="to-step-1">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+      Back to meeting types
+    </button>
+
+    <div class="ljb-summary-bar">
+      <div>
+        <h2 id="ljbSelTitle"></h2>
+        <div class="ljb-summary-meta">
+          <span class="ljb-meta" id="ljbSelDuration"></span>
+          <span class="ljb-meta">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 10l4.55-2.4a1 1 0 0 1 1.45.9v7l-6-3.1"/><rect x="3" y="6" width="12" height="12" rx="2"/></svg>
+            Online (video link sent after booking)
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <div class="ljb-section-label">Select a date</div>
+    <div class="ljb-day-scroller" id="ljbDayScroller"></div>
+
+    <div class="ljb-section-label">Select a time <span style="color:var(--ljb-muted); font-weight:500; text-transform:none; letter-spacing:0;" id="ljbTzLabel"></span></div>
+    <div class="ljb-slot-grid" id="ljbSlotGrid"></div>
+
+    <div class="ljb-step2-actions">
+      <button type="button" class="ljb-btn" id="ljbToStep3" disabled>Continue</button>
+    </div>
+  </section>
+
+  <!-- STEP 3: contact form -->
+  <section class="ljb-step" data-step="3">
+    <button type="button" class="ljb-link-back" data-action="to-step-2">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+      Back to date &amp; time
+    </button>
+
+    <div class="ljb-summary-bar">
+      <div>
+        <h2 id="ljbSelTitle2"></h2>
+        <div class="ljb-summary-meta">
+          <span class="ljb-meta" id="ljbSelWhen"></span>
+        </div>
+      </div>
+    </div>
+
+    <form class="ljb-form" id="ljbForm" novalidate>
+      <div class="ljb-field" id="ljbFieldName">
+        <label for="ljbName">Full name</label>
+        <input type="text" id="ljbName" name="name" autocomplete="name" placeholder="Jane Doe" />
+        <span class="ljb-error-text">Please enter your name.</span>
+      </div>
+      <div class="ljb-field" id="ljbFieldEmail">
+        <label for="ljbEmail">Email address</label>
+        <input type="email" id="ljbEmail" name="email" autocomplete="email" placeholder="jane@company.com" />
+        <span class="ljb-error-text">Please enter a valid email.</span>
+      </div>
+      <div class="ljb-field">
+        <label for="ljbPhone">Phone <span class="ljb-opt">(optional)</span></label>
+        <input type="tel" id="ljbPhone" name="phone" autocomplete="tel" placeholder="(555) 123-4567" />
+      </div>
+      <div class="ljb-field">
+        <label for="ljbNotes">What would you like to discuss? <span class="ljb-opt">(optional)</span></label>
+        <textarea id="ljbNotes" name="notes" placeholder="A little context helps us prep for the call."></textarea>
+      </div>
+      <div class="ljb-hp-field" aria-hidden="true">
+        <label for="ljbCompany">Company</label>
+        <input type="text" id="ljbCompany" name="company_hp" tabindex="-1" autocomplete="off" />
+      </div>
+      <div class="ljb-step3-actions">
+        <span class="ljb-form-msg" id="ljbFormMsg" role="status"></span>
+        <button type="submit" class="ljb-btn" id="ljbSubmitBtn">Confirm Booking</button>
+      </div>
+    </form>
+  </section>
+
+  <!-- STEP 4: confirmation -->
+  <section class="ljb-step" data-step="4">
+    <div class="ljb-confirm">
+      <div class="ljb-confirm-check">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+      </div>
+      <h2>You're booked!</h2>
+      <p>A confirmation with the video link will be sent to your email shortly.</p>
+      <div class="ljb-confirm-card">
+        <div>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          <span id="ljbConfType"></span>
+        </div>
+        <div>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+          <span id="ljbConfWhen"></span>
+        </div>
+        <div>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z"/><path d="M22 6l-10 7L2 6"/></svg>
+          <span id="ljbConfEmail"></span>
+        </div>
+      </div>
+      <button type="button" class="ljb-btn ljb-btn-ghost" id="ljbBookAnother">Book another appointment</button>
+    </div>
+  </section>
+
+</div>
+
+<script>
+(function () {
+  "use strict";
+
+  // SETUP: after creating your Supabase project (see SETUP.md), replace this
+  // with your project's Edge Functions URL, e.g.
+  // "https://abcdefghijk.functions.supabase.co"
+  var SUPABASE_FUNCTIONS_BASE = "https://YOUR-PROJECT-REF.functions.supabase.co";
+
+  var APPOINTMENT_TYPES = [
+    {
+      id: "quick-chat",
+      name: "Quick Chat",
+      durationMin: 15,
+      durationLabel: "15 min",
+      desc: "A fast, no-pressure intro call for new customers to learn what we do, how we work, and whether we're a fit.",
+      icon: '<path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>'
+    },
+    {
+      id: "initial-consult",
+      name: "Initial Consult",
+      durationMin: 45,
+      durationLabel: "45 min",
+      desc: "A deep-dive session where we learn your processes and start mapping out a custom automation built just for your business.",
+      icon: '<circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/>'
+    },
+    {
+      id: "30-min-consult",
+      name: "30 Min Consult",
+      durationMin: 30,
+      desc: "Open to anyone — book this if you need to talk with us for any reason, whether it's a question, an update, or something else.",
+      durationLabel: "30 min",
+      icon: '<path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.34 1.79.65 2.65a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.43-1.22a2 2 0 0 1 2.11-.45c.86.31 1.75.53 2.65.65A2 2 0 0 1 22 16.92z"/>'
+    }
+  ];
+
+  // Business hours are fixed in America/Chicago (Central Time) regardless of
+  // the visitor's own timezone — 8:00 AM to 5:00 PM, Monday-Friday.
+  var WORK_START_MIN = 8 * 60;
+  var WORK_END_MIN = 17 * 60;
+  var DAYS_AHEAD = 14;
+  var TZ_LABEL = "Central Time";
+
+  var state = {
+    type: null,
+    dateStr: null,  // "YYYY-MM-DD", a Chicago calendar date
+    time: null,      // minutes after midnight, Chicago wall time
+    days: []         // [{ dateStr, weekday, day, month }]
+  };
+
+  var root = document.getElementById("ljbWidget");
+  var q = function (sel) { return root.querySelector(sel); };
+  var qa = function (sel) { return Array.prototype.slice.call(root.querySelectorAll(sel)); };
+
+  function goToStep(n) {
+    qa(".ljb-step").forEach(function (el) {
+      el.classList.toggle("is-active", Number(el.getAttribute("data-step")) === n);
+    });
+    root.scrollIntoView({ behavior: "smooth", block: "nearest" });
+  }
+
+  /* ---------------- Step 1: render type cards ---------------- */
+  function renderTypes() {
+    var grid = q("#ljbTypeGrid");
+    grid.innerHTML = APPOINTMENT_TYPES.map(function (t) {
+      return (
+        '<div class="ljb-card">' +
+          '<div class="ljb-card-art"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">' + t.icon + '</svg></div>' +
+          '<div class="ljb-card-body">' +
+            '<h3>' + t.name + '</h3>' +
+            '<div class="ljb-meta-row">' +
+              '<span class="ljb-meta"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>' + t.durationLabel + '</span>' +
+              '<span class="ljb-meta"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 10l4.55-2.4a1 1 0 0 1 1.45.9v7l-6-3.1"/><rect x="3" y="6" width="12" height="12" rx="2"/></svg>Online</span>' +
+            '</div>' +
+            '<p class="ljb-card-desc">' + t.desc + '</p>' +
+            '<button type="button" class="ljb-btn ljb-btn-block" data-type-id="' + t.id + '">Book now</button>' +
+          '</div>' +
+        '</div>'
+      );
+    }).join("");
+
+    grid.addEventListener("click", function (e) {
+      var btn = e.target.closest("[data-type-id]");
+      if (!btn) return;
+      var type = APPOINTMENT_TYPES.filter(function (t) { return t.id === btn.getAttribute("data-type-id"); })[0];
+      selectType(type);
+    });
+  }
+
+  function selectType(type) {
+    state.type = type;
+    state.dateStr = null;
+    state.time = null;
+    q("#ljbSelTitle").textContent = type.name;
+    q("#ljbSelTitle2").textContent = type.name;
+    q("#ljbSelDuration").innerHTML =
+      '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>' + type.durationLabel;
+    q("#ljbTzLabel").textContent = "(" + TZ_LABEL + ")";
+    renderDays();
+    updateContinueState();
+    goToStep(2);
+  }
+
+  /* ---------------- Step 2: date + time (all in America/Chicago) ---------------- */
+
+  // Today's calendar date in Chicago as "YYYY-MM-DD", independent of the visitor's own timezone.
+  function chicagoTodayStr() {
+    var dtf = new Intl.DateTimeFormat("en-CA", { timeZone: "America/Chicago" }); // en-CA -> YYYY-MM-DD
+    return dtf.format(new Date());
+  }
+
+  function addDaysToDateStr(dateStr, n) {
+    var parts = dateStr.split("-").map(Number);
+    var d = new Date(Date.UTC(parts[0], parts[1] - 1, parts[2]));
+    d.setUTCDate(d.getUTCDate() + n);
+    var y = d.getUTCFullYear();
+    var m = String(d.getUTCMonth() + 1).padStart(2, "0");
+    var day = String(d.getUTCDate()).padStart(2, "0");
+    return y + "-" + m + "-" + day;
+  }
+
+  function weekdayOf(dateStr) {
+    var parts = dateStr.split("-").map(Number);
+    return new Date(Date.UTC(parts[0], parts[1] - 1, parts[2])).getUTCDay();
+  }
+
+  function buildUpcomingDays() {
+    var dow = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+    var mon = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+    var days = [];
+    var today = chicagoTodayStr();
+    var i = 0;
+    while (days.length < DAYS_AHEAD) {
+      var candStr = addDaysToDateStr(today, i);
+      var wd = weekdayOf(candStr);
+      if (wd !== 0 && wd !== 6) {
+        var parts = candStr.split("-").map(Number);
+        days.push({ dateStr: candStr, dow: dow[wd], day: parts[2], mon: mon[parts[1] - 1] });
+      }
+      i++;
+    }
+    return days;
+  }
+
+  function renderDays() {
+    state.days = buildUpcomingDays();
+    var scroller = q("#ljbDayScroller");
+    scroller.innerHTML = state.days.map(function (d, idx) {
+      return (
+        '<div class="ljb-day" data-idx="' + idx + '">' +
+          '<div class="ljb-day-dow">' + d.dow + '</div>' +
+          '<div class="ljb-day-num">' + d.day + '</div>' +
+          '<div class="ljb-day-mon">' + d.mon + '</div>' +
+        '</div>'
+      );
+    }).join("");
+
+    selectDay(0);
+
+    scroller.onclick = function (e) {
+      var el = e.target.closest("[data-idx]");
+      if (!el) return;
+      selectDay(Number(el.getAttribute("data-idx")));
+    };
+  }
+
+  function selectDay(idx) {
+    state.dateStr = state.days[idx].dateStr;
+    state.time = null;
+    qa("#ljbDayScroller .ljb-day").forEach(function (el, i) {
+      el.classList.toggle("is-selected", i === idx);
+    });
+    renderSlots();
+    updateContinueState();
+  }
+
+  // Full local grid (8am-5pm CT, stepped by the meeting's own duration),
+  // used as an offline fallback if the availability endpoint can't be reached.
+  function localSlotStarts(durationMin) {
+    var slots = [];
+    for (var m = WORK_START_MIN; m + durationMin <= WORK_END_MIN; m += durationMin) slots.push(m);
+    return slots;
+  }
+
+  var availabilityRequestId = 0;
+
+  function renderSlots() {
+    var grid = q("#ljbSlotGrid");
+    if (!state.dateStr || !state.type) { grid.innerHTML = ""; return; }
+
+    grid.innerHTML = '<div class="ljb-empty-note">Loading times…</div>';
+    var requestId = ++availabilityRequestId;
+
+    var url = SUPABASE_FUNCTIONS_BASE + "/get-availability?type=" +
+      encodeURIComponent(state.type.id) + "&date=" + encodeURIComponent(state.dateStr);
+
+    fetch(url)
+      .then(function (res) { return res.ok ? res.json() : Promise.reject(new Error("bad response")); })
+      .then(function (data) {
+        if (requestId !== availabilityRequestId) return; // a newer request superseded this one
+        renderSlotButtons(Array.isArray(data.slots) ? data.slots : []);
+      })
+      .catch(function () {
+        if (requestId !== availabilityRequestId) return;
+        // Backend not reachable (e.g. not deployed yet) — fall back to the full local grid
+        // so the widget still demos; the real check still happens at submit time.
+        renderSlotButtons(localSlotStarts(state.type.durationMin));
+      });
+  }
+
+  function renderSlotButtons(slots) {
+    var grid = q("#ljbSlotGrid");
+    if (!slots.length) {
+      grid.innerHTML = '<div class="ljb-empty-note">No open times this day — please pick another date.</div>';
+      return;
+    }
+
+    grid.innerHTML = slots.map(function (m) {
+      return '<div class="ljb-slot" data-min="' + m + '">' + minutesToLabel(m) + '</div>';
+    }).join("");
+
+    grid.onclick = function (e) {
+      var el = e.target.closest("[data-min]");
+      if (!el) return;
+      state.time = Number(el.getAttribute("data-min"));
+      qa("#ljbSlotGrid .ljb-slot").forEach(function (s) {
+        s.classList.toggle("is-selected", s === el);
+      });
+      updateContinueState();
+    };
+  }
+
+  function minutesToLabel(totalMin) {
+    var h = Math.floor(totalMin / 60);
+    var m = totalMin % 60;
+    var ampm = h >= 12 ? "PM" : "AM";
+    var h12 = h % 12 === 0 ? 12 : h % 12;
+    return h12 + (m === 0 ? "" : ":" + String(m).padStart(2, "0")) + " " + ampm;
+  }
+
+  function updateContinueState() {
+    q("#ljbToStep3").disabled = !(state.dateStr && state.time !== null && state.time !== undefined);
+  }
+
+  q("#ljbToStep3").addEventListener("click", function () {
+    var when = formatSelectedWhen();
+    q("#ljbSelWhen").innerHTML =
+      '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>' + when;
+    goToStep(3);
+  });
+
+  function formatSelectedWhen() {
+    var d = state.days.filter(function (x) { return x.dateStr === state.dateStr; })[0];
+    var dowFull = { Sun: "Sunday", Mon: "Monday", Tue: "Tuesday", Wed: "Wednesday", Thu: "Thursday", Fri: "Friday", Sat: "Saturday" }[d.dow];
+    var timeStr = minutesToLabel(state.time);
+    return dowFull + ", " + d.mon + " " + d.day + " · " + timeStr + " " + TZ_LABEL + " (" + state.type.durationLabel + ")";
+  }
+
+  /* ---------------- back links ---------------- */
+  root.addEventListener("click", function (e) {
+    var back1 = e.target.closest('[data-action="to-step-1"]');
+    var back2 = e.target.closest('[data-action="to-step-2"]');
+    if (back1) goToStep(1);
+    if (back2) goToStep(2);
+  });
+
+  /* ---------------- Step 3: form ---------------- */
+  var form = q("#ljbForm");
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    var companyHp = q("#ljbCompany").value.trim();
+    var name = q("#ljbName").value.trim();
+    var email = q("#ljbEmail").value.trim();
+    var emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+
+    q("#ljbFieldName").classList.toggle("has-error", !name);
+    q("#ljbFieldEmail").classList.toggle("has-error", !emailOk);
+    if (!name || !emailOk) return;
+
+    var payload = {
+      type: state.type.id,
+      date: state.dateStr,
+      start_minutes: state.time,
+      name: name,
+      email: email,
+      phone: q("#ljbPhone").value.trim(),
+      notes: q("#ljbNotes").value.trim(),
+      company_hp: companyHp
+    };
+
+    submitBooking(payload);
+  });
+
+  function setFormMsg(kind, text) {
+    var el = q("#ljbFormMsg");
+    el.textContent = text || "";
+    el.className = "ljb-form-msg" + (kind ? " ljb-form-msg-" + kind : "");
+  }
+
+  function submitBooking(payload) {
+    // Honeypot: bots fill every field including the hidden trap. Pretend
+    // success without ever hitting the network.
+    if (payload.company_hp) {
+      showConfirmation(payload);
+      return;
+    }
+
+    var btn = q("#ljbSubmitBtn");
+    btn.disabled = true;
+    btn.textContent = "Booking...";
+    setFormMsg("", "");
+
+    fetch(SUPABASE_FUNCTIONS_BASE + "/submit-appointment", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload)
+    })
+      .then(function (res) {
+        return res.json().then(function (data) { return { ok: res.ok, data: data }; });
+      })
+      .then(function (result) {
+        btn.disabled = false;
+        btn.textContent = "Confirm Booking";
+        if (result.ok) {
+          showConfirmation(payload);
+        } else {
+          var msg = (result.data && result.data.error) || "Something went wrong. Please try again.";
+          setFormMsg("error", msg);
+          // A 409 means the slot was just taken — refresh the time grid so they can pick another.
+          if (result.data && result.data.error && /already been booked|just been booked|just booked/i.test(result.data.error)) {
+            renderSlots();
+          }
+        }
+      })
+      .catch(function () {
+        btn.disabled = false;
+        btn.textContent = "Confirm Booking";
+        setFormMsg("error", "Network error — please check your connection and try again.");
+      });
+  }
+
+  function showConfirmation(payload) {
+    q("#ljbConfType").textContent = state.type.name + " (" + state.type.durationMin + " min)";
+    q("#ljbConfWhen").textContent = formatSelectedWhen();
+    q("#ljbConfEmail").textContent = "Confirmation to: " + payload.email;
+    goToStep(4);
+
+    // Notify a parent page/iframe host that a booking completed.
+    try {
+      window.parent.postMessage({ type: "ljb-booking-confirmed", payload: payload }, "*");
+    } catch (e) { /* no-op outside iframe */ }
+  }
+
+  q("#ljbBookAnother").addEventListener("click", function () {
+    state = { type: null, dateStr: null, time: null, days: [] };
+    form.reset();
+    qa(".ljb-field").forEach(function (f) { f.classList.remove("has-error"); });
+    setFormMsg("", "");
+    goToStep(1);
+  });
+
+  /* ---------------- auto-height for iframe embedding ---------------- */
+  function postHeight() {
+    try {
+      window.parent.postMessage({ type: "ljb-resize", height: document.documentElement.scrollHeight }, "*");
+    } catch (e) { /* no-op */ }
+  }
+  window.addEventListener("resize", postHeight);
+  new MutationObserver(postHeight).observe(root, { childList: true, subtree: true, attributes: true });
+
+  renderTypes();
+  postHeight();
+})();
+</script>
+</body>
+</html>
