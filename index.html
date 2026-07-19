@@ -475,8 +475,8 @@
     padding: 16px;
   }
 
-  /* black border, with a small, tight rainbow shadow that cycles
-     color — contained and modest, never a spreading blob */
+  /* plain black border at rest; a tight rainbow shadow cycles
+     color only on hover — contained and modest, never a spreading blob */
   .mpa-frame {
     position: relative;
     width: 100%;
@@ -485,7 +485,12 @@
     overflow: hidden;
     background: var(--paper);
     border: 3px solid var(--ink);
+    transition: transform 0.3s ease;
+  }
+
+  .mpa-frame:hover {
     animation: mpa-shadow-cycle 8s ease-in-out infinite;
+    transform: translateY(-4px);
   }
 
   @keyframes mpa-shadow-cycle {
@@ -504,7 +509,7 @@
 
   /* respect users who don't want motion */
   @media (prefers-reduced-motion: reduce) {
-    .mpa-frame { animation: none; box-shadow: 0 0 18px 1px var(--c3); }
+    .mpa-frame, .mpa-frame:hover { animation: none; transform: none; box-shadow: 0 0 18px 1px var(--c3); }
     .mpa-hero__title, .mpa-hero__subtitle, .mpa-hero__cta, .mpa-stats { animation: none; opacity: 1; transform: none; }
   }
 
@@ -745,8 +750,8 @@
     padding: 16px;
   }
 
-  /* black border, with a small, tight rainbow shadow that cycles
-     color — contained and modest, never a spreading blob */
+  /* plain black border at rest; a tight rainbow shadow cycles
+     color only on hover — contained and modest, never a spreading blob */
   .mpa-frame {
     position: relative;
     width: 100%;
@@ -755,7 +760,12 @@
     overflow: hidden;
     background: var(--paper);
     border: 3px solid var(--ink);
+    transition: transform 0.3s ease;
+  }
+
+  .mpa-frame:hover {
     animation: mpa-shadow-cycle 8s ease-in-out infinite;
+    transform: translateY(-4px);
   }
 
   @keyframes mpa-shadow-cycle {
@@ -774,7 +784,7 @@
 
   /* respect users who don't want motion */
   @media (prefers-reduced-motion: reduce) {
-    .mpa-frame { animation: none; box-shadow: 0 0 18px 1px var(--c3); }
+    .mpa-frame, .mpa-frame:hover { animation: none; transform: none; box-shadow: 0 0 18px 1px var(--c3); }
     .mpa-hero__title, .mpa-hero__subtitle, .mpa-hero__cta, .mpa-stats { animation: none; opacity: 1; transform: none; }
   }
 
