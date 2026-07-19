@@ -1,3 +1,14 @@
+/* Nav/footer logo is a stacked icon+wordmark lockup — the default 40px
+   Odoo nav-logo height makes the wordmark illegible, so give it more room */
+header .navbar-brand.logo img {
+  height: 3.75rem;
+  max-height: 3.75rem;
+}
+
+.o_footer_logo img {
+  max-height: 4.5rem;
+}
+
 /* Global button hover: subtle blue glow (added across the site) */
 .btn:hover {
   box-shadow: 0 0 0 4px rgba(59, 111, 234, 0.22), 0 10px 26px rgba(59, 111, 234, 0.28);
