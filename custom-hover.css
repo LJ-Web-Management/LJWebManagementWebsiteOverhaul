@@ -1,3 +1,31 @@
+/* Odoo's default theme ("Color 1" #38383B charcoal nav, "Color 5" #202022
+   footer, black .btn-primary/.btn-outline-primary) is grayscale — replace
+   with LJ Web Management's navy/cyan so header, footer, and every default
+   button read as on-brand instead of black-and-white. */
+header .navbar.o_cc {
+  background-color: #193866 !important;
+}
+.o_footer {
+  background-color: #193866 !important;
+}
+.btn-primary:not(.btn_cta), .btn-fill-primary:not(.btn_cta) {
+  background-color: #193866 !important;
+  border-color: #193866 !important;
+  color: #FFFFFF !important;
+}
+.btn-primary:not(.btn_cta):hover, .btn-fill-primary:not(.btn_cta):hover {
+  background-color: #122a4d !important;
+  border-color: #122a4d !important;
+}
+.btn-outline-primary {
+  color: #193866 !important;
+  border-color: #193866 !important;
+}
+.btn-outline-primary:hover {
+  background-color: #193866 !important;
+  color: #FFFFFF !important;
+}
+
 /* Nav/footer logo is a stacked icon+wordmark lockup — the default 40px
    Odoo nav-logo height makes the wordmark illegible, so give it more room */
 header .navbar-brand.logo img {
