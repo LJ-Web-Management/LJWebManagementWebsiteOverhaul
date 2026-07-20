@@ -11,7 +11,7 @@ header .navbar-brand.logo img {
 
 /* Global button hover: subtle blue glow (added across the site) */
 .btn:hover {
-  box-shadow: 0 0 0 4px rgba(59, 111, 234, 0.22), 0 10px 26px rgba(59, 111, 234, 0.28);
+  box-shadow: 0 0 0 4px rgba(30, 180, 230, 0.22), 0 10px 26px rgba(30, 180, 230, 0.28);
   transform: translateY(-2px);
   transition: box-shadow 0.25s ease, transform 0.2s ease;
 }
