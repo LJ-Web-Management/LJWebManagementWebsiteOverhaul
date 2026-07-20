@@ -3,7 +3,30 @@
    with LJ Web Management's navy/cyan so header, footer, and every default
    button read as on-brand instead of black-and-white. */
 header .navbar.o_cc {
+  background-color: #FFFFFF !important;
+  box-shadow: 0 2px 14px rgba(25, 56, 102, 0.12);
+}
+header .navbar.o_cc .nav-link {
+  color: #193866 !important;
+}
+header .navbar.o_cc .nav-link:hover,
+header .navbar.o_cc .nav-link.active {
+  color: #1EB4E6 !important;
+}
+header .navbar.o_cc .o_nav-link_secondary {
+  color: #6b7280 !important;
+}
+header .navbar.o_cc .btn_cta {
   background-color: #193866 !important;
+  border-color: #193866 !important;
+  color: #FFFFFF !important;
+}
+header .navbar.o_cc .btn_cta:hover {
+  background-color: #122a4d !important;
+  border-color: #122a4d !important;
+}
+header .navbar.o_cc .navbar-toggler-icon {
+  filter: invert(1);
 }
 .o_footer {
   background-color: #193866 !important;
