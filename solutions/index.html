@@ -348,8 +348,17 @@
   }
 
   /* ============ CLOSING CTA ============ */
-  .lj-sol-cta { background: var(--navy); padding: 80px 24px; text-align: center; }
-  .lj-sol-cta-inner { max-width: 620px; margin: 0 auto; }
+  .lj-sol-cta {
+    position: relative; overflow: hidden;
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+    padding: 80px 24px; text-align: center;
+  }
+  .lj-sol-cta::before {
+    content: ""; position: absolute; top: -120px; right: -120px;
+    width: 360px; height: 360px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(30, 180, 230, 0.28) 0%, rgba(30, 180, 230, 0) 70%);
+  }
+  .lj-sol-cta-inner { position: relative; max-width: 620px; margin: 0 auto; }
   .lj-sol-cta h2 { color: #fff; font-size: clamp(1.7rem, 3.2vw, 2.3rem); margin-bottom: 14px; }
   .lj-sol-cta p { color: rgba(255,255,255,0.72); font-size: 15.5px; line-height: 1.6; margin: 0 0 32px; }
   .lj-sol-cta-row { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
@@ -360,7 +369,7 @@
   <div class="lj-sol-hero-inner">
     <span class="lj-eyebrow">Platform Solutions</span>
     <h1>Full-Scale Systems, Not Just Single Automations</h1>
-    <p>Beyond individual role-based automations, these are broader systems infrastructure investments — built for businesses ready to replace disconnected tools with one integrated backbone.</p>
+    <p>Beyond individual role-based automations, these are broader systems infrastructure investments, built for businesses ready to replace disconnected tools with one integrated backbone.</p>
     <div class="lj-sol-hero-actions">
       <a href="../appointment" class="lj-btn lj-btn-primary">Book a Consultation</a>
       <a href="../automations" class="lj-btn lj-btn-outline">See Role-Based Automations</a>
@@ -377,7 +386,7 @@
         <div class="lj-sol-icon"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3.5 2"></path><path d="M12 3v2M12 19v2M3 12h2M19 12h2"></path></svg></div>
         <div>
           <h2>Obsolescence Management Platform</h2>
-          <p>A centralized system that tracks the lifecycle status of every component, part, or piece of equipment a business relies on — flagging items approaching end-of-life or end-of-support long before they become a supply chain emergency. The platform continuously cross-references bill-of-materials data against manufacturer lifecycle notices, alerts procurement and engineering teams to at-risk parts, and recommends qualified alternatives, giving manufacturing, defense, aerospace, and industrial clients a proactive way to avoid costly last-time-buy scrambles and unplanned production line stoppages.</p>
+          <p>A centralized system that tracks the lifecycle status of every component, part, or piece of equipment a business relies on, flagging items approaching end-of-life or end-of-support long before they become a supply chain emergency. The platform continuously cross-references bill-of-materials data against manufacturer lifecycle notices, alerts procurement and engineering teams to at-risk parts, and recommends qualified alternatives, giving manufacturing, defense, aerospace, and industrial clients a proactive way to avoid costly last-time-buy scrambles and unplanned production line stoppages.</p>
         </div>
       </div>
     </div>
@@ -397,7 +406,7 @@
         <div class="lj-sol-icon"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a9 9 0 1 0 9 9"></path><path d="M12 3v9l6-3"></path><path d="M19 5l1.5 1.5"></path></svg></div>
         <div>
           <h2>Managed SaaS Delivery &amp; Support Service</h2>
-          <p>A subscription-based service where a business's custom software, internal tools, or automation stack is hosted, monitored, secured, and maintained on the client's behalf. This includes uptime monitoring, security patching, feature updates, technical support, and scaling infrastructure as usage grows — allowing clients to treat their internal software the same way they'd treat any other reliable SaaS product, without needing an in-house DevOps or IT team.</p>
+          <p>A subscription-based service where a business's custom software, internal tools, or automation stack is hosted, monitored, secured, and maintained on the client's behalf. This includes uptime monitoring, security patching, feature updates, technical support, and scaling infrastructure as usage grows, allowing clients to treat their internal software the same way they'd treat any other reliable SaaS product, without needing an in-house DevOps or IT team.</p>
         </div>
       </div>
     </div>

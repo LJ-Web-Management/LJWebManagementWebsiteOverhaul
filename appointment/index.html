@@ -494,7 +494,7 @@
       id: "30-min-consult",
       name: "30 Min Consult",
       durationMin: 30,
-      desc: "Open to anyone — book this if you need to talk with us for any reason, whether it's a question, an update, or something else.",
+      desc: "Open to anyone, book this if you need to talk with us for any reason, whether it's a question, an update, or something else.",
       durationLabel: "30 min",
       icon: '<path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.34 1.79.65 2.65a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.43-1.22a2 2 0 0 1 2.11-.45c.86.31 1.75.53 2.65.65A2 2 0 0 1 22 16.92z"/>'
     }
@@ -677,7 +677,7 @@
   function renderSlotButtons(slots) {
     var grid = q("#ljbSlotGrid");
     if (!slots.length) {
-      grid.innerHTML = '<div class="ljb-empty-note">No open times this day — please pick another date.</div>';
+      grid.innerHTML = '<div class="ljb-empty-note">No open times this day, please pick another date.</div>';
       return;
     }
 
@@ -802,7 +802,7 @@
       .catch(function () {
         btn.disabled = false;
         btn.textContent = "Confirm Booking";
-        setFormMsg("error", "Network error — please check your connection and try again.");
+        setFormMsg("error", "Network error. Please check your connection and try again.");
       });
   }
 
