@@ -60,6 +60,26 @@ header .navbar.o_cc .btn_cta:hover {
 header .navbar.o_cc .navbar-toggler-icon {
   filter: invert(1);
 }
+/* The mobile offcanvas menu is a separate panel from the nav bar itself
+   (Bootstrap portals it out), so the white-header override above never
+   reached it — it was still on Odoo's old dark charcoal theme, with the
+   new navy link text from that override barely visible against it. */
+.offcanvas.o_navbar_mobile {
+  background-color: #FFFFFF !important;
+}
+.offcanvas.o_navbar_mobile .nav-link {
+  color: #193866 !important;
+}
+.offcanvas.o_navbar_mobile .nav-link:hover,
+.offcanvas.o_navbar_mobile .nav-link.active {
+  color: #1EB4E6 !important;
+}
+.offcanvas.o_navbar_mobile .o_nav-link_secondary {
+  color: #6b7280 !important;
+}
+.offcanvas.o_navbar_mobile .btn-close {
+  filter: none;
+}
 .o_footer {
   background-color: #193866 !important;
 }
@@ -86,6 +106,24 @@ header .navbar.o_cc .navbar-toggler-icon {
 header .navbar-brand.logo img {
   height: 3.75rem;
   max-height: 3.75rem;
+}
+
+/* On phone widths the mobile nav pill's own px-3 padding reads as too
+   tight against the logo specifically (a full logo mark wants more
+   breathing room than plain nav text does) */
+@media (max-width: 991.98px) {
+  header .o_header_mobile .navbar-brand.logo {
+    margin-left: 0.5rem;
+  }
+}
+
+/* Modern Contact Us button: pill shape (added via class) plus a bit
+   more presence than Bootstrap's default btn padding/weight */
+header .navbar.o_cc .btn_cta,
+.offcanvas.o_navbar_mobile .btn_cta {
+  font-weight: 600;
+  padding: 0.55rem 1.4rem;
+  letter-spacing: 0.01em;
 }
 
 .o_footer_logo img {
