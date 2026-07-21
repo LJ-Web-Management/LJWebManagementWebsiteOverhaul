@@ -205,6 +205,10 @@ this guide changes.
 - The Pricing page's "Book a Consultation" button also had a typo
   (`/appointments`, plural — a dead link even on the original site) fixed
   to point at the real `/appointment` page.
+- **Google Analytics/Tag Manager** tracking (`gtag.js`, ID `G-R423J2Q3EK`)
+  and the **`/admin`** dashboard have both been removed. With Contact Us,
+  booking, and the old product-lead forms all off the Supabase backend
+  already, `/admin` had nothing left to display.
 
 ## Notes on what's *not* included
 
