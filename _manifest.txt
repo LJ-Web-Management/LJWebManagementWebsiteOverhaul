@@ -1,34 +1,10 @@
 / -> index.html
 /contactus -> contactus/index.html
 /how-it-works -> how-it-works/index.html
-/pricing -> pricing/index.html
+/automations -> automations/index.html
 /privacy-policy -> privacy-policy/index.html
 /terms-of-service -> terms-of-service/index.html
 /appointment -> appointment/index.html
-/pre-made-automations/ai-document-data-extraction -> pre-made-automations/ai-document-data-extraction/index.html
-/pre-made-automations/appointment-scheduler -> pre-made-automations/appointment-scheduler/index.html
-/pre-made-automations/approval-workflow -> pre-made-automations/approval-workflow/index.html
-/pre-made-automations/booked -> pre-made-automations/booked/index.html
-/pre-made-automations/customer-support -> pre-made-automations/customer-support/index.html
-/pre-made-automations/daily-agenda-to-slack -> pre-made-automations/daily-agenda-to-slack/index.html
-/pre-made-automations/daily-digest-email -> pre-made-automations/daily-digest-email/index.html
-/pre-made-automations/email-attachments-to-onedrive -> pre-made-automations/email-attachments-to-onedrive/index.html
-/pre-made-automations/email-to-calendar-event -> pre-made-automations/email-to-calendar-event/index.html
-/pre-made-automations/email-to-planner-task -> pre-made-automations/email-to-planner-task/index.html
-/pre-made-automations/email-to-task -> pre-made-automations/email-to-task/index.html
-/pre-made-automations/form-to-document -> pre-made-automations/form-to-document/index.html
-/pre-made-automations/inbound-email-sorting -> pre-made-automations/inbound-email-sorting/index.html
-/pre-made-automations/invoicing-follow-up -> pre-made-automations/invoicing-follow-up/index.html
-/pre-made-automations/keyword-email-auto-reply -> pre-made-automations/keyword-email-auto-reply/index.html
-/pre-made-automations/lead-qualification -> pre-made-automations/lead-qualification/index.html
-/pre-made-automations/list-item-notification -> pre-made-automations/list-item-notification/index.html
-/pre-made-automations/personal-assistant -> pre-made-automations/personal-assistant/index.html
-/pre-made-automations/quote-follow-up -> pre-made-automations/quote-follow-up/index.html
-/pre-made-automations/sales-associate -> pre-made-automations/sales-associate/index.html
-/pre-made-automations/shared-mailbox-document-intake -> pre-made-automations/shared-mailbox-document-intake/index.html
-/pre-made-automations/upcoming-date-reminder -> pre-made-automations/upcoming-date-reminder/index.html
-/pre-made-automations/webpage-chatbot-openai -> pre-made-automations/webpage-chatbot-openai/index.html
-/pre-made-automations/website-chatbot-tawkto -> pre-made-automations/website-chatbot-tawkto/index.html
 
 Assets (295):
 https://mpautomate.odoo.com/web/assets/1/ceec6f2/web.assets_frontend_minimal.min.js -> web/assets/1/ceec6f2/web.assets_frontend_minimal.min.js

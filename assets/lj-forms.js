@@ -1,6 +1,7 @@
 /*
  * LJ Web — shared form-submission script.
- * Included on the Contact Us page and every /pre-made-automations/* page.
+ * Included on the Contact Us page, and (once rebuilt by industry/role)
+ * every product-detail automation page.
  *
  * Wires up any <form data-lj-form="contact|product-lead"> on the page:
  *   - auto-fills the hidden page_url field with the current full URL

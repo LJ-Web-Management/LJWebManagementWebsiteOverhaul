@@ -162,8 +162,10 @@ this guide changes.
    - It shows the inline "Thanks!" message.
    - A row appears in `contact_submissions` (Supabase Table Editor).
    - An email arrives at info@ljwebmanagement.com.
-2. Do the same on any `/pre-made-automations/<page>` product page — the
-   hidden link field should capture that exact page's URL.
+2. The old `/pre-made-automations/<page>` product pages have been removed
+   (the catalog is being rebuilt by industry/role) — once the new pages
+   exist, do the same test there; the hidden link field should capture
+   that exact page's URL.
 3. Visit `/appointment` (this is now the new booking widget — the old
    Odoo appointment pages have been removed), book a slot between
    8am–5pm Central on a weekday, and confirm the same three things (data

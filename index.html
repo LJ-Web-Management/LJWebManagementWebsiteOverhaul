@@ -11,7 +11,7 @@
         <meta property="og:title" content="Home | LJ Web Management"/>
         <meta property="og:site_name" content="LJ Web Management"/>
         <meta property="og:url" content="https://ljwebmanagement.com/"/>
-        <meta property="og:image" content="https://ljwebmanagement.com/web/image/website/1/social_default_image?unique=b6ce39d"/>
+        <meta property="og:image" content="https://ljwebmanagement.com/assets/social-share.png"/>
         <meta property="og:description" content="Transform repetitive business tasks with custom AI automation from LJ Web Management. Remove bottlenecks, save time, and keep your business moving."/>
             
         <meta name="twitter:card" content="summary_large_image"/>
@@ -19,9 +19,9 @@
         <link rel="canonical" href="https://ljwebmanagement.com/"/>
         
         <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin=""/>
-        <link rel="apple-touch-icon" href="web/image/website/1/favicon"/>
+        <link rel="apple-touch-icon" href="assets/favicon.ico"/>
         <title>Home | LJ Web Management</title>
-        <link type="image/x-icon" rel="shortcut icon" href="web/image/website/1/favicon"/>
+        <link type="image/x-icon" rel="shortcut icon" href="assets/favicon.ico"/>
         <link rel="preload" href="web/assets/1/89536c4/web.fontawesome.min.woff2" as="font" crossorigin=""/>
         <link rel="preload" href="web/assets/1/2fde661/web.odoo_ui_icons.min.woff2" as="font" crossorigin=""/>
         <link type="text/css" rel="stylesheet" href="web/assets/1/80bc15d/web.assets_frontend.min.css"/>
@@ -146,8 +146,8 @@
     </li>
 
     <li role="presentation" class="nav-item ">
-        <a role="menuitem" href="investments" class="nav-link ">
-            <span>Investments</span>
+        <a role="menuitem" href="automations" class="nav-link ">
+            <span>Automations</span>
         </a>
     </li>
                     
@@ -224,8 +224,8 @@
     </li>
 
     <li role="presentation" class="nav-item border-top border-bottom px-0">
-        <a role="menuitem" href="investments" class="nav-link p-3 text-wrap ">
-            <span>Investments</span>
+        <a role="menuitem" href="automations" class="nav-link p-3 text-wrap ">
+            <span>Automations</span>
         </a>
     </li>
                             
@@ -439,13 +439,12 @@
     transition: transform 0.2s ease, box-shadow 0.2s ease;
   }
   .lj-auto-card:hover { color: inherit; transform: translateY(-4px); box-shadow: var(--shadow); }
-  .lj-auto-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 18px; }
   .lj-auto-icon {
     width: 40px; height: 40px; border-radius: 10px; background: var(--navy);
     display: flex; align-items: center; justify-content: center; color: #fff;
+    margin-bottom: 18px;
   }
   .lj-auto-icon svg { width: 19px; height: 19px; }
-  .lj-auto-price { font-family: 'Sora', sans-serif; font-weight: 700; font-size: 13px; color: var(--cyan); }
   .lj-auto-card h3 { font-size: 16px; margin-bottom: 6px; }
   .lj-auto-card p { color: var(--body); font-size: 13.5px; line-height: 1.55; margin: 0; }
   .lj-catalog-cta { text-align: center; margin-top: 44px; }
@@ -479,7 +478,7 @@
       <h1 class="lj-hero-title">Cut Through<br/>The Delay.</h1>
       <p class="lj-hero-sub">We build custom AI automation systems that remove repetitive tasks and bottlenecks — connecting the tools you already use so your team can focus on the work that actually grows the business.</p>
       <div class="lj-hero-actions">
-        <a href="investments" class="lj-btn lj-btn-primary">View Investments</a>
+        <a href="automations" class="lj-btn lj-btn-primary">View Automations</a>
         <a href="appointment" class="lj-btn lj-btn-outline">Book a Consultation</a>
       </div>
       <div class="lj-stats">
@@ -592,61 +591,43 @@
 <section class="lj-section lj-catalog">
   <div class="lj-inner">
     <div class="lj-catalog-head">
-      <span class="lj-eyebrow">Popular Automations</span>
-      <h2>Automations built to save you hours</h2>
-      <p>Pre-built systems you can start with today, then customize to your business. A few of the most requested — see all 24+ in Investments.</p>
+      <span class="lj-eyebrow">Where We Help</span>
+      <h2>What We Automate</h2>
+      <p>Every business automates differently. Here's where our systems most often step in — each one scoped and quoted around your business, not sold off a shelf.</p>
     </div>
     <div class="lj-catalog-grid">
-      <a class="lj-auto-card" href="pre-made-automations/customer-support">
-        <div class="lj-auto-top">
-          <div class="lj-auto-icon"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14a5 5 0 0 1 5-5h6.5"></path><path d="M13 6.5l2.5 2.5-2.5 2.5"></path><path d="M20 10a5 5 0 0 1-5 5H8.5"></path><path d="M11 17.5L8.5 15l2.5-2.5"></path></svg></div>
-          <span class="lj-auto-price">$99.99</span>
-        </div>
+      <a class="lj-auto-card" href="automations">
+        <div class="lj-auto-icon"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14a5 5 0 0 1 5-5h6.5"></path><path d="M13 6.5l2.5 2.5-2.5 2.5"></path><path d="M20 10a5 5 0 0 1-5 5H8.5"></path><path d="M11 17.5L8.5 15l2.5-2.5"></path></svg></div>
         <h3>Customer Support</h3>
         <p>AI handles common questions and routes anything else straight to your team.</p>
       </a>
-      <a class="lj-auto-card" href="pre-made-automations/appointment-scheduler">
-        <div class="lj-auto-top">
-          <div class="lj-auto-icon"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"></rect><path d="M3 10h18"></path><path d="M8 3v4"></path><path d="M16 3v4"></path></svg></div>
-          <span class="lj-auto-price">$99.99</span>
-        </div>
-        <h3>Appointment Scheduler</h3>
+      <a class="lj-auto-card" href="automations">
+        <div class="lj-auto-icon"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"></rect><path d="M3 10h18"></path><path d="M8 3v4"></path><path d="M16 3v4"></path></svg></div>
+        <h3>Appointment Scheduling</h3>
         <p>Visitors book real open slots on your calendar without back-and-forth emails.</p>
       </a>
-      <a class="lj-auto-card" href="pre-made-automations/quote-follow-up">
-        <div class="lj-auto-top">
-          <div class="lj-auto-icon"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 4h9l3 3v13H6z"></path><path d="M9.5 12.5l1.8 1.8 3.2-3.6"></path></svg></div>
-          <span class="lj-auto-price">$49.99</span>
-        </div>
-        <h3>Quote Follow-Up</h3>
-        <p>Sent quotes get timely, automatic follow-ups so fewer of them go cold.</p>
+      <a class="lj-auto-card" href="automations">
+        <div class="lj-auto-icon"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 4h9l3 3v13H6z"></path><path d="M9.5 12.5l1.8 1.8 3.2-3.6"></path></svg></div>
+        <h3>Email &amp; Follow-Up</h3>
+        <p>Quotes, invoices, and leads get timely, automatic follow-ups so fewer go cold.</p>
       </a>
-      <a class="lj-auto-card" href="pre-made-automations/inbound-email-sorting">
-        <div class="lj-auto-top">
-          <div class="lj-auto-icon"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h11l3 3v9H4z"></path><path d="M4 6v3h14"></path><path d="M8 15h6"></path></svg></div>
-          <span class="lj-auto-price">$19.99</span>
-        </div>
-        <h3>Inbound Email Sorting</h3>
-        <p>Incoming mail is automatically labeled and routed to the right inbox or folder.</p>
+      <a class="lj-auto-card" href="automations">
+        <div class="lj-auto-icon"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h11l3 3v9H4z"></path><path d="M4 6v3h14"></path><path d="M8 15h6"></path></svg></div>
+        <h3>Operations &amp; Reporting</h3>
+        <p>Information moves between systems and routine reports build themselves.</p>
       </a>
-      <a class="lj-auto-card" href="pre-made-automations/website-chatbot-tawkto">
-        <div class="lj-auto-top">
-          <div class="lj-auto-icon"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v11H8l-4 4V5z"></path><circle cx="9" cy="10.5" r="0.8" fill="currentColor" stroke="none"></circle><circle cx="12" cy="10.5" r="0.8" fill="currentColor" stroke="none"></circle><circle cx="15" cy="10.5" r="0.8" fill="currentColor" stroke="none"></circle></svg></div>
-          <span class="lj-auto-price">$29.99</span>
-        </div>
-        <h3>Automated Website Chatbot</h3>
-        <p>A live chat assistant on your site that answers visitors around the clock.</p>
+      <a class="lj-auto-card" href="automations">
+        <div class="lj-auto-icon"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v11H8l-4 4V5z"></path><circle cx="9" cy="10.5" r="0.8" fill="currentColor" stroke="none"></circle><circle cx="12" cy="10.5" r="0.8" fill="currentColor" stroke="none"></circle><circle cx="15" cy="10.5" r="0.8" fill="currentColor" stroke="none"></circle></svg></div>
+        <h3>AI Website Assistants</h3>
+        <p>A live assistant on your site answers visitors and qualifies leads around the clock.</p>
       </a>
-      <a class="lj-auto-card" href="pre-made-automations/sales-associate">
-        <div class="lj-auto-top">
-          <div class="lj-auto-icon"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V6"></path><path d="M4 19h16"></path><path d="M8 15l3-4 3 3 4-6"></path></svg></div>
-          <span class="lj-auto-price">$99.99</span>
-        </div>
-        <h3>Sales Associate</h3>
+      <a class="lj-auto-card" href="automations">
+        <div class="lj-auto-icon"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V6"></path><path d="M4 19h16"></path><path d="M8 15l3-4 3 3 4-6"></path></svg></div>
+        <h3>CRM &amp; Sales</h3>
         <p>Leads get qualified and nurtured automatically, so your pipeline stays warm.</p>
       </a>
     </div>
-    <div class="lj-catalog-cta"><a href="investments" class="lj-btn lj-btn-primary">View All Investments</a></div>
+    <div class="lj-catalog-cta"><a href="appointment" class="lj-btn lj-btn-primary">Book a Consultation</a></div>
   </div>
 </section>
 

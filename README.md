@@ -14,7 +14,7 @@ a **Supabase** backend for form submissions and appointment booking.
 
 | Path | What it is |
 |---|---|
-| `index.html`, `how-it-works/`, `pricing/`, `contactus/`, `pre-made-automations/`, etc. | The site pages |
+| `index.html`, `how-it-works/`, `automations/`, `contactus/`, etc. | The site pages |
 | `appointment/` | The appointment booking widget (name, phone, email, date/time — 8am–5pm Central, weekdays only) |
 | `admin/` | Password-protected dashboard to view Contact Us, product page leads, and appointment submissions |
 | `assets/lj-forms.js` | Shared script that wires up the Contact Us and product-page forms |
