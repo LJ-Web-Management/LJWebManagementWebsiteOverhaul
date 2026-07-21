@@ -265,757 +265,402 @@
     </header>
                 <main class="">
                     
-        <div id="wrap" class="oe_structure"><section class="s_embed_code pt16 pb16 o_colored_level text-start" data-snippet="s_embed_code" data-name="Embed Code">
-        <template class="s_embed_code_saved"><section class="mpa-hero">
-  <div class="mpa-hero__inner">
+        <div id="wrap" class="oe_structure"><section class="lj-home">
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+  .lj-home {
+    --navy: #193866;
+    --navy-light: #254a81;
+    --navy-dark: #0f2544;
+    --cyan: #1EB4E6;
+    --cyan-light: #68ddff;
+    --ink: #16202e;
+    --body: #4b5563;
+    --muted: #6b7280;
+    --line: #e3e8ef;
+    --mist: #f6f8fb;
+    --white: #ffffff;
+    --shadow: 0 18px 40px rgba(15, 37, 68, 0.09);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    color: var(--ink);
+    background: var(--white);
+  }
+  .lj-home * { box-sizing: border-box; }
+  .lj-home h1, .lj-home h2, .lj-home h3 {
+    font-family: 'Sora', sans-serif;
+    color: var(--navy);
+    margin: 0;
+  }
+  .lj-eyebrow {
+    display: inline-block;
+    font-family: 'Sora', sans-serif;
+    font-weight: 700;
+    font-size: 12.5px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--cyan);
+    margin-bottom: 14px;
+  }
+  .lj-section { padding: 96px 24px; }
+  .lj-inner { max-width: 1180px; margin: 0 auto; }
 
-    <div class="mpa-hero__copy" style="text-align:center;">
-      <h1 class="mpa-hero__title">LJ Web<br/>Management</h1>
-      <p class="mpa-hero__subtitle">Cut Through The Delay</p>
+  /* ============ HERO ============ */
+  .lj-hero { padding: 88px 24px 80px; overflow: hidden; position: relative; }
+  .lj-hero-grid {
+    max-width: 1180px; margin: 0 auto;
+    display: grid; grid-template-columns: 1.05fr 0.95fr;
+    gap: 64px; align-items: center;
+  }
+  .lj-hero-title {
+    font-size: clamp(2.5rem, 4.6vw, 3.6rem);
+    font-weight: 800; line-height: 1.08; letter-spacing: -0.02em;
+    margin-bottom: 20px;
+  }
+  .lj-hero-sub {
+    font-size: 17px; line-height: 1.65; color: var(--body);
+    max-width: 480px; margin: 0 0 34px;
+  }
+  .lj-hero-actions { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 44px; }
+  .lj-btn {
+    font-family: 'Sora', sans-serif; font-weight: 700; font-size: 14.5px;
+    padding: 15px 30px; border-radius: 10px; text-decoration: none;
+    display: inline-flex; align-items: center; gap: 8px;
+    transition: transform 0.2s ease, box-shadow 0.25s ease, background 0.2s ease;
+  }
+  .lj-btn-primary { background: var(--navy); color: #fff; }
+  .lj-btn-primary:hover { background: var(--navy-dark); color: #fff; transform: translateY(-2px); box-shadow: 0 12px 24px rgba(25, 56, 102, 0.25); }
+  .lj-btn-outline { background: transparent; color: var(--navy); border: 1.5px solid var(--line); }
+  .lj-btn-outline:hover { color: var(--navy); border-color: var(--navy); transform: translateY(-2px); box-shadow: 0 10px 22px rgba(25, 56, 102, 0.1); }
+  .lj-btn-cyan { background: var(--cyan); color: #fff; }
+  .lj-btn-cyan:hover { background: #189cc9; color: #fff; transform: translateY(-2px); box-shadow: 0 12px 24px rgba(30, 180, 230, 0.3); }
 
-      <a href="investments" class="mpa-hero__cta">View Investments</a>
+  .lj-stats { display: flex; gap: 36px; flex-wrap: wrap; }
+  .lj-stat { border-left: 3px solid var(--cyan); padding-left: 14px; }
+  .lj-stat__num { display: block; font-family: 'Sora', sans-serif; font-weight: 800; font-size: 1.7rem; color: var(--navy); line-height: 1.1; }
+  .lj-stat__label { display: block; font-size: 12.5px; color: var(--muted); margin-top: 3px; }
 
-      <div class="mpa-stats">
-        <div class="mpa-stat">
-          <span class="mpa-stat__num">12+</span>
-          <span class="mpa-stat__label">Hours Saved / Month</span>
+  .lj-hero-media { position: relative; }
+  .lj-hero-card {
+    background: var(--white); border-radius: 20px; border: 1px solid var(--line);
+    box-shadow: var(--shadow); overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .lj-hero-card:hover { transform: translateY(-6px); box-shadow: 0 26px 54px rgba(15, 37, 68, 0.14); }
+  .lj-hero-card-bar {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 16px 20px; border-bottom: 1px solid var(--line);
+  }
+  .lj-hero-card-dots { display: flex; gap: 6px; }
+  .lj-hero-card-dots span { width: 8px; height: 8px; border-radius: 50%; display: block; }
+  .lj-hero-card-dots span:nth-child(1) { background: var(--navy); }
+  .lj-hero-card-dots span:nth-child(2) { background: var(--cyan); }
+  .lj-hero-card-dots span:nth-child(3) { background: var(--line); }
+  .lj-hero-card-bar span.lj-hero-card-label { font-size: 12px; font-weight: 600; color: var(--muted); }
+  .lj-hero-card-body { padding: 18px; display: flex; flex-direction: column; gap: 10px; }
+  .lj-hero-row {
+    display: flex; align-items: center; gap: 14px;
+    background: var(--mist); border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px;
+  }
+  .lj-hero-row-check {
+    flex-shrink: 0; width: 32px; height: 32px; border-radius: 9px;
+    background: #16a34a; display: flex; align-items: center; justify-content: center;
+  }
+  .lj-hero-row-text strong { display: block; font-size: 14.5px; color: var(--ink); font-weight: 700; }
+  .lj-hero-row-text span { display: block; font-size: 12.5px; color: var(--muted); margin-top: 2px; }
+
+  @media (max-width: 940px) {
+    .lj-hero-grid { grid-template-columns: 1fr; }
+    .lj-hero-media { order: -1; max-width: 480px; margin: 0 auto; width: 100%; }
+  }
+  @media (max-width: 560px) {
+    .lj-hero { padding: 60px 20px 56px; }
+    .lj-stats { gap: 24px; }
+  }
+
+  /* ============ PROCESS ============ */
+  .lj-process { background: var(--mist); }
+  .lj-process-head { text-align: center; max-width: 640px; margin: 0 auto 56px; }
+  .lj-process-head h2 { font-size: clamp(1.9rem, 3.2vw, 2.5rem); line-height: 1.2; margin-top: 4px; }
+  .lj-process-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .lj-step {
+    position: relative; background: var(--white); border: 1px solid var(--line);
+    border-radius: 16px; padding: 36px 28px 30px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  }
+  .lj-step:hover { transform: translateY(-4px); box-shadow: var(--shadow); border-color: transparent; }
+  .lj-step-num {
+    font-family: 'Sora', sans-serif; font-weight: 800; font-size: 13px; color: var(--cyan);
+    letter-spacing: 0.08em; display: block; margin-bottom: 18px;
+  }
+  .lj-step-icon {
+    width: 48px; height: 48px; border-radius: 12px; background: var(--navy);
+    display: flex; align-items: center; justify-content: center; color: #fff; margin-bottom: 18px;
+  }
+  .lj-step-icon svg { width: 22px; height: 22px; }
+  .lj-step h3 { font-size: 18px; margin-bottom: 8px; }
+  .lj-step p { color: var(--body); font-size: 14.5px; line-height: 1.6; margin: 0; }
+  .lj-process-cta {
+    display: flex; justify-content: center; margin-top: 44px;
+  }
+  .lj-process-cta a {
+    font-family: 'Sora', sans-serif; font-weight: 700; font-size: 14.5px; color: var(--navy);
+    text-decoration: none; display: inline-flex; align-items: center; gap: 8px;
+    border-bottom: 2px solid var(--cyan); padding-bottom: 3px; transition: color 0.2s ease, gap 0.2s ease;
+  }
+  .lj-process-cta a:hover { color: var(--cyan); gap: 12px; }
+  @media (max-width: 820px) { .lj-process-row { grid-template-columns: 1fr; } }
+
+  /* ============ WHY US ============ */
+  .lj-why-head { text-align: center; max-width: 660px; margin: 0 auto 52px; }
+  .lj-why-head h2 { font-size: clamp(1.9rem, 3.2vw, 2.5rem); line-height: 1.2; margin-top: 4px; }
+  .lj-why-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+  .lj-why-card { padding: 4px; }
+  .lj-why-icon {
+    width: 44px; height: 44px; border-radius: 10px; background: rgba(30, 180, 230, 0.12);
+    display: flex; align-items: center; justify-content: center; color: var(--cyan); margin-bottom: 16px;
+  }
+  .lj-why-icon svg { width: 21px; height: 21px; }
+  .lj-why-card h3 { font-size: 15.5px; margin-bottom: 6px; }
+  .lj-why-card p { color: var(--body); font-size: 14px; line-height: 1.6; margin: 0; }
+  @media (max-width: 900px) { .lj-why-row { grid-template-columns: repeat(2, 1fr); gap: 32px 20px; } }
+  @media (max-width: 560px) { .lj-why-row { grid-template-columns: 1fr; gap: 28px; } }
+
+  /* ============ CATALOG ============ */
+  .lj-catalog { background: var(--mist); }
+  .lj-catalog-head { text-align: center; max-width: 640px; margin: 0 auto 52px; }
+  .lj-catalog-head h2 { font-size: clamp(1.9rem, 3.2vw, 2.5rem); line-height: 1.2; margin-top: 4px; }
+  .lj-catalog-head p { color: var(--body); font-size: 15.5px; line-height: 1.6; margin: 12px 0 0; }
+  .lj-catalog-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+  .lj-auto-card {
+    background: var(--white); border: 1px solid var(--line); border-radius: 14px;
+    padding: 26px; text-decoration: none; color: inherit; display: block;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .lj-auto-card:hover { color: inherit; transform: translateY(-4px); box-shadow: var(--shadow); }
+  .lj-auto-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 18px; }
+  .lj-auto-icon {
+    width: 40px; height: 40px; border-radius: 10px; background: var(--navy);
+    display: flex; align-items: center; justify-content: center; color: #fff;
+  }
+  .lj-auto-icon svg { width: 19px; height: 19px; }
+  .lj-auto-price { font-family: 'Sora', sans-serif; font-weight: 700; font-size: 13px; color: var(--cyan); }
+  .lj-auto-card h3 { font-size: 16px; margin-bottom: 6px; }
+  .lj-auto-card p { color: var(--body); font-size: 13.5px; line-height: 1.55; margin: 0; }
+  .lj-catalog-cta { text-align: center; margin-top: 44px; }
+  @media (max-width: 900px) { .lj-catalog-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 560px) { .lj-catalog-grid { grid-template-columns: 1fr; } }
+
+  /* ============ CTA ============ */
+  .lj-cta {
+    position: relative; overflow: hidden;
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+    padding: 88px 24px; text-align: center; color: #fff;
+  }
+  .lj-cta::before {
+    content: ""; position: absolute; top: -120px; right: -120px;
+    width: 360px; height: 360px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(30, 180, 230, 0.28) 0%, rgba(30, 180, 230, 0) 70%);
+  }
+  .lj-cta-inner { position: relative; max-width: 620px; margin: 0 auto; }
+  .lj-cta h2 { color: #fff; font-size: clamp(1.8rem, 3.2vw, 2.3rem); margin-bottom: 14px; }
+  .lj-cta p { color: rgba(255,255,255,0.78); font-size: 15.5px; line-height: 1.6; margin: 0 0 32px; }
+  .lj-cta-row { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+  .lj-cta .lj-btn-outline { color: #fff; border-color: rgba(255,255,255,0.35); }
+  .lj-cta .lj-btn-outline:hover { border-color: #fff; box-shadow: none; }
+</style>
+
+<!-- HERO -->
+<section class="lj-hero">
+  <div class="lj-hero-grid">
+    <div>
+      <span class="lj-eyebrow">Custom Automation Systems</span>
+      <h1 class="lj-hero-title">Cut Through<br/>The Delay.</h1>
+      <p class="lj-hero-sub">We build custom AI automation systems that remove repetitive tasks and bottlenecks — connecting the tools you already use so your team can focus on the work that actually grows the business.</p>
+      <div class="lj-hero-actions">
+        <a href="investments" class="lj-btn lj-btn-primary">View Investments</a>
+        <a href="appointment" class="lj-btn lj-btn-outline">Book a Consultation</a>
+      </div>
+      <div class="lj-stats">
+        <div class="lj-stat"><span class="lj-stat__num">12+</span><span class="lj-stat__label">Hours Saved / Month</span></div>
+        <div class="lj-stat"><span class="lj-stat__num">2x</span><span class="lj-stat__label">Productivity</span></div>
+        <div class="lj-stat"><span class="lj-stat__num">35%</span><span class="lj-stat__label">Cost Reduction</span></div>
+      </div>
+    </div>
+    <div class="lj-hero-media">
+      <div class="lj-hero-card">
+        <div class="lj-hero-card-bar">
+          <div class="lj-hero-card-dots"><span></span><span></span><span></span></div>
+          <span class="lj-hero-card-label">Handled today</span>
         </div>
-        <div class="mpa-stat">
-          <span class="mpa-stat__num">2x</span>
-          <span class="mpa-stat__label">Productivity</span>
-        </div>
-        <div class="mpa-stat">
-          <span class="mpa-stat__num">35%</span>
-          <span class="mpa-stat__label">Cost Reduction</span>
+        <div class="lj-hero-card-body">
+          <div class="lj-hero-row">
+            <div class="lj-hero-row-check"><svg width="16" height="16" viewbox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"></path></svg></div>
+            <div class="lj-hero-row-text"><strong>Emails answered</strong><span>Auto-replied within minutes</span></div>
+          </div>
+          <div class="lj-hero-row">
+            <div class="lj-hero-row-check"><svg width="16" height="16" viewbox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"></path></svg></div>
+            <div class="lj-hero-row-text"><strong>Leads followed up</strong><span>No lead left waiting</span></div>
+          </div>
+          <div class="lj-hero-row">
+            <div class="lj-hero-row-check"><svg width="16" height="16" viewbox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"></path></svg></div>
+            <div class="lj-hero-row-text"><strong>Invoices sent</strong><span>Billed the moment work is done</span></div>
+          </div>
+          <div class="lj-hero-row">
+            <div class="lj-hero-row-check"><svg width="16" height="16" viewbox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"></path></svg></div>
+            <div class="lj-hero-row-text"><strong>Appointments booked</strong><span>Calendar fills itself</span></div>
+          </div>
+          <div class="lj-hero-row">
+            <div class="lj-hero-row-check"><svg width="16" height="16" viewbox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"></path></svg></div>
+            <div class="lj-hero-row-text"><strong>Reports generated</strong><span>Sent before you have to ask</span></div>
+          </div>
         </div>
       </div>
     </div>
-
-    <div class="mpa-hero__media">
-      <div class="mpa-frame">
-        <svg xmlns="http://www.w3.org/2000/svg" width="800" height="850" viewbox="0 0 800 850">
-  <rect x="0" y="0" width="800" height="850" fill="#ffffff"></rect>
-
-  <rect x="60" y="50" width="680" height="52" rx="16" fill="#ffffff" stroke="#e4e4e7" stroke-width="1.5"></rect>
-  <circle cx="92" cy="76" r="6" fill="#ff3cac"></circle>
-  <circle cx="114" cy="76" r="6" fill="#ff9f1c"></circle>
-  <circle cx="136" cy="76" r="6" fill="#00e5ff"></circle>
-  <text x="700" y="81" text-anchor="end" font-family="Inter, sans-serif" font-size="13" font-weight="600" fill="#9a9aa0">Handled today</text>
-
-  <g>
-    <rect x="60" y="140" width="680" height="96" rx="18" fill="#f5f5f7" stroke="#e4e4e7" stroke-width="1.5"></rect>
-    <rect x="90" y="164" width="48" height="48" rx="12" fill="#16a34a"></rect>
-    <path d="M101 189l9 9l19-21" fill="none" stroke="#ffffff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path>
-    <text x="170" y="186" font-family="Inter, sans-serif" font-size="22" font-weight="700" fill="#0b0b0c">Emails answered</text>
-    <text x="170" y="212" font-family="Inter, sans-serif" font-size="15" font-weight="500" fill="#6b6b70">Auto-replied within minutes</text>
-  </g>
-
-  <g>
-    <rect x="60" y="254" width="680" height="96" rx="18" fill="#f5f5f7" stroke="#e4e4e7" stroke-width="1.5"></rect>
-    <rect x="90" y="278" width="48" height="48" rx="12" fill="#16a34a"></rect>
-    <path d="M101 303l9 9l19-21" fill="none" stroke="#ffffff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path>
-    <text x="170" y="300" font-family="Inter, sans-serif" font-size="22" font-weight="700" fill="#0b0b0c">Leads followed up</text>
-    <text x="170" y="326" font-family="Inter, sans-serif" font-size="15" font-weight="500" fill="#6b6b70">No lead left waiting</text>
-  </g>
-
-  <g>
-    <rect x="60" y="368" width="680" height="96" rx="18" fill="#f5f5f7" stroke="#e4e4e7" stroke-width="1.5"></rect>
-    <rect x="90" y="392" width="48" height="48" rx="12" fill="#16a34a"></rect>
-    <path d="M101 417l9 9l19-21" fill="none" stroke="#ffffff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path>
-    <text x="170" y="414" font-family="Inter, sans-serif" font-size="22" font-weight="700" fill="#0b0b0c">Invoices sent</text>
-    <text x="170" y="440" font-family="Inter, sans-serif" font-size="15" font-weight="500" fill="#6b6b70">Billed the moment work is done</text>
-  </g>
-
-  <g>
-    <rect x="60" y="482" width="680" height="96" rx="18" fill="#f5f5f7" stroke="#e4e4e7" stroke-width="1.5"></rect>
-    <rect x="90" y="506" width="48" height="48" rx="12" fill="#16a34a"></rect>
-    <path d="M101 531l9 9l19-21" fill="none" stroke="#ffffff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path>
-    <text x="170" y="528" font-family="Inter, sans-serif" font-size="22" font-weight="700" fill="#0b0b0c">Appointments booked</text>
-    <text x="170" y="554" font-family="Inter, sans-serif" font-size="15" font-weight="500" fill="#6b6b70">Calendar fills itself</text>
-  </g>
-
-  <g>
-    <rect x="60" y="596" width="680" height="96" rx="18" fill="#f5f5f7" stroke="#e4e4e7" stroke-width="1.5"></rect>
-    <rect x="90" y="620" width="48" height="48" rx="12" fill="#16a34a"></rect>
-    <path d="M101 645l9 9l19-21" fill="none" stroke="#ffffff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path>
-    <text x="170" y="642" font-family="Inter, sans-serif" font-size="22" font-weight="700" fill="#0b0b0c">CRM updated</text>
-    <text x="170" y="668" font-family="Inter, sans-serif" font-size="15" font-weight="500" fill="#6b6b70">Every contact, always current</text>
-  </g>
-
-  <g>
-    <rect x="60" y="710" width="680" height="96" rx="18" fill="#f5f5f7" stroke="#e4e4e7" stroke-width="1.5"></rect>
-    <rect x="90" y="734" width="48" height="48" rx="12" fill="#16a34a"></rect>
-    <path d="M101 759l9 9l19-21" fill="none" stroke="#ffffff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path>
-    <text x="170" y="756" font-family="Inter, sans-serif" font-size="22" font-weight="700" fill="#0b0b0c">Reports generated</text>
-    <text x="170" y="782" font-family="Inter, sans-serif" font-size="15" font-weight="500" fill="#6b6b70">Sent before you have to ask</text>
-  </g>
-</svg>
-      </div>
-    </div>
-
   </div>
 </section>
 
-<style>
-  .mpa-hero * { box-sizing: border-box; }
-
-  .mpa-hero {
-    --ink: #0b0b0c;
-    --paper: #ffffff;
-    --mist: #f5f5f7;
-    --line: #e4e4e7;
-    --c1: #1EB4E6;
-    --c2: #ffa200;
-    --c3: #68ddff;
-    --c4: #193866;
-
-    background: var(--paper);
-    color: var(--ink);
-    padding: 72px 24px 56px;
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    overflow-x: hidden;
-  }
-
-  .mpa-hero__inner {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1.05fr 0.95fr;
-    gap: 56px;
-    align-items: center;
-  }
-
-  /* entrance animation on page load — same pattern as ljwebmanagement.com's
-     hero: headline fades in from the left, supporting elements fade up,
-     each on its own duration so they settle in a light cascade */
-  @keyframes mpa-fadeInLeft {
-    from { opacity: 0; transform: translate3d(-70px, 0, 0); }
-    to   { opacity: 1; transform: translate3d(0, 0, 0); }
-  }
-  @keyframes mpa-fadeInUp {
-    from { opacity: 0; transform: translate3d(0, 34px, 0); }
-    to   { opacity: 1; transform: translate3d(0, 0, 0); }
-  }
-  .mpa-hero__title    { animation: mpa-fadeInLeft 2s ease-in-out both; }
-  .mpa-hero__subtitle { animation: mpa-fadeInUp 1.5s ease-in-out both; }
-  .mpa-hero__cta       { animation: mpa-fadeInUp 2s ease-in-out both; }
-  .mpa-stats           { animation: mpa-fadeInUp 2.2s ease-in-out both; }
-
-  /* ---------- copy column ---------- */
-  .mpa-hero__title {
-    font-family: 'Sora', 'Inter', sans-serif;
-    font-weight: 800;
-    font-size: clamp(2.6rem, 5.2vw, 4.4rem);
-    line-height: 1.02;
-    letter-spacing: -0.02em;
-    margin: 0 0 14px;
-  }
-
-  .mpa-hero__subtitle {
-    font-size: clamp(1.05rem, 1.6vw, 1.35rem);
-    font-weight: 500;
-    color: #6b6b70;
-    margin: 0 0 28px;
-  }
-
-  .mpa-hero__cta {
-    display: inline-block;
-    background: #193866;
-    color: var(--paper);
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 0.98rem;
-    padding: 14px 30px;
-    border-radius: 999px;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-    margin: 0 auto;
-  }
-  .mpa-hero__cta:hover { transform: translateY(-2px);
-    box-shadow: 0 0 0 4px rgba(30, 180, 230, 0.22), 0 10px 26px rgba(30, 180, 230, 0.28); }
-
-  .mpa-stats {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 14px;
-    margin: 40px auto 0;
-    max-width: 520px;
-  }
-
-  .mpa-stat {
-    border: 1.5px solid var(--line);
-    border-radius: 16px;
-    padding: 16px 10px;
-    text-align: center;
-    background: var(--mist);
-  }
-
-  .mpa-stat__num {
-    display: block;
-    font-family: 'Sora', 'Inter', sans-serif;
-    font-weight: 800;
-    font-size: 1.5rem;
-    line-height: 1.1;
-  }
-
-  .mpa-stat__label {
-    display: block;
-    font-size: 0.72rem;
-    font-weight: 500;
-    color: #6b6b70;
-    margin-top: 4px;
-    line-height: 1.25;
-  }
-
-  /* ---------- media column ---------- */
-  .mpa-hero__media {
-    position: relative;
-    width: 100%;
-    aspect-ratio: 800 / 850;
-    padding: 16px;
-  }
-
-  /* plain black border at rest; a tight rainbow shadow cycles
-     color only on hover — contained and modest, never a spreading blob */
-  .mpa-frame {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    border-radius: 26px;
-    overflow: hidden;
-    background: var(--paper);
-    border: 3px solid var(--ink);
-    transition: transform 0.3s ease;
-  }
-
-  .mpa-frame:hover {
-    animation: mpa-shadow-cycle 8s ease-in-out infinite;
-    transform: translateY(-4px);
-  }
-
-  @keyframes mpa-shadow-cycle {
-    0%   { box-shadow: 0 0 18px 1px var(--c1); }
-    25%  { box-shadow: 0 0 18px 1px var(--c2); }
-    50%  { box-shadow: 0 0 18px 1px var(--c3); }
-    75%  { box-shadow: 0 0 18px 1px var(--c4); }
-    100% { box-shadow: 0 0 18px 1px var(--c1); }
-  }
-
-  .mpa-frame svg {
-    display: block;
-    width: 100%;
-    height: 100%;
-  }
-
-  /* respect users who don't want motion */
-  @media (prefers-reduced-motion: reduce) {
-    .mpa-frame, .mpa-frame:hover { animation: none; transform: none; box-shadow: 0 0 18px 1px var(--c3); }
-    .mpa-hero__title, .mpa-hero__subtitle, .mpa-hero__cta, .mpa-stats { animation: none; opacity: 1; transform: none; }
-  }
-
-  /* ---------- tablet ---------- */
-  @media (max-width: 900px) {
-    .mpa-hero { padding: 56px 20px 44px; }
-    .mpa-hero__inner {
-      grid-template-columns: 1fr;
-      gap: 40px;
-    }
-    .mpa-hero__media {
-      order: -1;
-      max-width: 480px;
-      margin: 0 auto;
-    }
-    .mpa-stats { max-width: 100%; }
-  }
-
-  /* ---------- mobile ---------- */
-  @media (max-width: 520px) {
-    .mpa-hero { padding: 40px 16px 36px; }
-    .mpa-hero__inner { gap: 28px; }
-    .mpa-hero__title { font-size: 2.3rem; }
-    .mpa-hero__media { padding: 10px; }
-    .mpa-stats {
-      grid-template-columns: repeat(3, 1fr);
-      gap: 8px;
-    }
-    .mpa-stat { padding: 12px 6px; border-radius: 12px; }
-    .mpa-stat__num { font-size: 1.15rem; }
-    .mpa-stat__label { font-size: 0.62rem; }
-    .mpa-hero__cta { width: 100%; text-align: center; }
-  }
-</style></template>
-        <div class="s_embed_code_embedded o_not_editable container"><section class="mpa-hero">
-  <div class="mpa-hero__inner">
-
-    <div class="mpa-hero__copy" style="text-align:center;">
-      <h1 class="mpa-hero__title">LJ Web<br/>Management</h1>
-      <p class="mpa-hero__subtitle">Cut Through The Delay</p>
-
-      <a href="investments" class="mpa-hero__cta">View Investments</a>
-
-      <div class="mpa-stats">
-        <div class="mpa-stat">
-          <span class="mpa-stat__num">12+</span>
-          <span class="mpa-stat__label">Hours Saved / Month</span>
-        </div>
-        <div class="mpa-stat">
-          <span class="mpa-stat__num">2x</span>
-          <span class="mpa-stat__label">Productivity</span>
-        </div>
-        <div class="mpa-stat">
-          <span class="mpa-stat__num">35%</span>
-          <span class="mpa-stat__label">Cost Reduction</span>
-        </div>
-      </div>
+<!-- PROCESS -->
+<section class="lj-section lj-process">
+  <div class="lj-inner">
+    <div class="lj-process-head">
+      <span class="lj-eyebrow">Our Process</span>
+      <h2>Ready to automate the boring, repetitive work?</h2>
     </div>
-
-    <div class="mpa-hero__media">
-      <div class="mpa-frame">
-        <svg xmlns="http://www.w3.org/2000/svg" width="800" height="850" viewbox="0 0 800 850">
-  <rect x="0" y="0" width="800" height="850" fill="#ffffff"></rect>
-
-  <rect x="60" y="50" width="680" height="52" rx="16" fill="#ffffff" stroke="#e4e4e7" stroke-width="1.5"></rect>
-  <circle cx="92" cy="76" r="6" fill="#ff3cac"></circle>
-  <circle cx="114" cy="76" r="6" fill="#ff9f1c"></circle>
-  <circle cx="136" cy="76" r="6" fill="#00e5ff"></circle>
-  <text x="700" y="81" text-anchor="end" font-family="Inter, sans-serif" font-size="13" font-weight="600" fill="#9a9aa0">Handled today</text>
-
-  <g>
-    <rect x="60" y="140" width="680" height="96" rx="18" fill="#f5f5f7" stroke="#e4e4e7" stroke-width="1.5"></rect>
-    <rect x="90" y="164" width="48" height="48" rx="12" fill="#16a34a"></rect>
-    <path d="M101 189l9 9l19-21" fill="none" stroke="#ffffff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path>
-    <text x="170" y="186" font-family="Inter, sans-serif" font-size="22" font-weight="700" fill="#0b0b0c">Emails answered</text>
-    <text x="170" y="212" font-family="Inter, sans-serif" font-size="15" font-weight="500" fill="#6b6b70">Auto-replied within minutes</text>
-  </g>
-
-  <g>
-    <rect x="60" y="254" width="680" height="96" rx="18" fill="#f5f5f7" stroke="#e4e4e7" stroke-width="1.5"></rect>
-    <rect x="90" y="278" width="48" height="48" rx="12" fill="#16a34a"></rect>
-    <path d="M101 303l9 9l19-21" fill="none" stroke="#ffffff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path>
-    <text x="170" y="300" font-family="Inter, sans-serif" font-size="22" font-weight="700" fill="#0b0b0c">Leads followed up</text>
-    <text x="170" y="326" font-family="Inter, sans-serif" font-size="15" font-weight="500" fill="#6b6b70">No lead left waiting</text>
-  </g>
-
-  <g>
-    <rect x="60" y="368" width="680" height="96" rx="18" fill="#f5f5f7" stroke="#e4e4e7" stroke-width="1.5"></rect>
-    <rect x="90" y="392" width="48" height="48" rx="12" fill="#16a34a"></rect>
-    <path d="M101 417l9 9l19-21" fill="none" stroke="#ffffff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path>
-    <text x="170" y="414" font-family="Inter, sans-serif" font-size="22" font-weight="700" fill="#0b0b0c">Invoices sent</text>
-    <text x="170" y="440" font-family="Inter, sans-serif" font-size="15" font-weight="500" fill="#6b6b70">Billed the moment work is done</text>
-  </g>
-
-  <g>
-    <rect x="60" y="482" width="680" height="96" rx="18" fill="#f5f5f7" stroke="#e4e4e7" stroke-width="1.5"></rect>
-    <rect x="90" y="506" width="48" height="48" rx="12" fill="#16a34a"></rect>
-    <path d="M101 531l9 9l19-21" fill="none" stroke="#ffffff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path>
-    <text x="170" y="528" font-family="Inter, sans-serif" font-size="22" font-weight="700" fill="#0b0b0c">Appointments booked</text>
-    <text x="170" y="554" font-family="Inter, sans-serif" font-size="15" font-weight="500" fill="#6b6b70">Calendar fills itself</text>
-  </g>
-
-  <g>
-    <rect x="60" y="596" width="680" height="96" rx="18" fill="#f5f5f7" stroke="#e4e4e7" stroke-width="1.5"></rect>
-    <rect x="90" y="620" width="48" height="48" rx="12" fill="#16a34a"></rect>
-    <path d="M101 645l9 9l19-21" fill="none" stroke="#ffffff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path>
-    <text x="170" y="642" font-family="Inter, sans-serif" font-size="22" font-weight="700" fill="#0b0b0c">CRM updated</text>
-    <text x="170" y="668" font-family="Inter, sans-serif" font-size="15" font-weight="500" fill="#6b6b70">Every contact, always current</text>
-  </g>
-
-  <g>
-    <rect x="60" y="710" width="680" height="96" rx="18" fill="#f5f5f7" stroke="#e4e4e7" stroke-width="1.5"></rect>
-    <rect x="90" y="734" width="48" height="48" rx="12" fill="#16a34a"></rect>
-    <path d="M101 759l9 9l19-21" fill="none" stroke="#ffffff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path>
-    <text x="170" y="756" font-family="Inter, sans-serif" font-size="22" font-weight="700" fill="#0b0b0c">Reports generated</text>
-    <text x="170" y="782" font-family="Inter, sans-serif" font-size="15" font-weight="500" fill="#6b6b70">Sent before you have to ask</text>
-  </g>
-</svg>
-      </div>
-    </div>
-
-  </div>
-</section><style>
-  .mpa-hero * { box-sizing: border-box; }
-
-  .mpa-hero {
-    --ink: #0b0b0c;
-    --paper: #ffffff;
-    --mist: #f5f5f7;
-    --line: #e4e4e7;
-    --c1: #1EB4E6;
-    --c2: #ffa200;
-    --c3: #68ddff;
-    --c4: #193866;
-
-    background: var(--paper);
-    color: var(--ink);
-    padding: 72px 24px 56px;
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    overflow-x: hidden;
-  }
-
-  .mpa-hero__inner {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1.05fr 0.95fr;
-    gap: 56px;
-    align-items: center;
-  }
-
-  /* entrance animation on page load — same pattern as ljwebmanagement.com's
-     hero: headline fades in from the left, supporting elements fade up,
-     each on its own duration so they settle in a light cascade */
-  @keyframes mpa-fadeInLeft {
-    from { opacity: 0; transform: translate3d(-70px, 0, 0); }
-    to   { opacity: 1; transform: translate3d(0, 0, 0); }
-  }
-  @keyframes mpa-fadeInUp {
-    from { opacity: 0; transform: translate3d(0, 34px, 0); }
-    to   { opacity: 1; transform: translate3d(0, 0, 0); }
-  }
-  .mpa-hero__title    { animation: mpa-fadeInLeft 2s ease-in-out both; }
-  .mpa-hero__subtitle { animation: mpa-fadeInUp 1.5s ease-in-out both; }
-  .mpa-hero__cta       { animation: mpa-fadeInUp 2s ease-in-out both; }
-  .mpa-stats           { animation: mpa-fadeInUp 2.2s ease-in-out both; }
-
-  /* ---------- copy column ---------- */
-  .mpa-hero__title {
-    font-family: 'Sora', 'Inter', sans-serif;
-    font-weight: 800;
-    font-size: clamp(2.6rem, 5.2vw, 4.4rem);
-    line-height: 1.02;
-    letter-spacing: -0.02em;
-    margin: 0 0 14px;
-  }
-
-  .mpa-hero__subtitle {
-    font-size: clamp(1.05rem, 1.6vw, 1.35rem);
-    font-weight: 500;
-    color: #6b6b70;
-    margin: 0 0 28px;
-  }
-
-  .mpa-hero__cta {
-    display: inline-block;
-    background: #193866;
-    color: var(--paper);
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 0.98rem;
-    padding: 14px 30px;
-    border-radius: 999px;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-    margin: 0 auto;
-  }
-  .mpa-hero__cta:hover { transform: translateY(-2px);
-    box-shadow: 0 0 0 4px rgba(30, 180, 230, 0.22), 0 10px 26px rgba(30, 180, 230, 0.28); }
-
-  .mpa-stats {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 14px;
-    margin: 40px auto 0;
-    max-width: 520px;
-  }
-
-  .mpa-stat {
-    border: 1.5px solid var(--line);
-    border-radius: 16px;
-    padding: 16px 10px;
-    text-align: center;
-    background: var(--mist);
-  }
-
-  .mpa-stat__num {
-    display: block;
-    font-family: 'Sora', 'Inter', sans-serif;
-    font-weight: 800;
-    font-size: 1.5rem;
-    line-height: 1.1;
-  }
-
-  .mpa-stat__label {
-    display: block;
-    font-size: 0.72rem;
-    font-weight: 500;
-    color: #6b6b70;
-    margin-top: 4px;
-    line-height: 1.25;
-  }
-
-  /* ---------- media column ---------- */
-  .mpa-hero__media {
-    position: relative;
-    width: 100%;
-    aspect-ratio: 800 / 850;
-    padding: 16px;
-  }
-
-  /* plain black border at rest; a tight rainbow shadow cycles
-     color only on hover — contained and modest, never a spreading blob */
-  .mpa-frame {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    border-radius: 26px;
-    overflow: hidden;
-    background: var(--paper);
-    border: 3px solid var(--ink);
-    transition: transform 0.3s ease;
-  }
-
-  .mpa-frame:hover {
-    animation: mpa-shadow-cycle 8s ease-in-out infinite;
-    transform: translateY(-4px);
-  }
-
-  @keyframes mpa-shadow-cycle {
-    0%   { box-shadow: 0 0 18px 1px var(--c1); }
-    25%  { box-shadow: 0 0 18px 1px var(--c2); }
-    50%  { box-shadow: 0 0 18px 1px var(--c3); }
-    75%  { box-shadow: 0 0 18px 1px var(--c4); }
-    100% { box-shadow: 0 0 18px 1px var(--c1); }
-  }
-
-  .mpa-frame svg {
-    display: block;
-    width: 100%;
-    height: 100%;
-  }
-
-  /* respect users who don't want motion */
-  @media (prefers-reduced-motion: reduce) {
-    .mpa-frame, .mpa-frame:hover { animation: none; transform: none; box-shadow: 0 0 18px 1px var(--c3); }
-    .mpa-hero__title, .mpa-hero__subtitle, .mpa-hero__cta, .mpa-stats { animation: none; opacity: 1; transform: none; }
-  }
-
-  /* ---------- tablet ---------- */
-  @media (max-width: 900px) {
-    .mpa-hero { padding: 56px 20px 44px; }
-    .mpa-hero__inner {
-      grid-template-columns: 1fr;
-      gap: 40px;
-    }
-    .mpa-hero__media {
-      order: -1;
-      max-width: 480px;
-      margin: 0 auto;
-    }
-    .mpa-stats { max-width: 100%; }
-  }
-
-  /* ---------- mobile ---------- */
-  @media (max-width: 520px) {
-    .mpa-hero { padding: 40px 16px 36px; }
-    .mpa-hero__inner { gap: 28px; }
-    .mpa-hero__title { font-size: 2.3rem; }
-    .mpa-hero__media { padding: 10px; }
-    .mpa-stats {
-      grid-template-columns: repeat(3, 1fr);
-      gap: 8px;
-    }
-    .mpa-stat { padding: 12px 6px; border-radius: 12px; }
-    .mpa-stat__num { font-size: 1.15rem; }
-    .mpa-stat__label { font-size: 0.62rem; }
-    .mpa-hero__cta { width: 100%; text-align: center; }
-  }
-</style></div>
-    </section><section class="mph-process">
-  <style>
-    .mph-process {
-      --ink: #0b0b0c; --paper: #ffffff; --mist: #f5f5f7; --line: #e4e4e7;
-      --blue: #1EB4E6; --blue-glow: rgba(30, 180, 230, 0.28); --muted: #6b6b70;
-      background: var(--paper); color: var(--ink);
-      padding: 88px 24px 72px;
-      font-family: 'Quicksand', sans-serif;
-    }
-    .mph-process * { box-sizing: border-box; }
-    .mph-process-inner { max-width: 1160px; margin: 0 auto; text-align: center; }
-    .mph-eyebrow {
-      font-family: 'Sora', sans-serif; font-weight: 700; font-size: 12px;
-      letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted);
-      display: block; margin-bottom: 10px;
-    }
-    .mph-process-head {
-      font-family: 'Playfair Display', serif; font-weight: 600;
-      font-size: clamp(1.8rem, 3.4vw, 2.6rem); line-height: 1.2;
-      margin: 0 0 48px;
-    }
-    .mph-process-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-    .mph-card {
-      background: var(--mist); border: 1.5px solid var(--line); border-radius: 18px;
-      padding: 32px 24px; transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-    .mph-card:hover { transform: translateY(-4px); box-shadow: 0 0 0 4px var(--blue-glow), 0 16px 34px rgba(0,0,0,0.1); }
-    .mph-card-icon {
-      width: 52px; height: 52px; border-radius: 50%; background: var(--paper);
-      border: 1.5px solid var(--line); display: flex; align-items: center; justify-content: center;
-      margin: 0 auto 18px; color: var(--ink);
-    }
-    .mph-card-icon svg { width: 24px; height: 24px; }
-    .mph-card h3 {
-      font-family: 'Sora', sans-serif; font-weight: 700; font-size: 17px; margin: 0 0 8px;
-    }
-    .mph-card p { color: var(--muted); font-size: 14.5px; line-height: 1.6; margin: 0; }
-    .mph-process-cta {
-      display: inline-flex; align-items: center; gap: 8px; margin-top: 40px;
-      font-family: 'Quicksand', sans-serif; font-weight: 600; font-size: 15px;
-      color: var(--ink); text-decoration: none; border: 1px solid var(--line);
-      border-radius: 999px; padding: 12px 26px; transition: box-shadow 0.25s ease, transform 0.2s ease;
-    }
-    .mph-process-cta:hover { color: var(--ink); box-shadow: 0 0 0 4px var(--blue-glow), 0 10px 26px rgba(30, 180, 230, 0.18); transform: translateY(-2px); }
-    @media (max-width: 820px) {
-      .mph-process-row { grid-template-columns: 1fr; }
-    }
-  </style>
-  <div class="mph-process-inner">
-    <span class="mph-eyebrow">Our Process</span>
-    <h2 class="mph-process-head">Ready to automate the boring, repetitive work?</h2>
-    <div class="mph-process-row">
-      <div class="mph-card">
-        <div class="mph-card-icon"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3.5 2"></path></svg></div>
+    <div class="lj-process-row">
+      <div class="lj-step">
+        <span class="lj-step-num">01</span>
+        <div class="lj-step-icon"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3.5 2"></path></svg></div>
         <h3>Identify the Delays</h3>
         <p>You let us know about repetitive tasks, disconnected tools, and bottlenecks slowing your business down.</p>
       </div>
-      <div class="mph-card">
-        <div class="mph-card-icon"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="9" r="2.6"></circle><path d="M9 3.5v1.6M9 12.9v1.6M3.5 9h1.6M12.9 9h1.6M5.6 5.6l1.2 1.2M10.2 10.2l1.2 1.2M12.4 5.6l-1.2 1.2M7.8 10.2l-1.2 1.2"></path><circle cx="16.5" cy="16.5" r="2.2"></circle><path d="M16.5 12v1.3M16.5 19.7V21M12 16.5h1.3M19.7 16.5H21"></path></svg></div>
+      <div class="lj-step">
+        <span class="lj-step-num">02</span>
+        <div class="lj-step-icon"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="9" r="2.6"></circle><path d="M9 3.5v1.6M9 12.9v1.6M3.5 9h1.6M12.9 9h1.6M5.6 5.6l1.2 1.2M10.2 10.2l1.2 1.2M12.4 5.6l-1.2 1.2M7.8 10.2l-1.2 1.2"></path><circle cx="16.5" cy="16.5" r="2.2"></circle><path d="M16.5 12v1.3M16.5 19.7V21M12 16.5h1.3M19.7 16.5H21"></path></svg></div>
         <h3>Build the Automation</h3>
         <p>We create customized systems that connect your tools and automate the work.</p>
       </div>
-      <div class="mph-card">
-        <div class="mph-card-icon"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 21V9l7-5 7 5v12"></path><path d="M9 21v-6h6v6"></path></svg></div>
+      <div class="lj-step">
+        <span class="lj-step-num">03</span>
+        <div class="lj-step-icon"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 21V9l7-5 7 5v12"></path><path d="M9 21v-6h6v6"></path></svg></div>
         <h3>Keep Business Moving</h3>
         <p>Our solutions help your team save time, respond faster, and operate more efficiently.</p>
       </div>
     </div>
-    <a href="how-it-works" class="mph-process-cta">See the Full Process
-      <svg width="14" height="14" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"></path></svg>
-    </a>
+    <div class="lj-process-cta">
+      <a href="how-it-works">See the Full Process
+        <svg width="14" height="14" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"></path></svg>
+      </a>
+    </div>
   </div>
-</section><section class="mph-catalog">
-  <style>
-    .mph-catalog {
-      --ink: #0b0b0c; --paper: #ffffff; --mist: #f5f5f7; --line: #e4e4e7;
-      --blue: #1EB4E6; --blue-glow: rgba(30, 180, 230, 0.28); --muted: #6b6b70;
-      background: var(--mist); color: var(--ink);
-      padding: 80px 24px; font-family: 'Quicksand', sans-serif;
-    }
-    .mph-catalog * { box-sizing: border-box; }
-    .mph-catalog-inner { max-width: 1160px; margin: 0 auto; }
-    .mph-catalog-head { text-align: center; max-width: 620px; margin: 0 auto 48px; }
-    .mph-catalog-head h2 {
-      font-family: 'Playfair Display', serif; font-weight: 600;
-      font-size: clamp(1.8rem, 3.4vw, 2.6rem); line-height: 1.2; margin: 0 0 12px;
-    }
-    .mph-catalog-head p { color: var(--muted); font-size: 15.5px; line-height: 1.6; margin: 0; }
-    .mph-catalog-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-    .mph-auto-card {
-      background: var(--paper); border: 1.5px solid var(--line); border-radius: 16px;
-      padding: 24px; text-decoration: none; color: var(--ink); display: block;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-    .mph-auto-card:hover { color: var(--ink); transform: translateY(-4px); box-shadow: 0 0 0 4px var(--blue-glow), 0 14px 30px rgba(0,0,0,0.08); }
-    .mph-auto-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px; }
-    .mph-auto-icon { font-size: 26px; }
-    .mph-auto-price { font-family: 'Sora', sans-serif; font-weight: 700; font-size: 13px; color: var(--blue); }
-    .mph-auto-card h3 { font-family: 'Sora', sans-serif; font-weight: 700; font-size: 16px; margin: 0 0 6px; }
-    .mph-auto-card p { color: var(--muted); font-size: 14px; line-height: 1.55; margin: 0; }
-    .mph-catalog-cta { text-align: center; margin-top: 40px; }
-    .mph-catalog-cta a {
-      display: inline-block; background: #193866; color: #fff; text-decoration: none;
-      font-weight: 600; font-size: 15px; padding: 13px 28px; border-radius: 999px;
-      transition: box-shadow 0.25s ease, transform 0.2s ease;
-    }
-    .mph-catalog-cta a:hover { color: #fff; box-shadow: 0 0 0 4px var(--blue-glow), 0 10px 26px rgba(30, 180, 230, 0.28); transform: translateY(-2px); }
-    @media (max-width: 900px) { .mph-catalog-grid { grid-template-columns: repeat(2, 1fr); } }
-    @media (max-width: 560px) { .mph-catalog-grid { grid-template-columns: 1fr; } }
-  </style>
-  <div class="mph-catalog-inner">
-    <div class="mph-catalog-head">
-      <span class="mph-eyebrow" style="color:var(--blue)">Popular Automations</span>
+</section>
+
+<!-- WHY US -->
+<section class="lj-section">
+  <div class="lj-inner">
+    <div class="lj-why-head">
+      <span class="lj-eyebrow">Why LJ Web Management</span>
+      <h2>Automation built around how your business already works</h2>
+    </div>
+    <div class="lj-why-row">
+      <div class="lj-why-card">
+        <div class="lj-why-icon"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4l-4 16"></path><path d="M18 8l4 4-4 4"></path><path d="M6 8l-4 4 4 4"></path></svg></div>
+        <h3>Custom-Fit Systems</h3>
+        <p>Built around the tools you already use — not the other way around.</p>
+      </div>
+      <div class="lj-why-card">
+        <div class="lj-why-icon"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M3 10h18"></path><path d="M7 15h4"></path></svg></div>
+        <h3>Transparent Investment</h3>
+        <p>Flat, upfront pricing on every automation — no surprise fees.</p>
+      </div>
+      <div class="lj-why-card">
+        <div class="lj-why-icon"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L4 14h7l-1 8 9-12h-7l1-8z"></path></svg></div>
+        <h3>Fast to Launch</h3>
+        <p>Most systems go live within days, not months.</p>
+      </div>
+      <div class="lj-why-card">
+        <div class="lj-why-icon"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-9 8.4 8.5 8.5 0 0 1-4-1L3 20l1.1-4A8.38 8.38 0 0 1 3 11.5a8.5 8.5 0 0 1 8.5-8.5A8.38 8.38 0 0 1 21 11.5z"></path></svg></div>
+        <h3>Real Support</h3>
+        <p>A team that answers when something needs to change.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CATALOG -->
+<section class="lj-section lj-catalog">
+  <div class="lj-inner">
+    <div class="lj-catalog-head">
+      <span class="lj-eyebrow">Popular Automations</span>
       <h2>Automations built to save you hours</h2>
       <p>Pre-built systems you can start with today, then customize to your business. A few of the most requested — see all 24+ in Investments.</p>
     </div>
-    <div class="mph-catalog-grid">
-      <a class="mph-auto-card" href="pre-made-automations/customer-support">
-        <div class="mph-auto-top"><span class="mph-auto-icon">🎧</span><span class="mph-auto-price">$99.99</span></div>
+    <div class="lj-catalog-grid">
+      <a class="lj-auto-card" href="pre-made-automations/customer-support">
+        <div class="lj-auto-top">
+          <div class="lj-auto-icon"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14a5 5 0 0 1 5-5h6.5"></path><path d="M13 6.5l2.5 2.5-2.5 2.5"></path><path d="M20 10a5 5 0 0 1-5 5H8.5"></path><path d="M11 17.5L8.5 15l2.5-2.5"></path></svg></div>
+          <span class="lj-auto-price">$99.99</span>
+        </div>
         <h3>Customer Support</h3>
         <p>AI handles common questions and routes anything else straight to your team.</p>
       </a>
-      <a class="mph-auto-card" href="pre-made-automations/appointment-scheduler">
-        <div class="mph-auto-top"><span class="mph-auto-icon">🗓️</span><span class="mph-auto-price">$99.99</span></div>
+      <a class="lj-auto-card" href="pre-made-automations/appointment-scheduler">
+        <div class="lj-auto-top">
+          <div class="lj-auto-icon"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"></rect><path d="M3 10h18"></path><path d="M8 3v4"></path><path d="M16 3v4"></path></svg></div>
+          <span class="lj-auto-price">$99.99</span>
+        </div>
         <h3>Appointment Scheduler</h3>
         <p>Visitors book real open slots on your calendar without back-and-forth emails.</p>
       </a>
-      <a class="mph-auto-card" href="pre-made-automations/quote-follow-up">
-        <div class="mph-auto-top"><span class="mph-auto-icon">📄</span><span class="mph-auto-price">$49.99</span></div>
+      <a class="lj-auto-card" href="pre-made-automations/quote-follow-up">
+        <div class="lj-auto-top">
+          <div class="lj-auto-icon"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 4h9l3 3v13H6z"></path><path d="M9.5 12.5l1.8 1.8 3.2-3.6"></path></svg></div>
+          <span class="lj-auto-price">$49.99</span>
+        </div>
         <h3>Quote Follow-Up</h3>
         <p>Sent quotes get timely, automatic follow-ups so fewer of them go cold.</p>
       </a>
-      <a class="mph-auto-card" href="pre-made-automations/inbound-email-sorting">
-        <div class="mph-auto-top"><span class="mph-auto-icon">🗂️</span><span class="mph-auto-price">$19.99</span></div>
+      <a class="lj-auto-card" href="pre-made-automations/inbound-email-sorting">
+        <div class="lj-auto-top">
+          <div class="lj-auto-icon"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h11l3 3v9H4z"></path><path d="M4 6v3h14"></path><path d="M8 15h6"></path></svg></div>
+          <span class="lj-auto-price">$19.99</span>
+        </div>
         <h3>Inbound Email Sorting</h3>
         <p>Incoming mail is automatically labeled and routed to the right inbox or folder.</p>
       </a>
-      <a class="mph-auto-card" href="pre-made-automations/website-chatbot-tawkto">
-        <div class="mph-auto-top"><span class="mph-auto-icon">💬</span><span class="mph-auto-price">$29.99</span></div>
+      <a class="lj-auto-card" href="pre-made-automations/website-chatbot-tawkto">
+        <div class="lj-auto-top">
+          <div class="lj-auto-icon"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v11H8l-4 4V5z"></path><circle cx="9" cy="10.5" r="0.8" fill="currentColor" stroke="none"></circle><circle cx="12" cy="10.5" r="0.8" fill="currentColor" stroke="none"></circle><circle cx="15" cy="10.5" r="0.8" fill="currentColor" stroke="none"></circle></svg></div>
+          <span class="lj-auto-price">$29.99</span>
+        </div>
         <h3>Automated Website Chatbot</h3>
         <p>A live chat assistant on your site that answers visitors around the clock.</p>
       </a>
-      <a class="mph-auto-card" href="pre-made-automations/sales-associate">
-        <div class="mph-auto-top"><span class="mph-auto-icon">💼</span><span class="mph-auto-price">$99.99</span></div>
+      <a class="lj-auto-card" href="pre-made-automations/sales-associate">
+        <div class="lj-auto-top">
+          <div class="lj-auto-icon"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V6"></path><path d="M4 19h16"></path><path d="M8 15l3-4 3 3 4-6"></path></svg></div>
+          <span class="lj-auto-price">$99.99</span>
+        </div>
         <h3>Sales Associate</h3>
         <p>Leads get qualified and nurtured automatically, so your pipeline stays warm.</p>
       </a>
     </div>
-    <div class="mph-catalog-cta"><a href="investments">View All Investments</a></div>
+    <div class="lj-catalog-cta"><a href="investments" class="lj-btn lj-btn-primary">View All Investments</a></div>
   </div>
-</section><section class="mph-mission">
-  <style>
-    .mph-mission {
-      --ink: #0b0b0c; --paper: #ffffff; --line: #e4e4e7; --muted: #6b6b70;
-      background: var(--paper); color: var(--ink);
-      padding: 88px 24px; font-family: 'Quicksand', sans-serif; text-align: center;
-    }
-    .mph-mission-inner { max-width: 760px; margin: 0 auto; }
-    .mph-mission h2 {
-      font-family: 'Playfair Display', serif; font-weight: 600;
-      font-size: clamp(1.6rem, 3vw, 2.2rem); line-height: 1.45; margin: 18px 0 0;
-    }
-  </style>
-  <div class="mph-mission-inner">
-    <span class="mph-eyebrow">Our Mission</span>
-    <h2>Our mission is to cut through delays by building practical automation systems that help businesses save time, work smarter, and grow efficiently.</h2>
-  </div>
-</section><section class="mph-cta">
-  <style>
-    .mph-cta {
-      --ink: #0b0b0c; --paper: #ffffff; --blue-glow: rgba(30, 180, 230, 0.28);
-      background: #254a81; color: var(--paper);
-      padding: 80px 24px; font-family: 'Quicksand', sans-serif; text-align: center;
-    }
-    .mph-cta-inner { max-width: 620px; margin: 0 auto; }
-    .mph-cta h2 {
-      font-family: 'Sora', sans-serif; font-weight: 800;
-      font-size: clamp(1.7rem, 3.2vw, 2.3rem); margin: 0 0 14px;
-    }
-    .mph-cta p { color: rgba(255,255,255,0.7); font-size: 15.5px; line-height: 1.6; margin: 0 0 32px; }
-    .mph-cta-row { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
-    .mph-cta-btn {
-      font-weight: 600; font-size: 15px; text-decoration: none; padding: 13px 28px;
-      border-radius: 999px; transition: box-shadow 0.25s ease, transform 0.2s ease;
-    }
-    .mph-cta-btn.primary { background: var(--paper); color: var(--ink); }
-    .mph-cta-btn.primary:hover { color: var(--ink); box-shadow: 0 0 0 4px var(--blue-glow), 0 10px 26px rgba(30, 180, 230, 0.35); transform: translateY(-2px); }
-    .mph-cta-btn.ghost { border: 1px solid rgba(255,255,255,0.3); color: var(--paper); }
-    .mph-cta-btn.ghost:hover { color: var(--paper); box-shadow: 0 0 0 4px var(--blue-glow); transform: translateY(-2px); }
-  </style>
-  <div class="mph-cta-inner">
+</section>
+
+<!-- CTA -->
+<section class="lj-cta">
+  <div class="lj-cta-inner">
     <h2>Ready to Cut Through the Delay?</h2>
     <p>Book a free consultation or send us a note — either way, we'll show you exactly where automation fits in your business.</p>
-    <div class="mph-cta-row">
-      <a href="appointment" class="mph-cta-btn primary">Book a Consultation</a>
-      <a href="contactus" class="mph-cta-btn ghost">Contact Us</a>
+    <div class="lj-cta-row">
+      <a href="appointment" class="lj-btn lj-btn-cyan">Book a Consultation</a>
+      <a href="contactus" class="lj-btn lj-btn-outline">Contact Us</a>
     </div>
   </div>
+</section>
 </section></div>
     
         <div id="o_shared_blocks" class="oe_unremovable"></div>
