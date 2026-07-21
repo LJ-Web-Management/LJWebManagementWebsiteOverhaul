@@ -4,18 +4,19 @@ This folder is the whole thing: the static site (goes to GitHub Pages) and
 the backend source (goes to Supabase) live together so you only have one
 folder to manage.
 
-**As of now, none of the site's live forms actually call this backend** —
-Contact Us is a Typeform embed and appointment booking is a Calendly
-embed, both handled entirely on those services' own infrastructure. The
-Supabase setup below (tables, functions, `/admin` login) is dormant: it's
-kept in place in case a custom-built form comes back for the new
-industry/role automation catalog, or you want to bring Contact Us or
-booking back in-house later. If neither of those is on your roadmap, you
-can skip this guide entirely.
+**As of now, nothing on the live site uses this backend at all** —
+Contact Us is a Typeform embed, appointment booking is a Calendly embed
+(both handled entirely on those services' own infrastructure), and the
+`/admin` dashboard that used to read the Supabase tables has been
+removed. Everything below is archival: kept in place in case a custom-
+built form comes back for the new industry/role automation catalog, or
+you want to bring Contact Us, booking, or an admin view back in-house
+later. If none of that is on your roadmap, you can ignore this guide
+(and the `supabase/` folder) entirely — nothing currently depends on it.
 
-**Stack:** Supabase (Postgres database + login for `/admin` + the small
-server-side functions that receive form submissions) and Resend (sends the
-email notifications). Both have free tiers with no credit card required.
+**Stack:** Supabase (Postgres database + the small server-side functions
+that receive form submissions) and Resend (sends the email
+notifications). Both have free tiers with no credit card required.
 Nothing here uses AI — every function is plain, deterministic code: take
 the submitted fields, save a row, send an email.
 
@@ -42,20 +43,23 @@ should take about 20–30 minutes end to end.
 3. You should see three new tables under **Table Editor**:
    `contact_submissions`, `product_leads`, `appointments`.
 
-This also turns on Row Level Security so that only a signed-in user (your
-admin login, next step) can read the data, and nobody can write to the
-tables directly — writes only happen through the server-side functions in
-step 5.
+This also turns on Row Level Security so that only a signed-in Supabase
+user can read the data, and nobody can write to the tables directly —
+writes only happen through the server-side functions in step 5. With no
+`/admin` page in this repo anymore, the simplest way to look at the data
+is Supabase's own **Table Editor** (you're signed in as the project
+owner there already, no extra login needed).
 
-## 3. Create your admin login
+## 3. (Optional) Create a login for a custom admin view
 
-This is the email/password you'll use to sign in at `/admin`.
+Skip this unless you rebuild an `/admin`-style page that needs its own
+sign-in separate from the Supabase project owner login above.
 
 1. Go to **Authentication** → **Users** → **Add user** → **Create new user**.
 2. Enter your email and a password. Check **Auto Confirm User** (so you
    don't need to click an email link) and click **Create user**.
-3. That's it — this account can now read all three tables and sign in on
-   the admin page. Create additional users the same way if more than one
+3. That's it — this account can now read all three tables through Row
+   Level Security. Create additional users the same way if more than one
    person needs access.
 
 ## 4. Get a Resend API key (for email notifications)
@@ -118,14 +122,10 @@ this doc.)
 
 ## 6. Plug your project's keys into the site
 
-You need your **Project URL** and **anon public key**, both on
-**Project Settings → API** in the Supabase dashboard.
-
-Edit this file and replace the placeholder values:
-
-| File | What to change |
-|---|---|
-| [`admin/index.html`](admin/index.html) | `SUPABASE_URL` → your Project URL, `SUPABASE_ANON_KEY` → your anon public key |
+There's nothing to edit here right now — the `/admin` page that used to
+need `SUPABASE_URL` and `SUPABASE_ANON_KEY` has been removed. Your
+**Project URL** and **anon public key** are on **Project Settings → API**
+in the Supabase dashboard whenever you need them for something new.
 
 (If you bring back a custom-built form that posts to one of the functions
 above, it'll need a `SUPABASE_FUNCTIONS_BASE` constant pointed at
@@ -179,9 +179,10 @@ this guide changes.
    Supabase-backed lead form comes back for those, this is the point
    where you'd test it: submit it and confirm a row appears in
    `product_leads` and an email arrives at info@ljwebmanagement.com.
-4. Visit `/admin` and sign in with the login from step 3 above — since
-   nothing currently feeds `contact_submissions`, `product_leads`, or
-   `appointments`, all three tabs should just show empty states.
+4. There's no `/admin` page to check anymore — if you want to look at
+   `contact_submissions`, `product_leads`, or `appointments` directly
+   (all empty right now, since nothing feeds them), use Supabase's own
+   Table Editor instead.
 
 ---
 
