@@ -2,15 +2,16 @@
 
 This folder is the whole thing: the static site (goes to GitHub Pages) and
 the backend source (goes to Supabase) live together so you only have one
-folder to manage. It gets the appointment booker actually working: every
-submission is saved to a database, shows up on your `/admin` page, and
-emails **info@ljwebmanagement.com**.
+folder to manage.
 
-(Contact Us is now a Typeform embed, and the individual product pages have
-been removed pending a rebuild by industry/role — the `submit-contact` and
-`submit-product-lead` functions and their `contact_submissions` /
-`product_leads` tables below are no longer fed by any live page, but are
-left in place in case you bring either flow back.)
+**As of now, none of the site's live forms actually call this backend** —
+Contact Us is a Typeform embed and appointment booking is a Calendly
+embed, both handled entirely on those services' own infrastructure. The
+Supabase setup below (tables, functions, `/admin` login) is dormant: it's
+kept in place in case a custom-built form comes back for the new
+industry/role automation catalog, or you want to bring Contact Us or
+booking back in-house later. If neither of those is on your roadmap, you
+can skip this guide entirely.
 
 **Stack:** Supabase (Postgres database + login for `/admin` + the small
 server-side functions that receive form submissions) and Resend (sends the
@@ -73,11 +74,12 @@ This is the email/password you'll use to sign in at `/admin`.
 
 ## 5. Deploy the server-side functions
 
-These are the four small functions in `supabase/functions/` that your
-forms talk to: `submit-contact`, `submit-product-lead`,
-`submit-appointment`, and `get-availability`. None of them call any AI —
-each one just validates the input, writes a row, and (for submissions)
-sends an email via Resend.
+These are the four small functions in `supabase/functions/`:
+`submit-contact`, `submit-product-lead`, `submit-appointment`, and
+`get-availability`. None of them call any AI — each one just validates
+the input, writes a row, and (for submissions) sends an email via Resend.
+(None are currently called by any live page — see the note at the top of
+this doc.)
 
 1. Install the Supabase CLI (pick one):
    ```bash
@@ -119,12 +121,16 @@ sends an email via Resend.
 You need your **Project URL** and **anon public key**, both on
 **Project Settings → API** in the Supabase dashboard.
 
-Edit these three files and replace the placeholder values:
+Edit this file and replace the placeholder values:
 
 | File | What to change |
 |---|---|
-| [`appointment/index.html`](appointment/index.html) | `SUPABASE_FUNCTIONS_BASE` constant, near the top of the `<script>` |
 | [`admin/index.html`](admin/index.html) | `SUPABASE_URL` → your Project URL, `SUPABASE_ANON_KEY` → your anon public key |
+
+(If you bring back a custom-built form that posts to one of the functions
+above, it'll need a `SUPABASE_FUNCTIONS_BASE` constant pointed at
+`https://YOUR-PROJECT-REF.functions.supabase.co` — see
+`supabase/functions/` for the shape each one expects.)
 
 The anon key is safe to have visible in the page source — it can only do
 what your Row Level Security policies allow (read nothing unless signed
@@ -162,20 +168,20 @@ this guide changes.
 ## 8. Test it
 
 1. Visit `/contactus` and confirm the Typeform embed loads and accepts a
-   submission — that flow lives entirely on Typeform's side now, so
-   there's nothing to check in Supabase for it.
-2. The old `/pre-made-automations/<page>` product pages have been removed
+   submission — that flow lives entirely on Typeform's side, so there's
+   nothing to check in Supabase for it.
+2. Visit `/appointment` and confirm the Calendly embed loads and lets you
+   pick a slot — same as Contact Us, this is entirely on Calendly's side
+   now (availability, confirmation email, timezone handling, double-
+   booking prevention), nothing to check in Supabase.
+3. The old `/pre-made-automations/<page>` product pages have been removed
    (the catalog is being rebuilt by industry/role) — if a custom
-   Supabase-backed lead form comes back for those, test it the same way
-   as appointment booking below.
-3. Visit `/appointment` (this is now the new booking widget — the old
-   Odoo appointment pages have been removed), book a slot between
-   8am–5pm Central on a weekday, and confirm data lands in `appointments`
-   and an email arrives at info@ljwebmanagement.com — try picking a time
-   outside business hours or on a weekend too; those shouldn't be offered
-   as options at all.
-4. Visit `/admin`, sign in with the login from step 3, and confirm all
-   three tabs show your test submissions.
+   Supabase-backed lead form comes back for those, this is the point
+   where you'd test it: submit it and confirm a row appears in
+   `product_leads` and an email arrives at info@ljwebmanagement.com.
+4. Visit `/admin` and sign in with the login from step 3 above — since
+   nothing currently feeds `contact_submissions`, `product_leads`, or
+   `appointments`, all three tabs should just show empty states.
 
 ---
 
@@ -191,24 +197,18 @@ this guide changes.
 - **The old `/appointment` pages** (Odoo's native booking flow, with cards
   like "Initial Consultation" linking to `/appointment/quick-chat-4` and
   similar) pointed at a backend that was already gone — that whole flow
-  has been **removed** and replaced by the new booking widget at the same
-  `/appointment` URL, so any existing links to it (the "Book a
-  Consultation" buttons on How It Works and Pricing) keep working
-  unchanged.
+  was first replaced by a custom Supabase-backed booking widget, then
+  replaced again by a Calendly embed, both at the same `/appointment`
+  URL, so any existing links to it (the "Book a Consultation" buttons
+  across the site) keep working unchanged.
 - The Pricing page's "Book a Consultation" button also had a typo
   (`/appointments`, plural — a dead link even on the original site) fixed
   to point at the real `/appointment` page.
 
 ## Notes on what's *not* included
 
-- **Double-booking protection** exists (the appointment function rejects a
-  slot that's already taken, and the widget re-checks live availability
-  when you pick a date) but there's no calendar sync — bookings don't
-  create an event on any calendar you look at day-to-day. If you want
-  that, the next step would be a Google Calendar API integration inside
-  `submit-appointment`.
-- **Rate limiting / spam** is handled with a honeypot field on every form
-  (invisible to real visitors, silently rejects bots that fill it) plus
-  server-side validation, but there's no CAPTCHA or IP throttling. If spam
-  becomes a problem, adding Cloudflare Turnstile (free) to each form is
-  the natural next step.
+- **Rate limiting / spam** on the dormant Supabase functions is handled
+  with a honeypot field (invisible to real visitors, silently rejects
+  bots that fill it) plus server-side validation, but there's no CAPTCHA
+  or IP throttling. Not relevant right now since nothing calls them, but
+  worth knowing if you revive one of these flows.
