@@ -2,10 +2,15 @@
 
 This folder is the whole thing: the static site (goes to GitHub Pages) and
 the backend source (goes to Supabase) live together so you only have one
-folder to manage. It gets your forms (Contact Us, the 24 product pages, and
-the appointment booker) actually working: every submission is saved to a
-database, shows up on your `/admin` page, and emails
-**info@ljwebmanagement.com**.
+folder to manage. It gets the appointment booker actually working: every
+submission is saved to a database, shows up on your `/admin` page, and
+emails **info@ljwebmanagement.com**.
+
+(Contact Us is now a Typeform embed, and the individual product pages have
+been removed pending a rebuild by industry/role — the `submit-contact` and
+`submit-product-lead` functions and their `contact_submissions` /
+`product_leads` tables below are no longer fed by any live page, but are
+left in place in case you bring either flow back.)
 
 **Stack:** Supabase (Postgres database + login for `/admin` + the small
 server-side functions that receive form submissions) and Resend (sends the
@@ -118,8 +123,7 @@ Edit these three files and replace the placeholder values:
 
 | File | What to change |
 |---|---|
-| [`assets/lj-forms.js`](assets/lj-forms.js) | `SUPABASE_FUNCTIONS_BASE` → `https://YOUR-PROJECT-REF.functions.supabase.co` |
-| [`appointment/index.html`](appointment/index.html) | Same `SUPABASE_FUNCTIONS_BASE` constant, near the top of the `<script>` |
+| [`appointment/index.html`](appointment/index.html) | `SUPABASE_FUNCTIONS_BASE` constant, near the top of the `<script>` |
 | [`admin/index.html`](admin/index.html) | `SUPABASE_URL` → your Project URL, `SUPABASE_ANON_KEY` → your anon public key |
 
 The anon key is safe to have visible in the page source — it can only do
@@ -157,21 +161,19 @@ this guide changes.
 
 ## 8. Test it
 
-1. Visit `/contactus` on your live (or locally-served) site, submit the
-   form, and confirm:
-   - It shows the inline "Thanks!" message.
-   - A row appears in `contact_submissions` (Supabase Table Editor).
-   - An email arrives at info@ljwebmanagement.com.
+1. Visit `/contactus` and confirm the Typeform embed loads and accepts a
+   submission — that flow lives entirely on Typeform's side now, so
+   there's nothing to check in Supabase for it.
 2. The old `/pre-made-automations/<page>` product pages have been removed
-   (the catalog is being rebuilt by industry/role) — once the new pages
-   exist, do the same test there; the hidden link field should capture
-   that exact page's URL.
+   (the catalog is being rebuilt by industry/role) — if a custom
+   Supabase-backed lead form comes back for those, test it the same way
+   as appointment booking below.
 3. Visit `/appointment` (this is now the new booking widget — the old
    Odoo appointment pages have been removed), book a slot between
-   8am–5pm Central on a weekday, and confirm the same three things (data
-   in `appointments`, email received) — try picking a time outside
-   business hours or on a weekend too; those shouldn't be offered as
-   options at all.
+   8am–5pm Central on a weekday, and confirm data lands in `appointments`
+   and an email arrives at info@ljwebmanagement.com — try picking a time
+   outside business hours or on a weekend too; those shouldn't be offered
+   as options at all.
 4. Visit `/admin`, sign in with the login from step 3, and confirm all
    three tabs show your test submissions.
 
@@ -179,9 +181,13 @@ this guide changes.
 
 ## What changed from the old site
 
-- **Contact Us** and all **24 product pages** had forms that posted to
-  Odoo's `/website/form/` endpoint, which doesn't exist once you're on
-  GitHub Pages — those now post to your Supabase functions instead.
+- **Contact Us** and the **24 product pages** originally had forms that
+  posted to Odoo's `/website/form/` endpoint, which doesn't exist once
+  you're on GitHub Pages — those were rebuilt to post to Supabase
+  functions instead (`submit-contact`, `submit-product-lead`). Contact Us
+  has since moved again, to a Typeform embed, so `submit-contact` is no
+  longer called by any live page; the product pages were removed pending
+  a rebuild by industry/role.
 - **The old `/appointment` pages** (Odoo's native booking flow, with cards
   like "Initial Consultation" linking to `/appointment/quick-chat-4` and
   similar) pointed at a backend that was already gone — that whole flow
