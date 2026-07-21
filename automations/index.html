@@ -152,6 +152,12 @@
         </a>
     </li>
 
+    <li role="presentation" class="nav-item ">
+        <a role="menuitem" href="../solutions" class="nav-link ">
+            <span>Solutions</span>
+        </a>
+    </li>
+
     </ul>
 
                     <ul class="navbar-nav align-items-center gap-1 flex-wrap flex-shrink-0 justify-content-end ps-3">
@@ -224,9 +230,15 @@
         </a>
     </li>
 
-    <li role="presentation" class="nav-item border-top border-bottom px-0">
+    <li role="presentation" class="nav-item border-top px-0">
         <a role="menuitem" href="../automations" class="nav-link p-3 text-wrap active">
             <span>Automations</span>
+        </a>
+    </li>
+
+    <li role="presentation" class="nav-item border-top border-bottom px-0">
+        <a role="menuitem" href="../solutions" class="nav-link p-3 text-wrap ">
+            <span>Solutions</span>
         </a>
     </li>
 
@@ -307,7 +319,7 @@
   .lj-auto .lj-btn-outline-light:hover { color: #fff; border-color: #fff; transform: translateY(-2px); }
 
   /* ============ HERO ============ */
-  .lj-auto-hero { padding: 88px 24px 72px; text-align: center; }
+  .lj-auto-hero { padding: 88px 24px 56px; text-align: center; }
   .lj-auto-hero-inner { max-width: 760px; margin: 0 auto; }
   .lj-auto-hero h1 {
     font-size: clamp(2.3rem, 4.4vw, 3.4rem);
@@ -320,26 +332,83 @@
   }
   .lj-auto-hero-actions { display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; }
 
-  /* ============ CATEGORIES ============ */
-  .lj-auto-cat { background: var(--mist); }
-  .lj-auto-cat-head { text-align: center; max-width: 640px; margin: 0 auto 52px; }
-  .lj-auto-cat-head h2 { font-size: clamp(1.9rem, 3.2vw, 2.5rem); line-height: 1.2; margin-top: 4px; }
-  .lj-auto-cat-head p { color: var(--body); font-size: 15.5px; line-height: 1.6; margin: 12px 0 0; }
-  .lj-auto-cat-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-  .lj-auto-cat-card {
-    background: var(--white); border: 1px solid var(--line); border-radius: 16px;
-    padding: 28px 26px; transition: transform 0.2s ease, box-shadow 0.2s ease;
+  /* ============ INDUSTRY JUMP NAV ============ */
+  .lj-jump-nav {
+    position: sticky; top: 0; z-index: 5; background: rgba(255,255,255,0.96);
+    backdrop-filter: blur(6px); border-bottom: 1px solid var(--line);
+    padding: 16px 24px;
   }
-  .lj-auto-cat-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
-  .lj-auto-cat-icon {
-    width: 44px; height: 44px; border-radius: 10px; background: rgba(30, 180, 230, 0.12);
-    display: flex; align-items: center; justify-content: center; color: var(--cyan); margin-bottom: 16px;
+  .lj-jump-nav-inner {
+    max-width: 1100px; margin: 0 auto; display: flex; gap: 8px;
+    flex-wrap: wrap; justify-content: center;
   }
-  .lj-auto-cat-icon svg { width: 21px; height: 21px; }
-  .lj-auto-cat-card h3 { font-size: 16.5px; margin-bottom: 6px; }
-  .lj-auto-cat-card p { color: var(--body); font-size: 14px; line-height: 1.6; margin: 0; }
-  @media (max-width: 900px) { .lj-auto-cat-row { grid-template-columns: repeat(2, 1fr); } }
-  @media (max-width: 560px) { .lj-auto-cat-row { grid-template-columns: 1fr; } }
+  .lj-jump-pill {
+    font-family: 'Sora', sans-serif; font-weight: 600; font-size: 12.5px;
+    color: var(--navy); background: var(--mist); border: 1px solid var(--line);
+    padding: 8px 14px; border-radius: 999px; text-decoration: none;
+    transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  }
+  .lj-jump-pill:hover { background: var(--navy); color: #fff; border-color: var(--navy); }
+
+  /* ============ INDUSTRY SECTIONS ============ */
+  .lj-industry { scroll-margin-top: 76px; }
+  .lj-industry:nth-child(even) { background: var(--mist); }
+  .lj-industry-head { display: flex; align-items: center; gap: 16px; margin-bottom: 36px; }
+  .lj-industry-icon {
+    flex-shrink: 0; width: 52px; height: 52px; border-radius: 14px; background: var(--navy);
+    display: flex; align-items: center; justify-content: center; color: #fff;
+  }
+  .lj-industry-icon svg { width: 26px; height: 26px; }
+  .lj-industry-head h2 { font-size: clamp(1.6rem, 2.6vw, 2.1rem); line-height: 1.15; }
+  .lj-industry-head span { display: block; color: var(--muted); font-size: 13.5px; margin-top: 2px; }
+
+  .lj-cat-list { display: flex; flex-direction: column; gap: 12px; }
+  .lj-cat-item {
+    background: var(--white); border: 1px solid var(--line); border-radius: 14px;
+    overflow: hidden;
+  }
+  .lj-industry:nth-child(even) .lj-cat-item { background: var(--white); }
+  .lj-cat-item summary {
+    cursor: pointer; list-style: none; padding: 20px 24px;
+    display: flex; align-items: flex-start; justify-content: space-between; gap: 16px;
+  }
+  .lj-cat-item summary::-webkit-details-marker { display: none; }
+  .lj-cat-role {
+    display: block; font-family: 'Sora', sans-serif; font-weight: 700; font-size: 11.5px;
+    letter-spacing: 0.08em; text-transform: uppercase; color: var(--cyan); margin-bottom: 5px;
+  }
+  .lj-cat-item h3 { font-size: 16.5px; line-height: 1.35; }
+  .lj-cat-chevron {
+    flex-shrink: 0; width: 18px; height: 18px; color: var(--muted); margin-top: 4px;
+    transition: transform 0.2s ease, color 0.2s ease;
+  }
+  .lj-cat-item[open] .lj-cat-chevron { transform: rotate(180deg); color: var(--cyan); }
+  .lj-cat-body { padding: 0 24px 24px; }
+  .lj-cat-body p { color: var(--body); font-size: 14.5px; line-height: 1.65; margin: 0 0 18px; }
+  .lj-cat-tools-label {
+    display: block; font-family: 'Sora', sans-serif; font-weight: 700; font-size: 11px;
+    letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin-bottom: 10px;
+  }
+  .lj-cat-tools { display: flex; flex-wrap: wrap; gap: 8px; }
+  .lj-cat-tools span {
+    background: var(--mist); border: 1px solid var(--line); border-radius: 999px;
+    padding: 6px 12px; font-size: 12.5px; color: var(--navy); font-weight: 500;
+  }
+  .lj-industry:nth-child(even) .lj-cat-tools span { background: var(--white); }
+
+  @media (max-width: 560px) {
+    .lj-cat-item summary { padding: 18px 20px; }
+    .lj-cat-body { padding: 0 20px 20px; }
+  }
+
+  /* ============ PLATFORM TEASER ============ */
+  .lj-platform-teaser {
+    background: var(--navy); border-radius: 20px; padding: 44px 40px;
+    display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap;
+    max-width: 1100px; margin: 0 auto;
+  }
+  .lj-platform-teaser-text h2 { color: #fff; font-size: clamp(1.5rem, 2.6vw, 1.9rem); margin-bottom: 8px; }
+  .lj-platform-teaser-text p { color: rgba(255,255,255,0.72); font-size: 15px; margin: 0; max-width: 480px; }
 
   /* ============ HOW PRICING WORKS ============ */
   .lj-auto-pricing-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
@@ -367,11 +436,11 @@
 </style>
 
 <!-- HERO -->
-<section class="lj-section lj-auto-hero">
+<section class="lj-section lj-auto-hero" style="padding-bottom:0;">
   <div class="lj-auto-hero-inner">
     <span class="lj-eyebrow">Automations</span>
-    <h1>Automation Built Around Your Business</h1>
-    <p>Every business automates differently depending on its industry, team, and tools. Instead of a fixed price list, we scope each system to what you actually need and give you a clear quote up front.</p>
+    <h1>35 Automations, Built by Industry &amp; Role</h1>
+    <p>Every automation below is done-for-you and scoped to a specific job — from a real estate agent's listing syndication to a bookkeeper's expense reconciliation. Book a consultation and we'll tailor it to your exact tools.</p>
     <div class="lj-auto-hero-actions">
       <a href="../appointment" class="lj-btn lj-btn-primary">Book a Consultation</a>
       <a href="../how-it-works" class="lj-btn lj-btn-outline">See How It Works</a>
@@ -379,58 +448,599 @@
   </div>
 </section>
 
-<!-- CATEGORIES -->
-<section class="lj-section lj-auto-cat">
+<!-- JUMP NAV -->
+<nav class="lj-jump-nav">
+  <div class="lj-jump-nav-inner">
+    <a class="lj-jump-pill" href="#real-estate">Real Estate</a>
+    <a class="lj-jump-pill" href="#healthcare">Healthcare</a>
+    <a class="lj-jump-pill" href="#legal">Legal</a>
+    <a class="lj-jump-pill" href="#home-services">Home Services</a>
+    <a class="lj-jump-pill" href="#ecommerce-retail">E-Commerce &amp; Retail</a>
+    <a class="lj-jump-pill" href="#financial-services">Financial Services</a>
+    <a class="lj-jump-pill" href="#marketing-agencies">Marketing Agencies</a>
+    <a class="lj-jump-pill" href="#hospitality">Hospitality &amp; Restaurants</a>
+    <a class="lj-jump-pill" href="#education">Education &amp; Training</a>
+    <a class="lj-jump-pill" href="../solutions">Platform Solutions</a>
+  </div>
+</nav>
+
+<!-- REAL ESTATE -->
+<section class="lj-section lj-industry" id="real-estate">
   <div class="lj-inner">
-    <div class="lj-auto-cat-head">
-      <span class="lj-eyebrow">Where We Help</span>
-      <h2>What We Automate</h2>
-      <p>A look at the areas of a business we most often step into. Every engagement starts with a conversation about which of these apply to you.</p>
+    <div class="lj-industry-head">
+      <div class="lj-industry-icon"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8"></path><path d="M5 10v10h14V10"></path><path d="M9 20v-6h6v6"></path></svg></div>
+      <div>
+        <h2>Real Estate</h2>
+        <span>5 automations</span>
+      </div>
     </div>
-    <div class="lj-auto-cat-row">
+    <div class="lj-cat-list">
 
-      <div class="lj-auto-cat-card">
-        <div class="lj-auto-cat-icon"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v11H8l-4 4V5z"></path><circle cx="9" cy="10.5" r="0.8" fill="currentColor" stroke="none"></circle><circle cx="12" cy="10.5" r="0.8" fill="currentColor" stroke="none"></circle><circle cx="15" cy="10.5" r="0.8" fill="currentColor" stroke="none"></circle></svg></div>
-        <h3>AI Website Assistants</h3>
-        <p>Answer common questions, collect information, and qualify potential customers automatically.</p>
-      </div>
+      <details class="lj-cat-item">
+        <summary>
+          <div><span class="lj-cat-role">Real Estate Agent / Broker</span><h3>Listing-to-Everywhere Syndicator</h3></div>
+          <svg class="lj-cat-chevron" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg>
+        </summary>
+        <div class="lj-cat-body">
+          <p>The moment a new listing goes live, this automation pulls the photos, price, and description and pushes them out to the agent's Facebook and Instagram business pages, a branded email blast to the agent's buyer list, and a text alert to any client whose saved search matches the property. It also generates a single-property landing page automatically, so the agent never has to manually re-type listing details across five different platforms again.</p>
+          <span class="lj-cat-tools-label">Tools Required</span>
+          <div class="lj-cat-tools"><span>Zapier or Make.com</span><span>MLS/IDX data feed (e.g., Bridge Interactive or Spark API)</span><span>Meta Business Suite (Facebook/Instagram)</span><span>Mailchimp or ActiveCampaign</span><span>Twilio (SMS)</span><span>A simple landing page builder (e.g., Carrd or Unbounce)</span></div>
+        </div>
+      </details>
 
-      <div class="lj-auto-cat-card">
-        <div class="lj-auto-cat-icon"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16v12H4z"></path><path d="M4 7l8 6 8-6"></path></svg></div>
-        <h3>Email &amp; Follow-Up</h3>
-        <p>Send timely, personalized messages without relying on someone to remember to do it.</p>
-      </div>
+      <details class="lj-cat-item">
+        <summary>
+          <div><span class="lj-cat-role">Property Manager</span><h3>Maintenance Request Triage &amp; Dispatch</h3></div>
+          <svg class="lj-cat-chevron" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg>
+        </summary>
+        <div class="lj-cat-body">
+          <p>Tenants submit maintenance issues through a simple online form or text line, and the system automatically classifies the urgency (emergency, urgent, routine), notifies the correct vendor or in-house technician, opens a work order, and keeps the tenant updated on status via automated texts — all without the property manager touching a spreadsheet or playing phone tag with contractors.</p>
+          <span class="lj-cat-tools-label">Tools Required</span>
+          <div class="lj-cat-tools"><span>Jotform or Typeform (intake form)</span><span>Zapier or Make.com</span><span>Twilio (SMS updates)</span><span>A property management platform (e.g., Buildium or AppFolio)</span><span>Slack or Microsoft Teams (internal alerts)</span></div>
+        </div>
+      </details>
 
-      <div class="lj-auto-cat-card">
-        <div class="lj-auto-cat-icon"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V6"></path><path d="M4 19h16"></path><path d="M8 15l3-4 3 3 4-6"></path></svg></div>
-        <h3>CRM &amp; Sales</h3>
-        <p>Organize leads, update records, assign tasks, and keep opportunities moving forward.</p>
-      </div>
+      <details class="lj-cat-item">
+        <summary>
+          <div><span class="lj-cat-role">Real Estate Marketing Manager</span><h3>Open House Lead Nurture Sequence</h3></div>
+          <svg class="lj-cat-chevron" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg>
+        </summary>
+        <div class="lj-cat-body">
+          <p>Every visitor who signs in at an open house (via QR code or tablet) is automatically added to a nurture sequence: an immediate thank-you text with a link to the listing, a follow-up email with similar properties two days later, and an automatic hand-off to the agent's CRM with a lead-score tag so hot leads get a phone call instead of another email.</p>
+          <span class="lj-cat-tools-label">Tools Required</span>
+          <div class="lj-cat-tools"><span>A digital sign-in tool (e.g., Google Forms or SpotOn)</span><span>Zapier or Make.com</span><span>CRM (e.g., Follow Up Boss or KVCore)</span><span>Mailchimp or ActiveCampaign</span><span>Twilio (SMS)</span></div>
+        </div>
+      </details>
 
-      <div class="lj-auto-cat-card">
-        <div class="lj-auto-cat-icon"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14a5 5 0 0 1 5-5h6.5"></path><path d="M13 6.5l2.5 2.5-2.5 2.5"></path><path d="M20 10a5 5 0 0 1-5 5H8.5"></path><path d="M11 17.5L8.5 15l2.5-2.5"></path></svg></div>
-        <h3>Customer Support</h3>
-        <p>Route requests to the right person, send acknowledgments, and speed up response times.</p>
-      </div>
+      <details class="lj-cat-item">
+        <summary>
+          <div><span class="lj-cat-role">Transaction Coordinator</span><h3>Closing Document Tracker &amp; Deadline Reminder</h3></div>
+          <svg class="lj-cat-chevron" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg>
+        </summary>
+        <div class="lj-cat-body">
+          <p>This automation reads a transaction's key dates (inspection period, financing deadline, closing date) from the contract or CRM, builds a shared timeline automatically, and sends escalating reminders to the agent, buyer, seller, and lender as deadlines approach — plus a daily digest to the transaction coordinator showing exactly which files are missing a signed document.</p>
+          <span class="lj-cat-tools-label">Tools Required</span>
+          <div class="lj-cat-tools"><span>DocuSign or Dotloop</span><span>Zapier or Make.com</span><span>Google Sheets or Airtable</span><span>Twilio or email (reminders)</span><span>CRM (e.g., Follow Up Boss)</span></div>
+        </div>
+      </details>
 
-      <div class="lj-auto-cat-card">
-        <div class="lj-auto-cat-icon"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h11l3 3v9H4z"></path><path d="M4 6v3h14"></path><path d="M8 15h6"></path></svg></div>
-        <h3>Operations &amp; Reporting</h3>
-        <p>Move information between systems and generate routine reports without manual pulls.</p>
-      </div>
-
-      <div class="lj-auto-cat-card">
-        <div class="lj-auto-cat-icon"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 4h9l3 3v13H6z"></path><path d="M9.5 12.5l1.8 1.8 3.2-3.6"></path></svg></div>
-        <h3>Onboarding &amp; Compliance</h3>
-        <p>Coordinate forms, documents, reminders, training steps, and approvals automatically.</p>
-      </div>
+      <details class="lj-cat-item">
+        <summary>
+          <div><span class="lj-cat-role">Leasing Agent</span><h3>Lead Qualification &amp; Tour Scheduler</h3></div>
+          <svg class="lj-cat-chevron" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg>
+        </summary>
+        <div class="lj-cat-body">
+          <p>Rental inquiries coming in from Zillow, Apartments.com, or the property website are automatically qualified against move-in date, budget, and pet policy, then routed straight into the leasing agent's calendar for a tour — no more back-and-forth texting to find a time that works. Unqualified leads get a polite automated response instead of silence.</p>
+          <span class="lj-cat-tools-label">Tools Required</span>
+          <div class="lj-cat-tools"><span>Zapier or Make.com</span><span>Calendly</span><span>Twilio (SMS)</span><span>A property listing syndication tool (e.g., Zillow Rental Manager API)</span><span>CRM or Google Sheets</span></div>
+        </div>
+      </details>
 
     </div>
   </div>
 </section>
 
-<!-- HOW PRICING WORKS -->
+<!-- HEALTHCARE -->
+<section class="lj-section lj-industry" id="healthcare">
+  <div class="lj-inner">
+    <div class="lj-industry-head">
+      <div class="lj-industry-icon"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M8 12h2.5l1.5-3 2 6 1.5-3H16"></path></svg></div>
+      <div>
+        <h2>Healthcare</h2>
+        <span>5 automations</span>
+      </div>
+    </div>
+    <div class="lj-cat-list">
+
+      <details class="lj-cat-item">
+        <summary>
+          <div><span class="lj-cat-role">Medical Office Manager</span><h3>Appointment Reminder &amp; No-Show Reduction System</h3></div>
+          <svg class="lj-cat-chevron" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg>
+        </summary>
+        <div class="lj-cat-body">
+          <p>Patients automatically receive a text and email reminder 48 hours and 2 hours before their appointment, with a one-tap confirm or reschedule link. No-shows trigger an automatic follow-up call task for front-desk staff, and the office manager gets a weekly no-show rate report — cutting missed appointments without adding phone calls to the front desk's day.</p>
+          <span class="lj-cat-tools-label">Tools Required</span>
+          <div class="lj-cat-tools"><span>Practice management software (e.g., Kareo or SimplePractice)</span><span>Zapier or Make.com</span><span>Twilio (SMS)</span><span>Email provider (e.g., SendGrid)</span></div>
+        </div>
+      </details>
+
+      <details class="lj-cat-item">
+        <summary>
+          <div><span class="lj-cat-role">Patient Care Coordinator</span><h3>Automated Intake &amp; Pre-Visit Form Collector</h3></div>
+          <svg class="lj-cat-chevron" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg>
+        </summary>
+        <div class="lj-cat-body">
+          <p>New patients receive intake paperwork, insurance verification requests, and HIPAA forms automatically as soon as they're scheduled, with reminders sent until everything is completed — so the care coordinator isn't chasing paperwork on the morning of the visit, and the front desk has a complete file before the patient walks in.</p>
+          <span class="lj-cat-tools-label">Tools Required</span>
+          <div class="lj-cat-tools"><span>Jotform (HIPAA-compliant plan) or Intake Q</span><span>Zapier or Make.com</span><span>Practice management software</span><span>Twilio or email reminders</span></div>
+        </div>
+      </details>
+
+      <details class="lj-cat-item">
+        <summary>
+          <div><span class="lj-cat-role">Medical Billing Specialist</span><h3>Claims Status &amp; Denial Follow-Up System</h3></div>
+          <svg class="lj-cat-chevron" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg>
+        </summary>
+        <div class="lj-cat-body">
+          <p>Instead of manually checking payer portals, this automation checks claim status on a schedule, flags denials the moment they post, auto-generates a first-draft appeal letter using the denial reason code, and creates a task for the billing specialist to review and submit — turning a multi-hour weekly chore into a five-minute review.</p>
+          <span class="lj-cat-tools-label">Tools Required</span>
+          <div class="lj-cat-tools"><span>Clearinghouse with API access (e.g., Availity or Waystar)</span><span>Zapier or Make.com</span><span>OpenAI API (for draft appeal letters)</span><span>Airtable or a billing dashboard</span></div>
+        </div>
+      </details>
+
+      <details class="lj-cat-item">
+        <summary>
+          <div><span class="lj-cat-role">Practice Administrator</span><h3>Patient Review &amp; Reputation Management System</h3></div>
+          <svg class="lj-cat-chevron" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg>
+        </summary>
+        <div class="lj-cat-body">
+          <p>After every completed visit, satisfied patients (identified through a quick post-visit survey) are automatically asked to leave a Google or Healthgrades review, while unhappy patients are routed privately to the practice administrator instead of a public review site — protecting the practice's online reputation while surfacing real service issues immediately.</p>
+          <span class="lj-cat-tools-label">Tools Required</span>
+          <div class="lj-cat-tools"><span>Survey tool (e.g., Jotform or SurveyMonkey)</span><span>Zapier or Make.com</span><span>Google Business Profile API</span><span>Twilio or email</span><span>A reputation tool (e.g., Podium or Birdeye) — optional upgrade</span></div>
+        </div>
+      </details>
+
+      <details class="lj-cat-item">
+        <summary>
+          <div><span class="lj-cat-role">Nurse Manager / Scheduler</span><h3>Staff Shift Scheduling &amp; Coverage Alert System</h3></div>
+          <svg class="lj-cat-chevron" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg>
+        </summary>
+        <div class="lj-cat-body">
+          <p>When a nurse calls out or a shift goes unfilled, the system automatically texts qualified, available staff in priority order until someone confirms, updates the schedule in real time, and alerts the nurse manager if no one picks up the shift within a set window — eliminating the group-text scramble that usually happens at 5 a.m.</p>
+          <span class="lj-cat-tools-label">Tools Required</span>
+          <div class="lj-cat-tools"><span>Scheduling software (e.g., When I Work or ShiftKey)</span><span>Zapier or Make.com</span><span>Twilio (SMS)</span><span>Slack or Teams (manager alerts)</span></div>
+        </div>
+      </details>
+
+    </div>
+  </div>
+</section>
+
+<!-- LEGAL -->
+<section class="lj-section lj-industry" id="legal">
+  <div class="lj-inner">
+    <div class="lj-industry-head">
+      <div class="lj-industry-icon"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18"></path><path d="M5 7h14"></path><path d="M5 7l-3 6a4 4 0 0 0 6 0z"></path><path d="M19 7l-3 6a4 4 0 0 0 6 0z"></path></svg></div>
+      <div>
+        <h2>Legal</h2>
+        <span>4 automations</span>
+      </div>
+    </div>
+    <div class="lj-cat-list">
+
+      <details class="lj-cat-item">
+        <summary>
+          <div><span class="lj-cat-role">Attorney</span><h3>Client Intake &amp; Conflict Check System</h3></div>
+          <svg class="lj-cat-chevron" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg>
+        </summary>
+        <div class="lj-cat-body">
+          <p>Every new inquiry submitted through the firm's website is automatically checked against the existing client database for conflicts of interest, formatted into a clean summary, and delivered to the attorney with a recommended next step — accept, decline, or refer — cutting the time between 'someone filled out a form' and 'the attorney knows what they're dealing with' from days to minutes.</p>
+          <span class="lj-cat-tools-label">Tools Required</span>
+          <div class="lj-cat-tools"><span>Jotform or a legal intake tool (e.g., Lawmatics)</span><span>Zapier or Make.com</span><span>Practice management software (e.g., Clio or MyCase)</span><span>OpenAI API (for summarization)</span></div>
+        </div>
+      </details>
+
+      <details class="lj-cat-item">
+        <summary>
+          <div><span class="lj-cat-role">Paralegal</span><h3>Document Assembly &amp; Deadline Calendar System</h3></div>
+          <svg class="lj-cat-chevron" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg>
+        </summary>
+        <div class="lj-cat-body">
+          <p>When a new matter is opened, this automation pulls the correct template set for the case type, pre-fills client and case details, and calculates every statutory deadline automatically, adding them straight to the firm's shared calendar with reminders — removing the manual, error-prone process of counting court days by hand.</p>
+          <span class="lj-cat-tools-label">Tools Required</span>
+          <div class="lj-cat-tools"><span>Practice management software (e.g., Clio)</span><span>Zapier or Make.com</span><span>Document automation tool (e.g., Lawyaw or PandaDoc)</span><span>Google Calendar or Outlook Calendar</span></div>
+        </div>
+      </details>
+
+      <details class="lj-cat-item">
+        <summary>
+          <div><span class="lj-cat-role">Law Firm Office Manager</span><h3>Billing &amp; Trust Account Reconciliation System</h3></div>
+          <svg class="lj-cat-chevron" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg>
+        </summary>
+        <div class="lj-cat-body">
+          <p>Time entries from attorneys and paralegals are automatically pulled into monthly invoices, checked against outstanding trust balances, and flagged if a client's trust account is running low before more work is billed against it — helping the office manager stay compliant with trust accounting rules without manually cross-referencing spreadsheets every month.</p>
+          <span class="lj-cat-tools-label">Tools Required</span>
+          <div class="lj-cat-tools"><span>Practice management/billing software (e.g., Clio)</span><span>Zapier or Make.com</span><span>QuickBooks Online</span><span>Google Sheets or Airtable (reconciliation log)</span></div>
+        </div>
+      </details>
+
+      <details class="lj-cat-item">
+        <summary>
+          <div><span class="lj-cat-role">Legal Intake Specialist</span><h3>Lead Qualification &amp; Consultation Scheduler</h3></div>
+          <svg class="lj-cat-chevron" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg>
+        </summary>
+        <div class="lj-cat-body">
+          <p>Prospective clients who call or fill out a web form are automatically screened with case-type questions, matched to the right attorney or practice group, and booked directly onto that attorney's calendar for a consultation — so the intake specialist spends time on the phone building rapport instead of manually checking calendars.</p>
+          <span class="lj-cat-tools-label">Tools Required</span>
+          <div class="lj-cat-tools"><span>Jotform or Lawmatics</span><span>Zapier or Make.com</span><span>Calendly</span><span>Twilio (SMS confirmations)</span></div>
+        </div>
+      </details>
+
+    </div>
+  </div>
+</section>
+
+<!-- HOME SERVICES -->
+<section class="lj-section lj-industry" id="home-services">
+  <div class="lj-inner">
+    <div class="lj-industry-head">
+      <div class="lj-industry-icon"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 1 0-5.4 5.4L3 18v3h3l6.3-6.3a4 4 0 0 0 5.4-5.4l-2.8 2.8-2-2z"></path></svg></div>
+      <div>
+        <h2>Home Services</h2>
+        <span>HVAC, Plumbing, Electrical &middot; 4 automations</span>
+      </div>
+    </div>
+    <div class="lj-cat-list">
+
+      <details class="lj-cat-item">
+        <summary>
+          <div><span class="lj-cat-role">Business Owner</span><h3>Job Booking &amp; Instant Dispatch System</h3></div>
+          <svg class="lj-cat-chevron" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg>
+        </summary>
+        <div class="lj-cat-body">
+          <p>When a customer calls, texts, or fills out a website form requesting service, the system automatically checks technician availability, books the job into the schedule, sends the customer a confirmation with a technician photo and ETA window, and notifies the assigned technician — replacing a manual, phone-tag-heavy booking process with something that runs itself 24/7.</p>
+          <span class="lj-cat-tools-label">Tools Required</span>
+          <div class="lj-cat-tools"><span>Field service software (e.g., Housecall Pro or ServiceTitan)</span><span>Zapier or Make.com</span><span>Twilio (SMS)</span><span>Google Calendar (technician schedules)</span></div>
+        </div>
+      </details>
+
+      <details class="lj-cat-item">
+        <summary>
+          <div><span class="lj-cat-role">Dispatcher</span><h3>Technician Routing &amp; Live ETA Notification System</h3></div>
+          <svg class="lj-cat-chevron" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg>
+        </summary>
+        <div class="lj-cat-body">
+          <p>As jobs are assigned throughout the day, this automation calculates optimal routing between stops, texts customers a live ETA update as the technician is en route, and automatically alerts the dispatcher if a job is running long enough to threaten the next appointment — cutting down on the constant 'where's my technician' phone calls.</p>
+          <span class="lj-cat-tools-label">Tools Required</span>
+          <div class="lj-cat-tools"><span>Field service software with GPS tracking</span><span>Zapier or Make.com</span><span>Route optimization tool (e.g., Routific or Google Maps API)</span><span>Twilio (SMS)</span></div>
+        </div>
+      </details>
+
+      <details class="lj-cat-item">
+        <summary>
+          <div><span class="lj-cat-role">Sales Estimator</span><h3>Quote Generation &amp; Automated Follow-Up System</h3></div>
+          <svg class="lj-cat-chevron" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg>
+        </summary>
+        <div class="lj-cat-body">
+          <p>After a site visit, the estimator enters a few key measurements and selections into a simple form, and the system instantly generates a professional, branded quote, emails it to the customer, and follows up automatically at 2 days, 5 days, and 10 days if the quote hasn't been accepted — recovering deals that would otherwise go cold from lack of follow-up.</p>
+          <span class="lj-cat-tools-label">Tools Required</span>
+          <div class="lj-cat-tools"><span>Jotform or a quoting tool (e.g., JobNimbus)</span><span>Zapier or Make.com</span><span>PandaDoc or DocuSign (quote/proposal)</span><span>Mailchimp or ActiveCampaign (follow-up sequence)</span></div>
+        </div>
+      </details>
+
+      <details class="lj-cat-item">
+        <summary>
+          <div><span class="lj-cat-role">Field Technician Manager</span><h3>Job Completion &amp; Review Request System</h3></div>
+          <svg class="lj-cat-chevron" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg>
+        </summary>
+        <div class="lj-cat-body">
+          <p>The moment a technician marks a job complete in the field app, the customer automatically receives an invoice, a payment link, and — 24 hours later, if payment has cleared — a review request sent to Google or Yelp, giving the field manager a hands-off way to turn completed jobs into revenue and reputation without extra admin work.</p>
+          <span class="lj-cat-tools-label">Tools Required</span>
+          <div class="lj-cat-tools"><span>Field service software (e.g., Housecall Pro)</span><span>Zapier or Make.com</span><span>QuickBooks or Stripe (invoicing/payment)</span><span>Google Business Profile API (review requests)</span></div>
+        </div>
+      </details>
+
+    </div>
+  </div>
+</section>
+
+<!-- E-COMMERCE & RETAIL -->
+<section class="lj-section lj-industry" id="ecommerce-retail">
+  <div class="lj-inner">
+    <div class="lj-industry-head">
+      <div class="lj-industry-icon"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="20" r="1" fill="currentColor" stroke="none"></circle><circle cx="18" cy="20" r="1" fill="currentColor" stroke="none"></circle><path d="M3 4h2l2.4 12.2a2 2 0 0 0 2 1.8h7.2a2 2 0 0 0 2-1.6L21 8H6"></path></svg></div>
+      <div>
+        <h2>E-Commerce &amp; Retail</h2>
+        <span>4 automations</span>
+      </div>
+    </div>
+    <div class="lj-cat-list">
+
+      <details class="lj-cat-item">
+        <summary>
+          <div><span class="lj-cat-role">Store Owner</span><h3>Abandoned Cart Recovery Sequence</h3></div>
+          <svg class="lj-cat-chevron" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg>
+        </summary>
+        <div class="lj-cat-body">
+          <p>Shoppers who add items to their cart but don't check out are automatically enrolled in a 3-part recovery sequence (a reminder email, a social-proof email, and a discount-code email), with the sequence stopping instantly the moment they complete their purchase — recovering revenue that would otherwise be lost with zero manual follow-up.</p>
+          <span class="lj-cat-tools-label">Tools Required</span>
+          <div class="lj-cat-tools"><span>Shopify or WooCommerce</span><span>Klaviyo or Mailchimp</span><span>Zapier or Make.com (if connecting non-native tools)</span></div>
+        </div>
+      </details>
+
+      <details class="lj-cat-item">
+        <summary>
+          <div><span class="lj-cat-role">Customer Service Manager</span><h3>Support Ticket Triage &amp; Auto-Response System</h3></div>
+          <svg class="lj-cat-chevron" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg>
+        </summary>
+        <div class="lj-cat-body">
+          <p>Incoming support emails and chats are automatically categorized (shipping issue, refund request, product question, complaint), routed to the right team member, and given an instant, on-brand acknowledgment reply — with an AI-drafted first-response suggestion attached so agents can approve and send in seconds instead of typing from scratch.</p>
+          <span class="lj-cat-tools-label">Tools Required</span>
+          <div class="lj-cat-tools"><span>Gorgias or Zendesk</span><span>Zapier or Make.com</span><span>OpenAI API (draft responses)</span><span>Slack (internal alerts)</span></div>
+        </div>
+      </details>
+
+      <details class="lj-cat-item">
+        <summary>
+          <div><span class="lj-cat-role">Inventory Manager</span><h3>Low-Stock Alert &amp; Auto-Reorder System</h3></div>
+          <svg class="lj-cat-chevron" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg>
+        </summary>
+        <div class="lj-cat-body">
+          <p>As inventory levels drop across sales channels, this automation checks stock in real time against a reorder threshold set per SKU, automatically generates a purchase order for the supplier, and notifies the inventory manager for a one-click approval — preventing stockouts on best-sellers without anyone having to check spreadsheets daily.</p>
+          <span class="lj-cat-tools-label">Tools Required</span>
+          <div class="lj-cat-tools"><span>Shopify/WooCommerce or an inventory platform (e.g., Cin7)</span><span>Zapier or Make.com</span><span>Google Sheets or Airtable (PO tracking)</span><span>Email or Slack (approval alerts)</span></div>
+        </div>
+      </details>
+
+      <details class="lj-cat-item">
+        <summary>
+          <div><span class="lj-cat-role">Marketing Manager</span><h3>Customer Segmentation &amp; Automated Campaign System</h3></div>
+          <svg class="lj-cat-chevron" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg>
+        </summary>
+        <div class="lj-cat-body">
+          <p>Customers are automatically tagged based on purchase behavior (first-time buyer, VIP, lapsed customer, high-cart-value) as orders come in, and each segment automatically receives the right campaign — a welcome series, a win-back offer, or an early-access VIP drop — so campaigns run continuously without the marketing manager building each send by hand.</p>
+          <span class="lj-cat-tools-label">Tools Required</span>
+          <div class="lj-cat-tools"><span>Shopify or WooCommerce</span><span>Klaviyo or ActiveCampaign</span><span>Zapier or Make.com</span></div>
+        </div>
+      </details>
+
+    </div>
+  </div>
+</section>
+
+<!-- FINANCIAL SERVICES -->
+<section class="lj-section lj-industry" id="financial-services">
+  <div class="lj-inner">
+    <div class="lj-industry-head">
+      <div class="lj-industry-icon"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20"></path><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H7"></path></svg></div>
+      <div>
+        <h2>Financial Services</h2>
+        <span>4 automations</span>
+      </div>
+    </div>
+    <div class="lj-cat-list">
+
+      <details class="lj-cat-item">
+        <summary>
+          <div><span class="lj-cat-role">Financial Advisor</span><h3>Client Onboarding &amp; Portfolio Review Scheduler</h3></div>
+          <svg class="lj-cat-chevron" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg>
+        </summary>
+        <div class="lj-cat-body">
+          <p>New clients automatically receive a welcome sequence with required disclosures, a risk-tolerance questionnaire, and a scheduling link for their first portfolio review — and existing clients are automatically prompted to book their quarterly or annual review before it's overdue, keeping the advisor's book of business on a consistent, compliant cadence.</p>
+          <span class="lj-cat-tools-label">Tools Required</span>
+          <div class="lj-cat-tools"><span>CRM (e.g., Wealthbox or Redtail)</span><span>Jotform or Typeform (risk questionnaire)</span><span>Zapier or Make.com</span><span>Calendly</span></div>
+        </div>
+      </details>
+
+      <details class="lj-cat-item">
+        <summary>
+          <div><span class="lj-cat-role">Insurance Agent</span><h3>Policy Renewal &amp; Cross-Sell Reminder System</h3></div>
+          <svg class="lj-cat-chevron" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg>
+        </summary>
+        <div class="lj-cat-body">
+          <p>As renewal dates approach, clients are automatically notified, sent their renewal documents, and — if they don't currently hold a policy type common to their profile (e.g., no umbrella policy despite owning a home and multiple vehicles) — flagged for a personal cross-sell call, turning renewal season into a proactive sales opportunity instead of just paperwork.</p>
+          <span class="lj-cat-tools-label">Tools Required</span>
+          <div class="lj-cat-tools"><span>Agency management system (e.g., AMS360 or EZLynx)</span><span>Zapier or Make.com</span><span>Twilio or email (reminders)</span><span>Airtable (cross-sell flagging logic)</span></div>
+        </div>
+      </details>
+
+      <details class="lj-cat-item">
+        <summary>
+          <div><span class="lj-cat-role">Bookkeeper / Accountant</span><h3>Invoice &amp; Expense Reconciliation System</h3></div>
+          <svg class="lj-cat-chevron" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg>
+        </summary>
+        <div class="lj-cat-body">
+          <p>Receipts and invoices forwarded to a dedicated inbox are automatically read, categorized, and matched against bank transactions in the accounting system, with anything that can't be confidently matched flagged for the bookkeeper's review — turning hours of manual data entry each week into a short approval pass.</p>
+          <span class="lj-cat-tools-label">Tools Required</span>
+          <div class="lj-cat-tools"><span>QuickBooks Online or Xero</span><span>Zapier or Make.com</span><span>OpenAI API or a receipt-OCR tool (e.g., Dext)</span><span>Gmail or Outlook (forwarding inbox)</span></div>
+        </div>
+      </details>
+
+      <details class="lj-cat-item">
+        <summary>
+          <div><span class="lj-cat-role">Loan Officer</span><h3>Application Status &amp; Document Collection System</h3></div>
+          <svg class="lj-cat-chevron" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg>
+        </summary>
+        <div class="lj-cat-body">
+          <p>Borrowers automatically receive a checklist of required documents when their application opens, reminders for anything still outstanding, and real-time status updates as their loan moves through underwriting — reducing the number of 'what's the status of my loan?' calls the loan officer fields every week.</p>
+          <span class="lj-cat-tools-label">Tools Required</span>
+          <div class="lj-cat-tools"><span>Loan origination system (e.g., Encompass)</span><span>Zapier or Make.com</span><span>Jotform (secure document upload)</span><span>Twilio or email (status updates)</span></div>
+        </div>
+      </details>
+
+    </div>
+  </div>
+</section>
+
+<!-- MARKETING AGENCIES -->
+<section class="lj-section lj-industry" id="marketing-agencies">
+  <div class="lj-inner">
+    <div class="lj-industry-head">
+      <div class="lj-industry-icon"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11v2a2 2 0 0 0 2 2h1l3 5V6l-3 5H5a2 2 0 0 0-2 2z"></path><path d="M14 7v10"></path><path d="M18 5v14"></path></svg></div>
+      <div>
+        <h2>Marketing Agencies</h2>
+        <span>4 automations</span>
+      </div>
+    </div>
+    <div class="lj-cat-list">
+
+      <details class="lj-cat-item">
+        <summary>
+          <div><span class="lj-cat-role">Agency Owner</span><h3>Automated Client Reporting Dashboard</h3></div>
+          <svg class="lj-cat-chevron" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg>
+        </summary>
+        <div class="lj-cat-body">
+          <p>Instead of an account manager spending hours every month pulling numbers from five different ad platforms into a slide deck, this automation pulls performance data automatically from every connected channel, builds a branded report, and delivers it to each client on a set schedule — giving the agency owner a scalable reporting process that doesn't require adding headcount as the client list grows.</p>
+          <span class="lj-cat-tools-label">Tools Required</span>
+          <div class="lj-cat-tools"><span>AgencyAnalytics or DataBox</span><span>Zapier or Make.com</span><span>Google Ads, Meta Ads, and Google Analytics APIs</span><span>Google Slides or PDF export tool</span></div>
+        </div>
+      </details>
+
+      <details class="lj-cat-item">
+        <summary>
+          <div><span class="lj-cat-role">Account Manager</span><h3>Client Check-In &amp; Task Status Update System</h3></div>
+          <svg class="lj-cat-chevron" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg>
+        </summary>
+        <div class="lj-cat-body">
+          <p>Each client automatically receives a weekly status update summarizing completed tasks, upcoming deliverables, and any blockers pulled straight from the agency's project management tool — so account managers spend their client-facing time on strategy conversations instead of manually writing status update emails every Friday.</p>
+          <span class="lj-cat-tools-label">Tools Required</span>
+          <div class="lj-cat-tools"><span>Project management tool (e.g., ClickUp, Asana, or monday.com)</span><span>Zapier or Make.com</span><span>Email or Slack Connect</span></div>
+        </div>
+      </details>
+
+      <details class="lj-cat-item">
+        <summary>
+          <div><span class="lj-cat-role">Content Manager</span><h3>Content Calendar &amp; Client Approval Workflow</h3></div>
+          <svg class="lj-cat-chevron" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg>
+        </summary>
+        <div class="lj-cat-body">
+          <p>Draft content moves automatically from the content calendar to a client-facing approval portal, with reminders sent if approval is pending, and approved content automatically scheduled to the right social or publishing platform — removing the manual copy-pasting and email chains that usually eat up a content manager's week.</p>
+          <span class="lj-cat-tools-label">Tools Required</span>
+          <div class="lj-cat-tools"><span>Airtable or Notion (content calendar)</span><span>Zapier or Make.com</span><span>A client approval tool (e.g., Approval Studio or a custom portal)</span><span>Buffer or Hootsuite (scheduling)</span></div>
+        </div>
+      </details>
+
+      <details class="lj-cat-item">
+        <summary>
+          <div><span class="lj-cat-role">SEO Specialist</span><h3>Rank Tracking &amp; Automated Client Reporting</h3></div>
+          <svg class="lj-cat-chevron" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg>
+        </summary>
+        <div class="lj-cat-body">
+          <p>Keyword rankings, backlink changes, and technical SEO issues are automatically checked on a schedule, and any significant movement (a ranking drop, a lost backlink, a new crawl error) triggers an instant alert — with a monthly summary automatically compiled and sent to clients so the SEO specialist can focus on strategy instead of manually pulling rank-tracker exports.</p>
+          <span class="lj-cat-tools-label">Tools Required</span>
+          <div class="lj-cat-tools"><span>SEMrush or Ahrefs (API access)</span><span>Zapier or Make.com</span><span>Google Search Console API</span><span>Slack or email (alerts)</span></div>
+        </div>
+      </details>
+
+    </div>
+  </div>
+</section>
+
+<!-- HOSPITALITY & RESTAURANTS -->
+<section class="lj-section lj-industry" id="hospitality">
+  <div class="lj-inner">
+    <div class="lj-industry-head">
+      <div class="lj-industry-icon"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3v8a2 2 0 0 0 4 0V3"></path><path d="M8 11v10"></path><path d="M16 3v18"></path><path d="M16 3c2 0 3 1.5 3 4s-1 4-3 4"></path></svg></div>
+      <div>
+        <h2>Hospitality &amp; Restaurants</h2>
+        <span>3 automations</span>
+      </div>
+    </div>
+    <div class="lj-cat-list">
+
+      <details class="lj-cat-item">
+        <summary>
+          <div><span class="lj-cat-role">Restaurant Owner / General Manager</span><h3>Reservation &amp; Waitlist Management System</h3></div>
+          <svg class="lj-cat-chevron" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg>
+        </summary>
+        <div class="lj-cat-body">
+          <p>Reservations and waitlist entries from the website, phone, and walk-ins are all automatically consolidated into one system, table turn times are tracked automatically, and guests get an automated text the moment their table is ready — reducing the front-of-house chaos of juggling a paper waitlist and a separate reservation book.</p>
+          <span class="lj-cat-tools-label">Tools Required</span>
+          <div class="lj-cat-tools"><span>OpenTable, Resy, or Toast (reservation platform)</span><span>Zapier or Make.com</span><span>Twilio (SMS)</span></div>
+        </div>
+      </details>
+
+      <details class="lj-cat-item">
+        <summary>
+          <div><span class="lj-cat-role">Reservations Manager</span><h3>Review Response &amp; Reputation Monitoring System</h3></div>
+          <svg class="lj-cat-chevron" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg>
+        </summary>
+        <div class="lj-cat-body">
+          <p>New reviews across Google, Yelp, and TripAdvisor are automatically pulled into one dashboard, with an AI-drafted response ready for approval within minutes of posting — so the reservations manager can respond to every review quickly and consistently instead of checking four different apps throughout the day.</p>
+          <span class="lj-cat-tools-label">Tools Required</span>
+          <div class="lj-cat-tools"><span>Podium or Birdeye (review aggregation)</span><span>Zapier or Make.com</span><span>OpenAI API (draft responses)</span><span>Slack (approval alerts)</span></div>
+        </div>
+      </details>
+
+      <details class="lj-cat-item">
+        <summary>
+          <div><span class="lj-cat-role">HR / Staffing Manager</span><h3>Employee Scheduling &amp; Shift Swap System</h3></div>
+          <svg class="lj-cat-chevron" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg>
+        </summary>
+        <div class="lj-cat-body">
+          <p>Staff can request a shift swap or call out through a simple text-based system, which automatically checks eligibility, offers the open shift to qualified team members in order of seniority or availability, and updates the master schedule the moment someone accepts — cutting out the group-chat scramble that usually falls on the HR manager to referee.</p>
+          <span class="lj-cat-tools-label">Tools Required</span>
+          <div class="lj-cat-tools"><span>7shifts or Deputy (scheduling platform)</span><span>Zapier or Make.com</span><span>Twilio (SMS)</span></div>
+        </div>
+      </details>
+
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION & TRAINING -->
+<section class="lj-section lj-industry" id="education">
+  <div class="lj-inner">
+    <div class="lj-industry-head">
+      <div class="lj-industry-icon"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l10 5-10 5L2 8l10-5z"></path><path d="M6 11v5c0 1.5 3 3 6 3s6-1.5 6-3v-5"></path></svg></div>
+      <div>
+        <h2>Education &amp; Training</h2>
+        <span>2 automations</span>
+      </div>
+    </div>
+    <div class="lj-cat-list">
+
+      <details class="lj-cat-item">
+        <summary>
+          <div><span class="lj-cat-role">Enrollment Coordinator</span><h3>Lead Nurture &amp; Enrollment Follow-Up System</h3></div>
+          <svg class="lj-cat-chevron" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg>
+        </summary>
+        <div class="lj-cat-body">
+          <p>Prospective students who request information are automatically enrolled in a nurture sequence covering program details, financial aid info, and testimonials, with reminders sent as application deadlines approach — and the moment a prospect goes quiet, the coordinator gets an alert to make a personal follow-up call, ensuring no lead falls through the cracks.</p>
+          <span class="lj-cat-tools-label">Tools Required</span>
+          <div class="lj-cat-tools"><span>CRM (e.g., HubSpot or Salesforce Education Cloud)</span><span>Zapier or Make.com</span><span>Mailchimp or ActiveCampaign</span><span>Twilio (SMS)</span></div>
+        </div>
+      </details>
+
+      <details class="lj-cat-item">
+        <summary>
+          <div><span class="lj-cat-role">School / Program Administrator</span><h3>Attendance Tracking &amp; Parent Notification System</h3></div>
+          <svg class="lj-cat-chevron" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg>
+        </summary>
+        <div class="lj-cat-body">
+          <p>Daily attendance entered by instructors is automatically checked against expected enrollment, and parents or guardians of absent students receive an immediate notification — while the administrator gets a weekly attendance-pattern report flagging students who may need outreach, all without manual cross-checking of rosters.</p>
+          <span class="lj-cat-tools-label">Tools Required</span>
+          <div class="lj-cat-tools"><span>Student information system (e.g., PowerSchool or a simple LMS)</span><span>Zapier or Make.com</span><span>Twilio or email (notifications)</span><span>Google Sheets or Airtable (pattern reporting)</span></div>
+        </div>
+      </details>
+
+    </div>
+  </div>
+</section>
+
+<!-- PLATFORM TEASER -->
 <section class="lj-section">
+  <div class="lj-platform-teaser">
+    <div class="lj-platform-teaser-text">
+      <h2>Need Something Bigger Than One Automation?</h2>
+      <p>Obsolescence Management, ERP Implementation, Managed SaaS, and LMS Deployment — full-scale platform solutions for businesses ready to invest in broader systems infrastructure.</p>
+    </div>
+    <a href="../solutions" class="lj-btn lj-btn-cyan">See Platform Solutions</a>
+  </div>
+</section>
+
+<!-- HOW PRICING WORKS -->
+<section class="lj-section" style="padding-top:0;">
   <div class="lj-inner">
     <div class="lj-auto-pricing-head">
       <span class="lj-eyebrow">How It's Priced</span>
