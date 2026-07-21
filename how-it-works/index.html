@@ -11,7 +11,7 @@
         <meta property="og:title" content="How It Works | LJ Web Management"/>
         <meta property="og:site_name" content="LJ Web Management"/>
         <meta property="og:url" content="https://ljwebmanagement.com/how-it-works"/>
-        <meta property="og:image" content="https://ljwebmanagement.com/web/image/website/1/social_default_image?unique=b6ce39d"/>
+        <meta property="og:image" content="https://ljwebmanagement.com/assets/social-share.png"/>
         <meta property="og:description" content="See how LJ Web Management turns repetitive workflows into custom AI solutions—from discovery and design to launch, support, and ongoing improvements."/>
             
         <meta name="twitter:card" content="summary_large_image"/>
@@ -19,9 +19,9 @@
         <link rel="canonical" href="https://ljwebmanagement.com/how-it-works"/>
         
         <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin=""/>
-        <link rel="apple-touch-icon" href="../web/image/website/1/favicon"/>
+        <link rel="apple-touch-icon" href="../assets/favicon.ico"/>
         <title>How It Works | LJ Web Management</title>
-        <link type="image/x-icon" rel="shortcut icon" href="../web/image/website/1/favicon"/>
+        <link type="image/x-icon" rel="shortcut icon" href="../assets/favicon.ico"/>
         <link rel="preload" href="../web/assets/1/89536c4/web.fontawesome.min.woff2" as="font" crossorigin=""/>
         <link rel="preload" href="../web/assets/1/2fde661/web.odoo_ui_icons.min.woff2" as="font" crossorigin=""/>
         <link type="text/css" rel="stylesheet" href="../web/assets/1/80bc15d/web.assets_frontend.min.css"/>
@@ -146,8 +146,8 @@
     </li>
 
     <li role="presentation" class="nav-item ">
-        <a role="menuitem" href="../investments" class="nav-link ">
-            <span>Investments</span>
+        <a role="menuitem" href="../automations" class="nav-link ">
+            <span>Automations</span>
         </a>
     </li>
                     
@@ -224,8 +224,8 @@
     </li>
 
     <li role="presentation" class="nav-item border-top border-bottom px-0">
-        <a role="menuitem" href="../investments" class="nav-link p-3 text-wrap ">
-            <span>Investments</span>
+        <a role="menuitem" href="../automations" class="nav-link p-3 text-wrap ">
+            <span>Automations</span>
         </a>
     </li>
                             
@@ -265,1833 +265,403 @@
     </header>
                 <main class="">
                     
-        <div id="wrap" class="oe_structure oe_empty"><section class="s_embed_code o_colored_level text-center" data-snippet="s_embed_code" data-name="Embed Code">
-        <template class="s_embed_code_saved">
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@700;800&amp;family=Nunito:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<div id="wrap" class="oe_structure"><section class="lj-how">
+<style>
+  .lj-how {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    color: var(--ink);
+    background: var(--white);
+  }
+  .lj-how * { box-sizing: border-box; }
+  .lj-how h1, .lj-how h2, .lj-how h3 {
+    font-family: 'Sora', sans-serif;
+    color: var(--navy);
+    margin: 0;
+  }
+  .lj-how .lj-eyebrow {
+    display: inline-block;
+    font-family: 'Sora', sans-serif;
+    font-weight: 700;
+    font-size: 12.5px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--cyan);
+    margin-bottom: 14px;
+  }
+  .lj-how .lj-section { padding: 88px 24px; }
+  .lj-how .lj-inner { max-width: 1180px; margin: 0 auto; }
+  .lj-how .lj-btn {
+    font-family: 'Sora', sans-serif; font-weight: 700; font-size: 14.5px;
+    padding: 15px 30px; border-radius: 10px; text-decoration: none;
+    display: inline-flex; align-items: center; gap: 8px;
+    transition: transform 0.2s ease, box-shadow 0.25s ease, background 0.2s ease;
+  }
+  .lj-how .lj-btn-primary { background: var(--navy); color: #fff; }
+  .lj-how .lj-btn-primary:hover { background: var(--navy-dark); color: #fff; transform: translateY(-2px); box-shadow: 0 12px 24px rgba(25, 56, 102, 0.25); }
+  .lj-how .lj-btn-outline { background: transparent; color: var(--navy); border: 1.5px solid var(--line); }
+  .lj-how .lj-btn-outline:hover { color: var(--navy); border-color: var(--navy); transform: translateY(-2px); box-shadow: 0 10px 22px rgba(25, 56, 102, 0.1); }
+  .lj-how .lj-btn-cyan { background: var(--cyan); color: #fff; }
+  .lj-how .lj-btn-cyan:hover { background: #189cc9; color: #fff; transform: translateY(-2px); box-shadow: 0 12px 24px rgba(30, 180, 230, 0.3); }
+  .lj-how .lj-btn-outline-light { background: transparent; color: #fff; border: 1.5px solid rgba(255,255,255,0.35); }
+  .lj-how .lj-btn-outline-light:hover { color: #fff; border-color: #fff; transform: translateY(-2px); }
 
-<section class="hiw-hero">
-  <style>
-    .hiw-hero {
-      --ink: #1a1a1a;
-      --bg: #ffffff;
-      --muted: #6b7280;
+  /* ============ HERO ============ */
+  .lj-how-hero { padding: 88px 24px 72px; text-align: center; }
+  .lj-how-hero-inner { max-width: 760px; margin: 0 auto; }
+  .lj-how-hero h1 {
+    font-size: clamp(2.3rem, 4.4vw, 3.4rem);
+    font-weight: 800; line-height: 1.1; letter-spacing: -0.02em;
+    margin-bottom: 20px;
+  }
+  .lj-how-hero p {
+    font-size: 17px; line-height: 1.65; color: var(--body);
+    max-width: 580px; margin: 0 auto 34px;
+  }
+  .lj-how-hero-actions { display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; }
 
-      background: var(--bg);
-      padding: 72px 24px 48px;
-      text-align: center;
-      font-family: 'Nunito', sans-serif;
-    }
-    .hiw-hero * { box-sizing: border-box; }
+  /* ============ PROCESS ============ */
+  .lj-how-process { background: var(--mist); }
+  .lj-how-process-head { text-align: center; max-width: 640px; margin: 0 auto 56px; }
+  .lj-how-process-head h2 { font-size: clamp(1.9rem, 3.2vw, 2.5rem); line-height: 1.2; margin-top: 4px; }
+  .lj-how-process-head p { color: var(--body); font-size: 15.5px; line-height: 1.6; margin: 12px 0 0; }
+  .lj-how-process-row {
+    display: grid; grid-template-columns: repeat(5, 1fr); gap: 18px;
+  }
+  .lj-how-step {
+    background: var(--white); border: 1px solid var(--line);
+    border-radius: 16px; padding: 30px 22px 26px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  }
+  .lj-how-step:hover { transform: translateY(-4px); box-shadow: var(--shadow); border-color: transparent; }
+  .lj-how-step-num {
+    font-family: 'Sora', sans-serif; font-weight: 800; font-size: 13px; color: var(--cyan);
+    letter-spacing: 0.08em; display: block; margin-bottom: 16px;
+  }
+  .lj-how-step-icon {
+    width: 44px; height: 44px; border-radius: 11px; background: var(--navy);
+    display: flex; align-items: center; justify-content: center; color: #fff; margin-bottom: 16px;
+  }
+  .lj-how-step-icon svg { width: 20px; height: 20px; }
+  .lj-how-step h3 { font-size: 16.5px; margin-bottom: 8px; }
+  .lj-how-step p { color: var(--body); font-size: 14px; line-height: 1.6; margin: 0; }
+  @media (max-width: 1024px) { .lj-how-process-row { grid-template-columns: repeat(3, 1fr); } }
+  @media (max-width: 640px) { .lj-how-process-row { grid-template-columns: 1fr; } }
 
-    .hiw-hero-box {
-      position: relative;
-      max-width: 760px;
-      margin: 0 auto;
-      background: #ffffff;
-      border-radius: 28px;
-      padding: 56px 48px;
-      transition: box-shadow 0.35s ease, transform 0.3s ease;
-    }
-    .hiw-hero-box:hover { box-shadow: 0 14px 32px rgba(0, 0, 0, 0.16); transform: translateY(-4px); }
-    @media (prefers-reduced-motion: reduce) {
-      .hiw-hero-box { transition: none, transform 0.3s ease; }
-    }
+  /* ============ COVERAGE GRID ============ */
+  .lj-how-cover-head { text-align: center; max-width: 640px; margin: 0 auto 52px; }
+  .lj-how-cover-head h2 { font-size: clamp(1.9rem, 3.2vw, 2.5rem); line-height: 1.2; margin-top: 4px; }
+  .lj-how-cover-head p { color: var(--body); font-size: 15.5px; line-height: 1.6; margin: 12px 0 0; }
+  .lj-how-cover-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .lj-how-cover-card {
+    background: var(--mist); border: 1px solid var(--line); border-radius: 16px;
+    padding: 28px 26px; transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+  }
+  .lj-how-cover-card:hover { transform: translateY(-4px); background: var(--white); box-shadow: var(--shadow); }
+  .lj-how-cover-icon {
+    width: 44px; height: 44px; border-radius: 10px; background: rgba(30, 180, 230, 0.12);
+    display: flex; align-items: center; justify-content: center; color: var(--cyan); margin-bottom: 16px;
+  }
+  .lj-how-cover-icon svg { width: 21px; height: 21px; }
+  .lj-how-cover-card h3 { font-size: 16.5px; margin-bottom: 6px; }
+  .lj-how-cover-card p { color: var(--body); font-size: 14px; line-height: 1.6; margin: 0; }
+  .lj-how-cover-cta {
+    margin-top: 20px; background: var(--navy); border-radius: 16px;
+    padding: 32px 30px; display: flex; align-items: center; justify-content: space-between;
+    gap: 20px; flex-wrap: wrap;
+  }
+  .lj-how-cover-cta-text h3 { color: #fff; font-size: 18px; margin-bottom: 4px; }
+  .lj-how-cover-cta-text p { color: rgba(255,255,255,0.7); font-size: 14.5px; margin: 0; max-width: 420px; }
+  @media (max-width: 900px) { .lj-how-cover-row { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 560px) {
+    .lj-how-cover-row { grid-template-columns: 1fr; }
+    .lj-how-cover-cta { flex-direction: column; align-items: flex-start; }
+  }
 
-    .hiw-hero-inner {
-      max-width: 760px;
-      margin: 0 auto;
-    }
+  /* ============ BEFORE / AFTER ============ */
+  .lj-how-result { background: var(--mist); }
+  .lj-how-result-head { text-align: center; max-width: 640px; margin: 0 auto 56px; }
+  .lj-how-result-head h2 { font-size: clamp(1.9rem, 3.2vw, 2.5rem); line-height: 1.2; margin-top: 4px; }
+  .lj-how-table { max-width: 880px; margin: 0 auto; background: var(--white); border: 1px solid var(--line); border-radius: 18px; overflow: hidden; }
+  .lj-how-cols {
+    display: grid; grid-template-columns: 1fr 48px 1fr;
+    padding: 20px 28px 0;
+  }
+  .lj-how-cols span {
+    font-family: 'Sora', sans-serif; font-size: 11.5px; font-weight: 700;
+    letter-spacing: 0.1em; text-transform: uppercase;
+  }
+  .lj-how-cols .before-label { color: var(--muted); text-align: right; padding-right: 16px; }
+  .lj-how-cols .after-label { color: var(--cyan); text-align: left; padding-left: 16px; }
+  .lj-how-row {
+    display: grid; grid-template-columns: 1fr 48px 1fr; align-items: center;
+    padding: 20px 28px; border-top: 1px solid var(--line);
+  }
+  .lj-how-before { text-align: right; padding-right: 16px; color: var(--muted); font-size: 15px; text-decoration: line-through; text-decoration-color: #c1633f; text-decoration-thickness: 1.5px; }
+  .lj-how-arrow { display: flex; align-items: center; justify-content: center; color: var(--cyan); }
+  .lj-how-arrow svg { width: 20px; height: 20px; }
+  .lj-how-after { text-align: left; padding-left: 16px; color: var(--ink); font-size: 15.5px; font-weight: 600; }
+  @media (max-width: 640px) {
+    .lj-how-cols, .lj-how-row { grid-template-columns: 1fr 32px 1fr; padding-left: 18px; padding-right: 18px; }
+    .lj-how-before { font-size: 13px; } .lj-how-after { font-size: 14px; }
+  }
 
-    .hiw-hero-head {
-      font-family: 'Baloo 2', sans-serif;
-      font-weight: 800;
-      font-size: clamp(34px, 5vw, 54px);
-      line-height: 1.15;
-      color: var(--ink);
-      margin: 0 0 20px;
-    }
+  /* ============ FAQ ============ */
+  .lj-how-faq-head { text-align: center; max-width: 640px; margin: 0 auto 48px; }
+  .lj-how-faq-head h2 { font-size: clamp(1.9rem, 3.2vw, 2.5rem); line-height: 1.2; margin-top: 4px; }
+  .lj-how-faq-list { max-width: 780px; margin: 0 auto; display: flex; flex-direction: column; gap: 12px; }
+  .lj-how-faq-item { background: var(--mist); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; }
+  .lj-how-faq-item summary {
+    cursor: pointer; list-style: none; display: flex; align-items: center; justify-content: space-between;
+    gap: 16px; padding: 20px 24px; font-family: 'Sora', sans-serif; font-weight: 700; font-size: 15.5px; color: var(--ink);
+  }
+  .lj-how-faq-item summary::-webkit-details-marker { display: none; }
+  .lj-how-faq-chevron { flex-shrink: 0; width: 18px; height: 18px; color: var(--muted); transition: transform 0.2s ease, color 0.2s ease; }
+  .lj-how-faq-item[open] .lj-how-faq-chevron { transform: rotate(180deg); color: var(--cyan); }
+  .lj-how-faq-item p { margin: 0; padding: 0 24px 22px; color: var(--body); font-size: 14.5px; line-height: 1.6; }
+  @media (max-width: 560px) {
+    .lj-how-faq-item summary { padding: 18px 20px; font-size: 15px; }
+    .lj-how-faq-item p { padding: 0 20px 20px; }
+  }
 
-    .hiw-hero-sub {
-      font-weight: 400;
-      font-size: clamp(16px, 1.6vw, 19px);
-      line-height: 1.6;
-      color: var(--muted);
-      max-width: 560px;
-      margin: 0 auto;
-    }
+  /* ============ CLOSING CTA ============ */
+  .lj-how-cta { background: var(--navy); padding: 80px 24px; text-align: center; }
+  .lj-how-cta-inner { max-width: 620px; margin: 0 auto; }
+  .lj-how-cta h2 { color: #fff; font-size: clamp(1.7rem, 3.2vw, 2.3rem); margin-bottom: 14px; }
+  .lj-how-cta p { color: rgba(255,255,255,0.72); font-size: 15.5px; line-height: 1.6; margin: 0 0 32px; }
+  .lj-how-cta-row { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+</style>
 
-    @media (max-width: 560px) {
-      .hiw-hero { padding: 72px 20px 48px; }
-      .hiw-hero-box { padding: 40px 24px; border-radius: 22px; }
-    }
-  </style>
-
-  <div class="hiw-hero-box">
-    <div class="hiw-hero-inner">
-      <h1 class="hiw-hero-head">Wondering How This Actually Works?</h1>
-      <p class="hiw-hero-sub">Here's exactly how we turn the repetitive, disconnected parts of your business into automated systems, no jargon, no guesswork.</p>
+<!-- HERO -->
+<section class="lj-section lj-how-hero">
+  <div class="lj-how-hero-inner">
+    <span class="lj-eyebrow">How It Works</span>
+    <h1>From Bottleneck to Automated, Step by Step</h1>
+    <p>Here's exactly what happens once you reach out — from the first conversation about what's slowing you down, to a working system your team relies on every day. No jargon, no guesswork.</p>
+    <div class="lj-how-hero-actions">
+      <a href="../appointment" class="lj-btn lj-btn-primary">Book a Consultation</a>
+      <a href="../automations" class="lj-btn lj-btn-outline">View Automations</a>
     </div>
   </div>
-</section></template>
-        <div class="s_embed_code_embedded container o_not_editable"><link rel="preconnect" href="https://fonts.googleapis.com"/><link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@700;800&amp;family=Nunito:wght@400;600&amp;display=swap" rel="stylesheet"/><section class="hiw-hero">
-  <style>
-    .hiw-hero {
-      --ink: #1a1a1a;
-      --bg: #ffffff;
-      --muted: #6b7280;
+</section>
 
-      background: var(--bg);
-      padding: 72px 24px 48px;
-      text-align: center;
-      font-family: 'Nunito', sans-serif;
-    }
-    .hiw-hero * { box-sizing: border-box; }
-
-    .hiw-hero-box {
-      position: relative;
-      max-width: 760px;
-      margin: 0 auto;
-      background: #ffffff;
-      border-radius: 28px;
-      padding: 56px 48px;
-      transition: box-shadow 0.35s ease, transform 0.3s ease;
-    }
-    .hiw-hero-box:hover { box-shadow: 0 14px 32px rgba(0, 0, 0, 0.16); transform: translateY(-4px); }
-    @media (prefers-reduced-motion: reduce) {
-      .hiw-hero-box { transition: none, transform 0.3s ease; }
-    }
-
-    .hiw-hero-inner {
-      max-width: 760px;
-      margin: 0 auto;
-    }
-
-    .hiw-hero-head {
-      font-family: 'Baloo 2', sans-serif;
-      font-weight: 800;
-      font-size: clamp(34px, 5vw, 54px);
-      line-height: 1.15;
-      color: var(--ink);
-      margin: 0 0 20px;
-    }
-
-    .hiw-hero-sub {
-      font-weight: 400;
-      font-size: clamp(16px, 1.6vw, 19px);
-      line-height: 1.6;
-      color: var(--muted);
-      max-width: 560px;
-      margin: 0 auto;
-    }
-
-    @media (max-width: 560px) {
-      .hiw-hero { padding: 72px 20px 48px; }
-      .hiw-hero-box { padding: 40px 24px; border-radius: 22px; }
-    }
-  </style>
-
-  <div class="hiw-hero-box">
-    <div class="hiw-hero-inner">
-      <h1 class="hiw-hero-head">Wondering How This Actually Works?</h1>
-      <p class="hiw-hero-sub">Here's exactly how we turn the repetitive, disconnected parts of your business into automated systems, no jargon, no guesswork.</p>
+<!-- PROCESS -->
+<section class="lj-section lj-how-process">
+  <div class="lj-inner">
+    <div class="lj-how-process-head">
+      <span class="lj-eyebrow">The Full Process</span>
+      <h2>Five Steps From First Call to Live System</h2>
+      <p>Every project follows the same process, so you always know what's happening next and why.</p>
     </div>
-  </div>
-</section></div>
-    </section><section class="s_embed_code text-center o_colored_level" data-snippet="s_embed_code" data-name="Embed Code">
-        <template class="s_embed_code_saved">
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link href="https://fonts.googleapis.com/css2?family=Lora:wght@600;700&amp;family=Nunito:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+    <div class="lj-how-process-row">
 
-<section class="steps3">
-  <style>
-    .steps3 {
-      --ink: #1a1a1a;
-      --bg: #ffffff;
-      --card: #f3f4f6;
-      --blue: #1EB4E6;
-      --muted: #6b7280;
-      --line: #d7dbe2;
-
-      background: var(--bg);
-      color: var(--ink);
-      padding: 64px 24px 28px;
-      font-family: 'Nunito', sans-serif;
-    }
-    .steps3 * { box-sizing: border-box; }
-    .steps3-inner { max-width: 1100px; margin: 0 auto; }
-
-    .steps3-eyebrow {
-      display: block;
-      text-align: center;
-      font-weight: 800;
-      font-size: 13px;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--blue);
-      margin-bottom: 14px;
-    }
-    .steps3-head {
-      font-family: 'Lora', serif;
-      font-weight: 700;
-      font-size: clamp(28px, 3.2vw, 38px);
-      line-height: 1.2;
-      text-align: center;
-      margin: 0 0 56px;
-      color: var(--ink);
-    }
-
-    .steps3-row {
-      position: relative;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 32px;
-    }
-
-    /* connecting path (desktop) */
-    .steps3-path {
-      position: absolute;
-      top: 28px;
-      left: 16.6%;
-      right: 16.6%;
-      height: 2px;
-      background: repeating-linear-gradient(to right, var(--line) 0 6px, transparent 6px 12px);
-      z-index: 0;
-    }
-    .steps3-arrow {
-      position: absolute;
-      top: 21px;
-      width: 14px;
-      height: 14px;
-      z-index: 1;
-      color: var(--line);
-    }
-    .steps3-arrow.a1 { left: calc(33.33% - 7px); }
-    .steps3-arrow.a2 { left: calc(66.66% - 7px); }
-
-    .step {
-      position: relative;
-      z-index: 2;
-      text-align: center;
-      padding: 0 8px;
-    }
-
-    .step-icon {
-      width: 56px;
-      height: 56px;
-      border-radius: 50%;
-      background: var(--card);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto 20px;
-      color: var(--ink);
-      transition: color 0.2s ease, background 0.2s ease, transform 0.2s ease;
-    }
-    .step:hover .step-icon {
-      color: var(--blue);
-      transform: translateY(-3px);
-    }
-    .step-icon svg { width: 26px; height: 26px; }
-
-    .step-title {
-      font-family: 'Lora', serif;
-      font-weight: 700;
-      font-size: 19px;
-      margin: 0 0 8px;
-      color: var(--ink);
-    }
-    .step-desc {
-      color: var(--muted);
-      font-size: 15px;
-      line-height: 1.6;
-      margin: 0 auto;
-      max-width: 260px;
-    }
-
-    /* mobile: stack + vertical connector */
-    @media (max-width: 768px) {
-      .steps3 { padding: 60px 20px 30px; }
-      .steps3-head { margin-bottom: 40px; }
-      .steps3-row {
-        grid-template-columns: 1fr;
-        gap: 0;
-      }
-      .steps3-path, .steps3-arrow { display: none; }
-      .step { padding: 0 8px 44px; }
-      .step:not(:last-child)::after {
-        content: "";
-        position: absolute;
-        bottom: 14px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 2px;
-        height: 24px;
-        background: repeating-linear-gradient(to bottom, var(--line) 0 5px, transparent 5px 10px);
-      }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      .step-icon { transition: none; }
-    }
-  </style>
-
-  <div class="steps3-inner">
-    <span class="steps3-eyebrow">Our Process</span>
-    <h2 class="steps3-head">How We Cut Through The Delay</h2>
-    <div class="steps3-row">
-
-      <div class="steps3-path"></div>
-      <svg class="steps3-arrow a1" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"></path></svg>
-      <svg class="steps3-arrow a2" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"></path></svg>
-
-      <div class="step">
-        <div class="step-icon">
-          <svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3.5 2"></path>
-          </svg>
-        </div>
-        <h3 class="step-title">Identify the Delays</h3>
-        <p class="step-desc">Tell us what's repetitive, disconnected, or slowing your business down.</p>
+      <div class="lj-how-step">
+        <span class="lj-how-step-num">01</span>
+        <div class="lj-how-step-icon"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v11H8l-4 4V5z"></path><circle cx="9" cy="10.5" r="0.8" fill="currentColor" stroke="none"></circle><circle cx="12" cy="10.5" r="0.8" fill="currentColor" stroke="none"></circle><circle cx="15" cy="10.5" r="0.8" fill="currentColor" stroke="none"></circle></svg></div>
+        <h3>Discovery Call</h3>
+        <p>We talk through your workflows and pinpoint exactly where time and accuracy are being lost.</p>
       </div>
 
-      <div class="step">
-        <div class="step-icon">
-          <svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="9" cy="9" r="2.6"></circle><path d="M9 3.5v1.6M9 12.9v1.6M3.5 9h1.6M12.9 9h1.6M5.6 5.6l1.2 1.2M10.2 10.2l1.2 1.2M12.4 5.6l-1.2 1.2M7.8 10.2l-1.2 1.2"></path>
-            <circle cx="16.5" cy="16.5" r="2.2"></circle><path d="M16.5 12v1.3M16.5 19.7V21M12 16.5h1.3M19.7 16.5H21M13.6 13.6l.9.9M18.5 18.5l.9.9M19.4 13.6l-.9.9M14.5 18.5l-.9.9"></path>
-          </svg>
-        </div>
-        <h3 class="step-title">Build the Automation</h3>
-        <p class="step-desc">We connect your tools and build the systems that do the work.</p>
+      <div class="lj-how-step">
+        <span class="lj-how-step-num">02</span>
+        <div class="lj-how-step-icon"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 4h9l3 3v13H6z"></path><path d="M9.5 12.5l1.8 1.8 3.2-3.6"></path></svg></div>
+        <h3>Scope &amp; Proposal</h3>
+        <p>You get a clear breakdown of what we'll build, which tools it connects to, and a flat price — before work starts.</p>
       </div>
 
-      <div class="step">
-        <div class="step-icon">
-          <svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M5 21V9l7-5 7 5v12"></path><path d="M9 21v-6h6v6"></path><path d="M9 12h.01M15 12h.01M9 9h.01M15 9h.01"></path>
-          </svg>
-        </div>
-        <h3 class="step-title">Keep Business Moving</h3>
-        <p class="step-desc">Your team saves time, responds faster, and runs more efficiently.</p>
+      <div class="lj-how-step">
+        <span class="lj-how-step-num">03</span>
+        <div class="lj-how-step-icon"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="9" r="2.6"></circle><path d="M9 3.5v1.6M9 12.9v1.6M3.5 9h1.6M12.9 9h1.6M5.6 5.6l1.2 1.2M10.2 10.2l1.2 1.2M12.4 5.6l-1.2 1.2M7.8 10.2l-1.2 1.2"></path><circle cx="16.5" cy="16.5" r="2.2"></circle><path d="M16.5 12v1.3M16.5 19.7V21M12 16.5h1.3M19.7 16.5H21"></path></svg></div>
+        <h3>Build &amp; Connect</h3>
+        <p>We build the automation and connect it to the tools you already use — no rip-and-replace.</p>
+      </div>
+
+      <div class="lj-how-step">
+        <span class="lj-how-step-num">04</span>
+        <div class="lj-how-step-icon"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M9 12.5l2 2 4-4.5"></path></svg></div>
+        <h3>Test Together</h3>
+        <p>You review the system on real examples from your business, and we tune it based on what you see.</p>
+      </div>
+
+      <div class="lj-how-step">
+        <span class="lj-how-step-num">05</span>
+        <div class="lj-how-step-icon"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L4 14h7l-1 8 9-12h-7l1-8z"></path></svg></div>
+        <h3>Launch &amp; Support</h3>
+        <p>It goes live, your team gets a walkthrough, and we stay on to support things as they change.</p>
       </div>
 
     </div>
   </div>
-</section></template>
-        <div class="s_embed_code_embedded container o_not_editable"><link rel="preconnect" href="https://fonts.googleapis.com"/><link href="https://fonts.googleapis.com/css2?family=Lora:wght@600;700&amp;family=Nunito:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/><section class="steps3">
-  <style>
-    .steps3 {
-      --ink: #1a1a1a;
-      --bg: #ffffff;
-      --card: #f3f4f6;
-      --blue: #1EB4E6;
-      --muted: #6b7280;
-      --line: #d7dbe2;
+</section>
 
-      background: var(--bg);
-      color: var(--ink);
-      padding: 64px 24px 28px;
-      font-family: 'Nunito', sans-serif;
-    }
-    .steps3 * { box-sizing: border-box; }
-    .steps3-inner { max-width: 1100px; margin: 0 auto; }
-
-    .steps3-eyebrow {
-      display: block;
-      text-align: center;
-      font-weight: 800;
-      font-size: 13px;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--blue);
-      margin-bottom: 14px;
-    }
-    .steps3-head {
-      font-family: 'Lora', serif;
-      font-weight: 700;
-      font-size: clamp(28px, 3.2vw, 38px);
-      line-height: 1.2;
-      text-align: center;
-      margin: 0 0 56px;
-      color: var(--ink);
-    }
-
-    .steps3-row {
-      position: relative;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 32px;
-    }
-
-    /* connecting path (desktop) */
-    .steps3-path {
-      position: absolute;
-      top: 28px;
-      left: 16.6%;
-      right: 16.6%;
-      height: 2px;
-      background: repeating-linear-gradient(to right, var(--line) 0 6px, transparent 6px 12px);
-      z-index: 0;
-    }
-    .steps3-arrow {
-      position: absolute;
-      top: 21px;
-      width: 14px;
-      height: 14px;
-      z-index: 1;
-      color: var(--line);
-    }
-    .steps3-arrow.a1 { left: calc(33.33% - 7px); }
-    .steps3-arrow.a2 { left: calc(66.66% - 7px); }
-
-    .step {
-      position: relative;
-      z-index: 2;
-      text-align: center;
-      padding: 0 8px;
-    }
-
-    .step-icon {
-      width: 56px;
-      height: 56px;
-      border-radius: 50%;
-      background: var(--card);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto 20px;
-      color: var(--ink);
-      transition: color 0.2s ease, background 0.2s ease, transform 0.2s ease;
-    }
-    .step:hover .step-icon {
-      color: var(--blue);
-      transform: translateY(-3px);
-    }
-    .step-icon svg { width: 26px; height: 26px; }
-
-    .step-title {
-      font-family: 'Lora', serif;
-      font-weight: 700;
-      font-size: 19px;
-      margin: 0 0 8px;
-      color: var(--ink);
-    }
-    .step-desc {
-      color: var(--muted);
-      font-size: 15px;
-      line-height: 1.6;
-      margin: 0 auto;
-      max-width: 260px;
-    }
-
-    /* mobile: stack + vertical connector */
-    @media (max-width: 768px) {
-      .steps3 { padding: 60px 20px 30px; }
-      .steps3-head { margin-bottom: 40px; }
-      .steps3-row {
-        grid-template-columns: 1fr;
-        gap: 0;
-      }
-      .steps3-path, .steps3-arrow { display: none; }
-      .step { padding: 0 8px 44px; }
-      .step:not(:last-child)::after {
-        content: "";
-        position: absolute;
-        bottom: 14px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 2px;
-        height: 24px;
-        background: repeating-linear-gradient(to bottom, var(--line) 0 5px, transparent 5px 10px);
-      }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      .step-icon { transition: none; }
-    }
-  </style>
-
-  <div class="steps3-inner">
-    <span class="steps3-eyebrow">Our Process</span>
-    <h2 class="steps3-head">How We Cut Through The Delay</h2>
-    <div class="steps3-row">
-
-      <div class="steps3-path"></div>
-      <svg class="steps3-arrow a1" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"></path></svg>
-      <svg class="steps3-arrow a2" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"></path></svg>
-
-      <div class="step">
-        <div class="step-icon">
-          <svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3.5 2"></path>
-          </svg>
-        </div>
-        <h3 class="step-title">Identify the Delays</h3>
-        <p class="step-desc">Tell us what's repetitive, disconnected, or slowing your business down.</p>
-      </div>
-
-      <div class="step">
-        <div class="step-icon">
-          <svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="9" cy="9" r="2.6"></circle><path d="M9 3.5v1.6M9 12.9v1.6M3.5 9h1.6M12.9 9h1.6M5.6 5.6l1.2 1.2M10.2 10.2l1.2 1.2M12.4 5.6l-1.2 1.2M7.8 10.2l-1.2 1.2"></path>
-            <circle cx="16.5" cy="16.5" r="2.2"></circle><path d="M16.5 12v1.3M16.5 19.7V21M12 16.5h1.3M19.7 16.5H21M13.6 13.6l.9.9M18.5 18.5l.9.9M19.4 13.6l-.9.9M14.5 18.5l-.9.9"></path>
-          </svg>
-        </div>
-        <h3 class="step-title">Build the Automation</h3>
-        <p class="step-desc">We connect your tools and build the systems that do the work.</p>
-      </div>
-
-      <div class="step">
-        <div class="step-icon">
-          <svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M5 21V9l7-5 7 5v12"></path><path d="M9 21v-6h6v6"></path><path d="M9 12h.01M15 12h.01M9 9h.01M15 9h.01"></path>
-          </svg>
-        </div>
-        <h3 class="step-title">Keep Business Moving</h3>
-        <p class="step-desc">Your team saves time, responds faster, and runs more efficiently.</p>
-      </div>
-
+<!-- WHAT WE CAN AUTOMATE -->
+<section class="lj-section">
+  <div class="lj-inner">
+    <div class="lj-how-cover-head">
+      <span class="lj-eyebrow">Automation Coverage</span>
+      <h2>What We Can Automate</h2>
+      <p>Every business has a version of these bottlenecks. Here's where our systems quietly take over.</p>
     </div>
-  </div>
-</section></div>
-    </section><section class="s_embed_code o_colored_level text-start" data-snippet="s_embed_code" data-name="Embed Code">
-        <template class="s_embed_code_saved">
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link href="https://fonts.googleapis.com/css2?family=Lora:wght@600;700&amp;family=Nunito:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+    <div class="lj-how-cover-row">
 
-<section class="wwca">
-  <style>
-    .wwca {
-      --ink: #1a1a1a;
-      --bg: #ffffff;
-      --card: #f3f4f6;
-      --card-hover: #eef1f7;
-      --blue: #1EB4E6;
-      --blue-glow: rgba(30, 180, 230, 0.28);
-      --muted: #6b7280;
-
-      background: var(--bg);
-      color: var(--ink);
-      padding: 64px 24px;
-      font-family: 'Nunito', sans-serif;
-    }
-    .wwca * { box-sizing: border-box; }
-    .wwca .wwca-inner { max-width: 1200px; margin: 0 auto; }
-
-    .wwca-eyebrow {
-      display: block;
-      font-weight: 800;
-      font-size: 13px;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--blue);
-      margin-bottom: 14px;
-    }
-    .wwca-head {
-      font-family: 'Lora', serif;
-      font-weight: 700;
-      font-size: clamp(30px, 3.4vw, 42px);
-      line-height: 1.2;
-      margin: 0 0 14px;
-      color: var(--ink);
-    }
-    .wwca-sub {
-      font-weight: 400;
-      color: var(--muted);
-      font-size: 17px;
-      line-height: 1.6;
-      max-width: 560px;
-      margin: 0 0 52px;
-    }
-
-    .wwca-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
-    }
-
-    .wwca-card {
-      background: var(--card);
-      border-radius: 20px;
-      padding: 32px 28px;
-      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
-    }
-    .wwca-card:hover { transform: translateY(-4px);
-      background: var(--card-hover);
-      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.18); }
-
-    .wwca-icon {
-      color: var(--ink);
-      margin-bottom: 18px;
-      transition: color 0.2s ease;
-    }
-    .wwca-card:hover .wwca-icon { color: var(--blue); }
-    .wwca-icon svg { width: 30px; height: 30px; }
-
-    .wwca-title {
-      font-family: 'Lora', serif;
-      font-weight: 700;
-      font-size: 19px;
-      margin: 0 0 8px;
-      color: var(--ink);
-    }
-    .wwca-desc {
-      color: var(--muted);
-      font-size: 15px;
-      line-height: 1.6;
-      margin: 0;
-    }
-
-    @media (max-width: 900px) {
-      .wwca-grid { grid-template-columns: repeat(2, 1fr); }
-    }
-    @media (max-width: 560px) {
-      .wwca { padding: 60px 20px; }
-      .wwca-grid { grid-template-columns: 1fr; }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      .wwca-card { transition: none; }
-    }
-
-    .wwca-cta {
-      margin-top: 28px;
-      background: var(--card);
-      border-radius: 20px;
-      padding: 36px 32px;
-      text-align: center;
-      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
-    }
-    .wwca-cta:hover { transform: translateY(-4px);
-      background: var(--card-hover);
-      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.18); }
-    .wwca-cta-text h3 {
-      font-family: 'Lora', serif;
-      font-weight: 700;
-      font-size: 20px;
-      margin: 0 0 6px;
-      color: var(--ink);
-    }
-    .wwca-cta-text p {
-      color: var(--muted);
-      font-size: 15px;
-      margin: 0 auto;
-      max-width: 480px;
-    }
-    .wwca-cta-btn {
-      display: inline-block;
-      background: #193866;
-      color: #fff;
-      font-weight: 700;
-      font-size: 15px;
-      text-decoration: none;
-      padding: 14px 28px;
-      border-radius: 999px;
-      white-space: nowrap;
-      transition: background 0.2s ease, transform 0.2s ease;
-    }
-    .wwca-cta-btn:hover {
-      background: var(--blue);
-      color: #fff;
-      transform: translateY(-2px);
-    }
-    @media (max-width: 560px) {
-      .wwca-cta { padding: 28px 24px; }
-      .wwca-cta-btn { width: 100%; text-align: center; }
-    }
-  </style>
-
-  <div class="wwca-inner">
-    <span class="wwca-eyebrow">Automation Coverage</span>
-    <h2 class="wwca-head">What We Can Automate</h2>
-    <p class="wwca-sub">Every business has a version of these bottlenecks. Here's where our systems quietly take over.</p>
-
-    <div class="wwca-grid">
-
-      <div class="wwca-card">
-        <div class="wwca-icon">
-          <svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M4 5h16v11H8l-4 4V5z"></path><circle cx="9" cy="10.5" r="0.8" fill="currentColor" stroke="none"></circle><circle cx="12" cy="10.5" r="0.8" fill="currentColor" stroke="none"></circle><circle cx="15" cy="10.5" r="0.8" fill="currentColor" stroke="none"></circle>
-          </svg>
-        </div>
-        <h3 class="wwca-title">AI Website Assistants</h3>
-        <p class="wwca-desc">Answer common questions, collect information, and qualify potential customers.</p>
+      <div class="lj-how-cover-card">
+        <div class="lj-how-cover-icon"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v11H8l-4 4V5z"></path><circle cx="9" cy="10.5" r="0.8" fill="currentColor" stroke="none"></circle><circle cx="12" cy="10.5" r="0.8" fill="currentColor" stroke="none"></circle><circle cx="15" cy="10.5" r="0.8" fill="currentColor" stroke="none"></circle></svg></div>
+        <h3>AI Website Assistants</h3>
+        <p>Answer common questions, collect information, and qualify potential customers automatically.</p>
       </div>
 
-      <div class="wwca-card">
-        <div class="wwca-icon">
-          <svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M4 6h16v12H4z"></path><path d="M4 7l8 6 8-6"></path>
-          </svg>
-        </div>
-        <h3 class="wwca-title">Email and Follow-Up</h3>
-        <p class="wwca-desc">Send timely, personalized messages without relying on manual reminders.</p>
+      <div class="lj-how-cover-card">
+        <div class="lj-how-cover-icon"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16v12H4z"></path><path d="M4 7l8 6 8-6"></path></svg></div>
+        <h3>Email &amp; Follow-Up</h3>
+        <p>Send timely, personalized messages without relying on someone to remember to do it.</p>
       </div>
 
-      <div class="wwca-card">
-        <div class="wwca-icon">
-          <svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M4 19V6"></path><path d="M4 19h16"></path><path d="M8 15l3-4 3 3 4-6"></path>
-          </svg>
-        </div>
-        <h3 class="wwca-title">CRM and Sales</h3>
-        <p class="wwca-desc">Organize leads, update records, assign tasks, and keep opportunities moving.</p>
+      <div class="lj-how-cover-card">
+        <div class="lj-how-cover-icon"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V6"></path><path d="M4 19h16"></path><path d="M8 15l3-4 3 3 4-6"></path></svg></div>
+        <h3>CRM &amp; Sales</h3>
+        <p>Organize leads, update records, assign tasks, and keep opportunities moving forward.</p>
       </div>
 
-      <div class="wwca-card">
-        <div class="wwca-icon">
-          <svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M4 14a5 5 0 0 1 5-5h6.5"></path><path d="M13 6.5l2.5 2.5-2.5 2.5"></path><path d="M20 10a5 5 0 0 1-5 5H8.5"></path><path d="M11 17.5L8.5 15l2.5-2.5"></path>
-          </svg>
-        </div>
-        <h3 class="wwca-title">Customer Support</h3>
-        <p class="wwca-desc">Route requests, notify the right people, and provide faster responses.</p>
+      <div class="lj-how-cover-card">
+        <div class="lj-how-cover-icon"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14a5 5 0 0 1 5-5h6.5"></path><path d="M13 6.5l2.5 2.5-2.5 2.5"></path><path d="M20 10a5 5 0 0 1-5 5H8.5"></path><path d="M11 17.5L8.5 15l2.5-2.5"></path></svg></div>
+        <h3>Customer Support</h3>
+        <p>Route requests to the right person, send acknowledgments, and speed up response times.</p>
       </div>
 
-      <div class="wwca-card">
-        <div class="wwca-icon">
-          <svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M4 6h11l3 3v9H4z"></path><path d="M4 6v3h14"></path><path d="M8 15h6"></path>
-          </svg>
-        </div>
-        <h3 class="wwca-title">Operations and Reporting</h3>
-        <p class="wwca-desc">Move information between systems and produce routine reports automatically.</p>
+      <div class="lj-how-cover-card">
+        <div class="lj-how-cover-icon"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h11l3 3v9H4z"></path><path d="M4 6v3h14"></path><path d="M8 15h6"></path></svg></div>
+        <h3>Operations &amp; Reporting</h3>
+        <p>Move information between systems and generate routine reports without manual pulls.</p>
       </div>
 
-      <div class="wwca-card">
-        <div class="wwca-icon">
-          <svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M6 4h9l3 3v13H6z"></path><path d="M9.5 12.5l1.8 1.8 3.2-3.6"></path>
-          </svg>
-        </div>
-        <h3 class="wwca-title">Onboarding and Compliance</h3>
-        <p class="wwca-desc">Coordinate forms, documents, reminders, training, and approvals.</p>
+      <div class="lj-how-cover-card">
+        <div class="lj-how-cover-icon"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 4h9l3 3v13H6z"></path><path d="M9.5 12.5l1.8 1.8 3.2-3.6"></path></svg></div>
+        <h3>Onboarding &amp; Compliance</h3>
+        <p>Coordinate forms, documents, reminders, training steps, and approvals automatically.</p>
       </div>
 
     </div>
 
-    <div class="wwca-cta">
-      <div class="wwca-cta-text">
+    <div class="lj-how-cover-cta">
+      <div class="lj-how-cover-cta-text">
         <h3>Don't see what you need?</h3>
         <p>If it's repetitive, disconnected, or slowing your team down, chances are we can automate it.</p>
       </div>
+      <a href="../contactus" class="lj-btn lj-btn-cyan">Tell Us About It</a>
     </div>
   </div>
-</section></template>
-        <div class="s_embed_code_embedded o_not_editable container"><link rel="preconnect" href="https://fonts.googleapis.com"/><link href="https://fonts.googleapis.com/css2?family=Lora:wght@600;700&amp;family=Nunito:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/><section class="wwca">
-  <style>
-    .wwca {
-      --ink: #1a1a1a;
-      --bg: #ffffff;
-      --card: #f3f4f6;
-      --card-hover: #eef1f7;
-      --blue: #1EB4E6;
-      --blue-glow: rgba(30, 180, 230, 0.28);
-      --muted: #6b7280;
+</section>
 
-      background: var(--bg);
-      color: var(--ink);
-      padding: 64px 24px;
-      font-family: 'Nunito', sans-serif;
-    }
-    .wwca * { box-sizing: border-box; }
-    .wwca .wwca-inner { max-width: 1200px; margin: 0 auto; }
-
-    .wwca-eyebrow {
-      display: block;
-      font-weight: 800;
-      font-size: 13px;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--blue);
-      margin-bottom: 14px;
-    }
-    .wwca-head {
-      font-family: 'Lora', serif;
-      font-weight: 700;
-      font-size: clamp(30px, 3.4vw, 42px);
-      line-height: 1.2;
-      margin: 0 0 14px;
-      color: var(--ink);
-    }
-    .wwca-sub {
-      font-weight: 400;
-      color: var(--muted);
-      font-size: 17px;
-      line-height: 1.6;
-      max-width: 560px;
-      margin: 0 0 52px;
-    }
-
-    .wwca-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
-    }
-
-    .wwca-card {
-      background: var(--card);
-      border-radius: 20px;
-      padding: 32px 28px;
-      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
-    }
-    .wwca-card:hover { transform: translateY(-4px);
-      background: var(--card-hover);
-      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.18); }
-
-    .wwca-icon {
-      color: var(--ink);
-      margin-bottom: 18px;
-      transition: color 0.2s ease;
-    }
-    .wwca-card:hover .wwca-icon { color: var(--blue); }
-    .wwca-icon svg { width: 30px; height: 30px; }
-
-    .wwca-title {
-      font-family: 'Lora', serif;
-      font-weight: 700;
-      font-size: 19px;
-      margin: 0 0 8px;
-      color: var(--ink);
-    }
-    .wwca-desc {
-      color: var(--muted);
-      font-size: 15px;
-      line-height: 1.6;
-      margin: 0;
-    }
-
-    @media (max-width: 900px) {
-      .wwca-grid { grid-template-columns: repeat(2, 1fr); }
-    }
-    @media (max-width: 560px) {
-      .wwca { padding: 60px 20px; }
-      .wwca-grid { grid-template-columns: 1fr; }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      .wwca-card { transition: none; }
-    }
-
-    .wwca-cta {
-      margin-top: 28px;
-      background: var(--card);
-      border-radius: 20px;
-      padding: 36px 32px;
-      text-align: center;
-      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
-    }
-    .wwca-cta:hover { transform: translateY(-4px);
-      background: var(--card-hover);
-      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.18); }
-    .wwca-cta-text h3 {
-      font-family: 'Lora', serif;
-      font-weight: 700;
-      font-size: 20px;
-      margin: 0 0 6px;
-      color: var(--ink);
-    }
-    .wwca-cta-text p {
-      color: var(--muted);
-      font-size: 15px;
-      margin: 0 auto;
-      max-width: 480px;
-    }
-    .wwca-cta-btn {
-      display: inline-block;
-      background: #193866;
-      color: #fff;
-      font-weight: 700;
-      font-size: 15px;
-      text-decoration: none;
-      padding: 14px 28px;
-      border-radius: 999px;
-      white-space: nowrap;
-      transition: background 0.2s ease, transform 0.2s ease;
-    }
-    .wwca-cta-btn:hover {
-      background: var(--blue);
-      color: #fff;
-      transform: translateY(-2px);
-    }
-    @media (max-width: 560px) {
-      .wwca-cta { padding: 28px 24px; }
-      .wwca-cta-btn { width: 100%; text-align: center; }
-    }
-  </style>
-
-  <div class="wwca-inner">
-    <span class="wwca-eyebrow">Automation Coverage</span>
-    <h2 class="wwca-head">What We Can Automate</h2>
-    <p class="wwca-sub">Every business has a version of these bottlenecks. Here's where our systems quietly take over.</p>
-
-    <div class="wwca-grid">
-
-      <div class="wwca-card">
-        <div class="wwca-icon">
-          <svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M4 5h16v11H8l-4 4V5z"></path><circle cx="9" cy="10.5" r="0.8" fill="currentColor" stroke="none"></circle><circle cx="12" cy="10.5" r="0.8" fill="currentColor" stroke="none"></circle><circle cx="15" cy="10.5" r="0.8" fill="currentColor" stroke="none"></circle>
-          </svg>
-        </div>
-        <h3 class="wwca-title">AI Website Assistants</h3>
-        <p class="wwca-desc">Answer common questions, collect information, and qualify potential customers.</p>
-      </div>
-
-      <div class="wwca-card">
-        <div class="wwca-icon">
-          <svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M4 6h16v12H4z"></path><path d="M4 7l8 6 8-6"></path>
-          </svg>
-        </div>
-        <h3 class="wwca-title">Email and Follow-Up</h3>
-        <p class="wwca-desc">Send timely, personalized messages without relying on manual reminders.</p>
-      </div>
-
-      <div class="wwca-card">
-        <div class="wwca-icon">
-          <svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M4 19V6"></path><path d="M4 19h16"></path><path d="M8 15l3-4 3 3 4-6"></path>
-          </svg>
-        </div>
-        <h3 class="wwca-title">CRM and Sales</h3>
-        <p class="wwca-desc">Organize leads, update records, assign tasks, and keep opportunities moving.</p>
-      </div>
-
-      <div class="wwca-card">
-        <div class="wwca-icon">
-          <svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M4 14a5 5 0 0 1 5-5h6.5"></path><path d="M13 6.5l2.5 2.5-2.5 2.5"></path><path d="M20 10a5 5 0 0 1-5 5H8.5"></path><path d="M11 17.5L8.5 15l2.5-2.5"></path>
-          </svg>
-        </div>
-        <h3 class="wwca-title">Customer Support</h3>
-        <p class="wwca-desc">Route requests, notify the right people, and provide faster responses.</p>
-      </div>
-
-      <div class="wwca-card">
-        <div class="wwca-icon">
-          <svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M4 6h11l3 3v9H4z"></path><path d="M4 6v3h14"></path><path d="M8 15h6"></path>
-          </svg>
-        </div>
-        <h3 class="wwca-title">Operations and Reporting</h3>
-        <p class="wwca-desc">Move information between systems and produce routine reports automatically.</p>
-      </div>
-
-      <div class="wwca-card">
-        <div class="wwca-icon">
-          <svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M6 4h9l3 3v13H6z"></path><path d="M9.5 12.5l1.8 1.8 3.2-3.6"></path>
-          </svg>
-        </div>
-        <h3 class="wwca-title">Onboarding and Compliance</h3>
-        <p class="wwca-desc">Coordinate forms, documents, reminders, training, and approvals.</p>
-      </div>
-
+<!-- BEFORE / AFTER -->
+<section class="lj-section lj-how-result">
+  <div class="lj-inner">
+    <div class="lj-how-result-head">
+      <span class="lj-eyebrow">The Result</span>
+      <h2>What Changes Once the Busywork Disappears</h2>
     </div>
 
-    <div class="wwca-cta">
-      <div class="wwca-cta-text">
-        <h3>Don't see what you need?</h3>
-        <p>If it's repetitive, disconnected, or slowing your team down, chances are we can automate it.</p>
+    <div class="lj-how-table">
+      <div class="lj-how-cols">
+        <span class="before-label">Before</span>
+        <span></span>
+        <span class="after-label">After</span>
+      </div>
+
+      <div class="lj-how-row">
+        <div class="lj-how-before">Customers wait hours for a reply</div>
+        <div class="lj-how-arrow"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16M14 6l6 6-6 6"></path></svg></div>
+        <div class="lj-how-after">Faster customer responses</div>
+      </div>
+      <div class="lj-how-row">
+        <div class="lj-how-before">Leads fall through the cracks</div>
+        <div class="lj-how-arrow"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16M14 6l6 6-6 6"></path></svg></div>
+        <div class="lj-how-after">Fewer missed follow-ups</div>
+      </div>
+      <div class="lj-how-row">
+        <div class="lj-how-before">Hours lost retyping the same data</div>
+        <div class="lj-how-arrow"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16M14 6l6 6-6 6"></path></svg></div>
+        <div class="lj-how-after">Less manual data entry</div>
+      </div>
+      <div class="lj-how-row">
+        <div class="lj-how-before">Every task handled a different way</div>
+        <div class="lj-how-arrow"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16M14 6l6 6-6 6"></path></svg></div>
+        <div class="lj-how-after">More consistent processes</div>
+      </div>
+      <div class="lj-how-row">
+        <div class="lj-how-before">Small mistakes turn into big problems</div>
+        <div class="lj-how-arrow"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16M14 6l6 6-6 6"></path></svg></div>
+        <div class="lj-how-after">Fewer avoidable errors</div>
+      </div>
+      <div class="lj-how-row">
+        <div class="lj-how-before">Buried in busywork instead of building the business</div>
+        <div class="lj-how-arrow"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16M14 6l6 6-6 6"></path></svg></div>
+        <div class="lj-how-after">More time for growth</div>
       </div>
     </div>
   </div>
+</section>
+
+<!-- FAQ -->
+<section class="lj-section">
+  <div class="lj-inner">
+    <div class="lj-how-faq-head">
+      <span class="lj-eyebrow">FAQ</span>
+      <h2>Common Questions</h2>
+    </div>
+
+    <div class="lj-how-faq-list">
+      <details class="lj-how-faq-item">
+        <summary>Do I need to replace my current software?
+          <svg class="lj-how-faq-chevron" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg>
+        </summary>
+        <p>Not necessarily. We can usually build the automation around the tools you already use.</p>
+      </details>
+      <details class="lj-how-faq-item">
+        <summary>Can a small business benefit from automation?
+          <svg class="lj-how-faq-chevron" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg>
+        </summary>
+        <p>Yes. Automating even one repetitive, time-consuming process can make a meaningful difference.</p>
+      </details>
+      <details class="lj-how-faq-item">
+        <summary>Will my team stay in control?
+          <svg class="lj-how-faq-chevron" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg>
+        </summary>
+        <p>Yes. Automation handles the steps you choose, while your team keeps control of decisions, exceptions, and customer relationships.</p>
+      </details>
+      <details class="lj-how-faq-item">
+        <summary>What processes can be automated?
+          <svg class="lj-how-faq-chevron" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg>
+        </summary>
+        <p>Most repetitive, rules-based processes. Tell us what you want handled, and we'll confirm what's possible.</p>
+      </details>
+      <details class="lj-how-faq-item">
+        <summary>How long does implementation take?
+          <svg class="lj-how-faq-chevron" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg>
+        </summary>
+        <p>It depends on the tools involved and the complexity of your request. You'll get a clear project scope before development begins.</p>
+      </details>
+      <details class="lj-how-faq-item">
+        <summary>Will you show us how it works?
+          <svg class="lj-how-faq-chevron" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg>
+        </summary>
+        <p>Yes. We'll walk your team through the finished system so everyone knows how to use it.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- CLOSING CTA -->
+<section class="lj-how-cta">
+  <div class="lj-how-cta-inner">
+    <h2>Ready to See It Built Around Your Business?</h2>
+    <p>Tell us what's slowing you down. We'll walk through what's possible and what it would take — no pressure, no obligation.</p>
+    <div class="lj-how-cta-row">
+      <a href="../appointment" class="lj-btn lj-btn-cyan">Book a Consultation</a>
+      <a href="../contactus" class="lj-btn lj-btn-outline-light">Contact Us</a>
+    </div>
+  </div>
+</section>
+
 </section></div>
-    </section><section class="s_embed_code o_colored_level text-center" data-snippet="s_embed_code" data-name="Embed Code">
-        <template class="s_embed_code_saved"><section class="mpa-result">
-  <style>
-    .mpa-result {
-      --ink: #12161F;
-      --muted: #868C99;
-      --before-strike: #C1633F;
-      --after: #0F9E76;
-      --after-dim: #E4F5EF;
-      --line: #DFE2E8;
-      --bg: #FFFFFF;
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-      background: var(--bg);
-      padding: 64px 24px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .mpa-result * { box-sizing: border-box; }
-
-    .mpa-result-head {
-      text-align: center;
-      max-width: 640px;
-      margin: 0 auto 64px;
-    }
-
-    .mpa-result-eyebrow {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 13px;
-      font-weight: 600;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--after);
-      display: block;
-      margin-bottom: 14px;
-    }
-
-    .mpa-result-head h2 {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: clamp(30px, 4vw, 44px);
-      font-weight: 600;
-      color: var(--ink);
-      margin: 0;
-      line-height: 1.15;
-    }
-
-    .mpa-table {
-      max-width: 900px;
-      margin: 0 auto;
-      position: relative;
-    }
-
-    /* column labels */
-    .mpa-cols {
-      display: grid;
-      grid-template-columns: 1fr 56px 1fr;
-      margin-bottom: 8px;
-    }
-    .mpa-cols span {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 12px;
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-    }
-    .mpa-cols .before-label { color: var(--muted); text-align: right; padding-right: 20px; }
-    .mpa-cols .after-label { color: var(--after); text-align: left; padding-left: 20px; }
-
-    .mpa-row {
-      display: grid;
-      grid-template-columns: 1fr 56px 1fr;
-      align-items: center;
-      border-top: 1px solid var(--line);
-      padding: 26px 0;
-    }
-    .mpa-row:last-child { border-bottom: 1px solid var(--line); }
-
-    .mpa-before {
-      text-align: right;
-      padding-right: 20px;
-      color: var(--muted);
-      font-size: 16px;
-      position: relative;
-    }
-    .mpa-before .strike {
-      text-decoration-line: line-through;
-      text-decoration-color: var(--before-strike);
-      text-decoration-thickness: 1.5px;
-    }
-
-    .mpa-cut {
-      position: relative;
-      height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .mpa-cut svg { width: 28px; height: 28px; }
-    .mpa-cut path {
-      stroke: var(--after);
-      stroke-width: 2;
-      fill: none;
-    }
-
-    .mpa-after {
-      text-align: left;
-      padding-left: 20px;
-      color: var(--ink);
-      font-size: 17px;
-      font-weight: 600;
-    }
-
-    /* jagged cut line running the full length behind the columns */
-    .mpa-table::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 50%;
-      width: 1px;
-      background: repeating-linear-gradient(
-        to bottom,
-        var(--line) 0px, var(--line) 6px,
-        transparent 6px, transparent 11px
-      );
-      transform: translateX(-50%);
-    }
-
-    @media (max-width: 640px) {
-      .mpa-cols, .mpa-row { grid-template-columns: 1fr 36px 1fr; }
-      .mpa-before { font-size: 14px; padding-right: 10px; }
-      .mpa-after { font-size: 15px; padding-left: 10px; }
-      .mpa-result-head { margin-bottom: 44px; }
-    }
-  </style>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
-
-  <div class="mpa-result-head">
-    <span class="mpa-result-eyebrow">The Result</span>
-    <h2>What changes once the busywork disappears</h2>
-  </div>
-
-  <div class="mpa-table">
-    <div class="mpa-cols">
-      <span class="before-label">Before</span>
-      <span></span>
-      <span class="after-label">After</span>
-    </div>
-
-    <div class="mpa-row" data-row="">
-      <div class="mpa-before"><span class="strike">Customers wait hours for a reply</span></div>
-      <div class="mpa-cut"><svg viewbox="0 0 24 24"><path d="M4 12h16M14 6l6 6-6 6"></path></svg></div>
-      <div class="mpa-after">Faster customer responses</div>
-    </div>
-
-    <div class="mpa-row" data-row="">
-      <div class="mpa-before"><span class="strike">Leads fall through the cracks</span></div>
-      <div class="mpa-cut"><svg viewbox="0 0 24 24"><path d="M4 12h16M14 6l6 6-6 6"></path></svg></div>
-      <div class="mpa-after">Fewer missed follow-ups</div>
-    </div>
-
-    <div class="mpa-row" data-row="">
-      <div class="mpa-before"><span class="strike">Hours lost retyping the same data</span></div>
-      <div class="mpa-cut"><svg viewbox="0 0 24 24"><path d="M4 12h16M14 6l6 6-6 6"></path></svg></div>
-      <div class="mpa-after">Less manual data entry</div>
-    </div>
-
-    <div class="mpa-row" data-row="">
-      <div class="mpa-before"><span class="strike">Every task handled a different way</span></div>
-      <div class="mpa-cut"><svg viewbox="0 0 24 24"><path d="M4 12h16M14 6l6 6-6 6"></path></svg></div>
-      <div class="mpa-after">More consistent processes</div>
-    </div>
-
-    <div class="mpa-row" data-row="">
-      <div class="mpa-before"><span class="strike">Small mistakes turn into big problems</span></div>
-      <div class="mpa-cut"><svg viewbox="0 0 24 24"><path d="M4 12h16M14 6l6 6-6 6"></path></svg></div>
-      <div class="mpa-after">Fewer avoidable errors</div>
-    </div>
-
-    <div class="mpa-row" data-row="">
-      <div class="mpa-before"><span class="strike">Buried in busywork instead of building the business</span></div>
-      <div class="mpa-cut"><svg viewbox="0 0 24 24"><path d="M4 12h16M14 6l6 6-6 6"></path></svg></div>
-      <div class="mpa-after">More time for growth</div>
-    </div>
-  </div>
-
-  <script>
-    (function() {
-      var rows = document.querySelectorAll('.mpa-result [data-row]');
-      if (!('IntersectionObserver' in window)) {
-        rows.forEach(function(r) { r.classList.add('mpa-visible'); });
-        return;
-      }
-      var obs = new IntersectionObserver(function(entries) {
-        entries.forEach(function(entry, i) {
-          if (entry.isIntersecting) {
-            setTimeout(function() { entry.target.classList.add('mpa-visible'); }, i * 80);
-            obs.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.3 });
-      rows.forEach(function(r) { obs.observe(r); });
-    })();
-  </script>
-</section></template>
-        <div class="s_embed_code_embedded o_not_editable container"><section class="mpa-result">
-  <style>
-    .mpa-result {
-      --ink: #12161F;
-      --muted: #868C99;
-      --before-strike: #C1633F;
-      --after: #0F9E76;
-      --after-dim: #E4F5EF;
-      --line: #DFE2E8;
-      --bg: #FFFFFF;
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-      background: var(--bg);
-      padding: 64px 24px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .mpa-result * { box-sizing: border-box; }
-
-    .mpa-result-head {
-      text-align: center;
-      max-width: 640px;
-      margin: 0 auto 64px;
-    }
-
-    .mpa-result-eyebrow {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 13px;
-      font-weight: 600;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--after);
-      display: block;
-      margin-bottom: 14px;
-    }
-
-    .mpa-result-head h2 {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: clamp(30px, 4vw, 44px);
-      font-weight: 600;
-      color: var(--ink);
-      margin: 0;
-      line-height: 1.15;
-    }
-
-    .mpa-table {
-      max-width: 900px;
-      margin: 0 auto;
-      position: relative;
-    }
-
-    /* column labels */
-    .mpa-cols {
-      display: grid;
-      grid-template-columns: 1fr 56px 1fr;
-      margin-bottom: 8px;
-    }
-    .mpa-cols span {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 12px;
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-    }
-    .mpa-cols .before-label { color: var(--muted); text-align: right; padding-right: 20px; }
-    .mpa-cols .after-label { color: var(--after); text-align: left; padding-left: 20px; }
-
-    .mpa-row {
-      display: grid;
-      grid-template-columns: 1fr 56px 1fr;
-      align-items: center;
-      border-top: 1px solid var(--line);
-      padding: 26px 0;
-    }
-    .mpa-row:last-child { border-bottom: 1px solid var(--line); }
-
-    .mpa-before {
-      text-align: right;
-      padding-right: 20px;
-      color: var(--muted);
-      font-size: 16px;
-      position: relative;
-    }
-    .mpa-before .strike {
-      text-decoration-line: line-through;
-      text-decoration-color: var(--before-strike);
-      text-decoration-thickness: 1.5px;
-    }
-
-    .mpa-cut {
-      position: relative;
-      height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .mpa-cut svg { width: 28px; height: 28px; }
-    .mpa-cut path {
-      stroke: var(--after);
-      stroke-width: 2;
-      fill: none;
-    }
-
-    .mpa-after {
-      text-align: left;
-      padding-left: 20px;
-      color: var(--ink);
-      font-size: 17px;
-      font-weight: 600;
-    }
-
-    /* jagged cut line running the full length behind the columns */
-    .mpa-table::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 50%;
-      width: 1px;
-      background: repeating-linear-gradient(
-        to bottom,
-        var(--line) 0px, var(--line) 6px,
-        transparent 6px, transparent 11px
-      );
-      transform: translateX(-50%);
-    }
-
-    @media (max-width: 640px) {
-      .mpa-cols, .mpa-row { grid-template-columns: 1fr 36px 1fr; }
-      .mpa-before { font-size: 14px; padding-right: 10px; }
-      .mpa-after { font-size: 15px; padding-left: 10px; }
-      .mpa-result-head { margin-bottom: 44px; }
-    }
-  </style>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
-
-  <div class="mpa-result-head">
-    <span class="mpa-result-eyebrow">The Result</span>
-    <h2>What changes once the busywork disappears</h2>
-  </div>
-
-  <div class="mpa-table">
-    <div class="mpa-cols">
-      <span class="before-label">Before</span>
-      <span></span>
-      <span class="after-label">After</span>
-    </div>
-
-    <div class="mpa-row" data-row="">
-      <div class="mpa-before"><span class="strike">Customers wait hours for a reply</span></div>
-      <div class="mpa-cut"><svg viewbox="0 0 24 24"><path d="M4 12h16M14 6l6 6-6 6"></path></svg></div>
-      <div class="mpa-after">Faster customer responses</div>
-    </div>
-
-    <div class="mpa-row" data-row="">
-      <div class="mpa-before"><span class="strike">Leads fall through the cracks</span></div>
-      <div class="mpa-cut"><svg viewbox="0 0 24 24"><path d="M4 12h16M14 6l6 6-6 6"></path></svg></div>
-      <div class="mpa-after">Fewer missed follow-ups</div>
-    </div>
-
-    <div class="mpa-row" data-row="">
-      <div class="mpa-before"><span class="strike">Hours lost retyping the same data</span></div>
-      <div class="mpa-cut"><svg viewbox="0 0 24 24"><path d="M4 12h16M14 6l6 6-6 6"></path></svg></div>
-      <div class="mpa-after">Less manual data entry</div>
-    </div>
-
-    <div class="mpa-row" data-row="">
-      <div class="mpa-before"><span class="strike">Every task handled a different way</span></div>
-      <div class="mpa-cut"><svg viewbox="0 0 24 24"><path d="M4 12h16M14 6l6 6-6 6"></path></svg></div>
-      <div class="mpa-after">More consistent processes</div>
-    </div>
-
-    <div class="mpa-row" data-row="">
-      <div class="mpa-before"><span class="strike">Small mistakes turn into big problems</span></div>
-      <div class="mpa-cut"><svg viewbox="0 0 24 24"><path d="M4 12h16M14 6l6 6-6 6"></path></svg></div>
-      <div class="mpa-after">Fewer avoidable errors</div>
-    </div>
-
-    <div class="mpa-row" data-row="">
-      <div class="mpa-before"><span class="strike">Buried in busywork instead of building the business</span></div>
-      <div class="mpa-cut"><svg viewbox="0 0 24 24"><path d="M4 12h16M14 6l6 6-6 6"></path></svg></div>
-      <div class="mpa-after">More time for growth</div>
-    </div>
-  </div>
-
-  <script>
-    (function() {
-      var rows = document.querySelectorAll('.mpa-result [data-row]');
-      if (!('IntersectionObserver' in window)) {
-        rows.forEach(function(r) { r.classList.add('mpa-visible'); });
-        return;
-      }
-      var obs = new IntersectionObserver(function(entries) {
-        entries.forEach(function(entry, i) {
-          if (entry.isIntersecting) {
-            setTimeout(function() { entry.target.classList.add('mpa-visible'); }, i * 80);
-            obs.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.3 });
-      rows.forEach(function(r) { obs.observe(r); });
-    })();
-  </script>
-</section></div>
-    </section><section class="s_embed_code o_colored_level text-center" data-snippet="s_embed_code" data-name="Embed Code">
-        <template class="s_embed_code_saved">
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link href="https://fonts.googleapis.com/css2?family=Lora:wght@600;700&amp;family=Nunito:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
-
-<section class="hiw-faq">
-  <style>
-    .hiw-faq {
-      --ink: #1a1a1a;
-      --bg: #ffffff;
-      --card: #f3f4f6;
-      --blue: #1EB4E6;
-      --muted: #6b7280;
-
-      background: var(--bg);
-      padding: 56px 24px;
-      font-family: 'Nunito', sans-serif;
-    }
-    .hiw-faq * { box-sizing: border-box; }
-    .hiw-faq-inner { max-width: 780px; margin: 0 auto; }
-
-    .hiw-faq-eyebrow {
-      display: block;
-      text-align: center;
-      font-weight: 800;
-      font-size: 13px;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--blue);
-      margin-bottom: 14px;
-    }
-    .hiw-faq-head {
-      font-family: 'Lora', serif;
-      font-weight: 700;
-      font-size: clamp(28px, 3.2vw, 38px);
-      text-align: center;
-      margin: 0 0 12px;
-      color: var(--ink);
-    }
-    .hiw-faq-sub {
-      text-align: center;
-      color: var(--muted);
-      font-size: 16px;
-      margin: 0 0 44px;
-    }
-
-    .hiw-faq-item {
-      background: var(--card);
-      border-radius: 16px;
-      margin-bottom: 14px;
-      overflow: hidden;
-    }
-    .hiw-faq-q {
-      cursor: default;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-      padding: 20px 24px;
-      font-family: 'Lora', serif;
-      font-weight: 700;
-      font-size: 16.5px;
-      color: var(--ink);
-    }
-
-    .hiw-faq-chevron {
-      flex-shrink: 0;
-      width: 20px;
-      height: 20px;
-      color: var(--muted);
-      transition: transform 0.25s ease, color 0.25s ease;
-    }
-    .hiw-faq-item:hover .hiw-faq-chevron {
-      transform: rotate(180deg);
-      color: var(--blue);
-    }
-
-    .hiw-faq-answer-wrap {
-      display: grid;
-      grid-template-rows: 0fr;
-      transition: grid-template-rows 0.3s ease;
-    }
-    .hiw-faq-answer-wrap > div { overflow: hidden; }
-    .hiw-faq-item:hover .hiw-faq-answer-wrap {
-      grid-template-rows: 1fr;
-    }
-    .hiw-faq-answer {
-      padding: 0 24px 22px;
-      color: var(--muted);
-      font-size: 15px;
-      line-height: 1.6;
-    }
-
-    @media (max-width: 560px) {
-      .hiw-faq { padding: 56px 20px; }
-      .hiw-faq-q { padding: 18px 20px; font-size: 16px; }
-      .hiw-faq-answer { padding: 0 20px 20px; }
-    }
-  </style>
-
-  <div class="hiw-faq-inner">
-    <span class="hiw-faq-eyebrow">FAQ</span>
-    <h2 class="hiw-faq-head">Common Questions</h2>
-    <p class="hiw-faq-sub">Here's what most people ask before getting started.</p>
-
-    <div class="hiw-faq-item">
-      <div class="hiw-faq-q">
-        Do I need to replace my current software?
-        <svg class="hiw-faq-chevron" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg>
-      </div>
-      <div class="hiw-faq-answer-wrap"><div>
-        <p class="hiw-faq-answer">Not necessarily. We can usually build the automation around the tools you already use.</p>
-      </div></div>
-    </div>
-
-    <div class="hiw-faq-item">
-      <div class="hiw-faq-q">
-        Can a small business benefit from automation?
-        <svg class="hiw-faq-chevron" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg>
-      </div>
-      <div class="hiw-faq-answer-wrap"><div>
-        <p class="hiw-faq-answer">Yes. Automating even one repetitive, time-consuming process can make a meaningful difference.</p>
-      </div></div>
-    </div>
-
-    <div class="hiw-faq-item">
-      <div class="hiw-faq-q">
-        Will my team stay in control?
-        <svg class="hiw-faq-chevron" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg>
-      </div>
-      <div class="hiw-faq-answer-wrap"><div>
-        <p class="hiw-faq-answer">Yes. Automation handles the steps you choose, while your team keeps control of decisions, exceptions, and customer relationships.</p>
-      </div></div>
-    </div>
-
-    <div class="hiw-faq-item">
-      <div class="hiw-faq-q">
-        What processes can be automated?
-        <svg class="hiw-faq-chevron" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg>
-      </div>
-      <div class="hiw-faq-answer-wrap"><div>
-        <p class="hiw-faq-answer">Most repetitive, rules-based processes. Tell us what you want handled, and we'll confirm what's possible.</p>
-      </div></div>
-    </div>
-
-    <div class="hiw-faq-item">
-      <div class="hiw-faq-q">
-        How long does implementation take?
-        <svg class="hiw-faq-chevron" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg>
-      </div>
-      <div class="hiw-faq-answer-wrap"><div>
-        <p class="hiw-faq-answer">It depends on the tools involved and the complexity of your request. You'll get a clear project scope before development begins.</p>
-      </div></div>
-    </div>
-
-    <div class="hiw-faq-item">
-      <div class="hiw-faq-q">
-        Will you show us how it works?
-        <svg class="hiw-faq-chevron" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg>
-      </div>
-      <div class="hiw-faq-answer-wrap"><div>
-        <p class="hiw-faq-answer">Yes. We'll walk your team through the finished system so everyone knows how to use it.</p>
-      </div></div>
-    </div>
-
-  </div>
-</section></template>
-        <div class="s_embed_code_embedded container o_not_editable"><link rel="preconnect" href="https://fonts.googleapis.com"/><link href="https://fonts.googleapis.com/css2?family=Lora:wght@600;700&amp;family=Nunito:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/><section class="hiw-faq">
-  <style>
-    .hiw-faq {
-      --ink: #1a1a1a;
-      --bg: #ffffff;
-      --card: #f3f4f6;
-      --blue: #1EB4E6;
-      --muted: #6b7280;
-
-      background: var(--bg);
-      padding: 56px 24px;
-      font-family: 'Nunito', sans-serif;
-    }
-    .hiw-faq * { box-sizing: border-box; }
-    .hiw-faq-inner { max-width: 780px; margin: 0 auto; }
-
-    .hiw-faq-eyebrow {
-      display: block;
-      text-align: center;
-      font-weight: 800;
-      font-size: 13px;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--blue);
-      margin-bottom: 14px;
-    }
-    .hiw-faq-head {
-      font-family: 'Lora', serif;
-      font-weight: 700;
-      font-size: clamp(28px, 3.2vw, 38px);
-      text-align: center;
-      margin: 0 0 12px;
-      color: var(--ink);
-    }
-    .hiw-faq-sub {
-      text-align: center;
-      color: var(--muted);
-      font-size: 16px;
-      margin: 0 0 44px;
-    }
-
-    .hiw-faq-item {
-      background: var(--card);
-      border-radius: 16px;
-      margin-bottom: 14px;
-      overflow: hidden;
-    }
-    .hiw-faq-q {
-      cursor: default;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-      padding: 20px 24px;
-      font-family: 'Lora', serif;
-      font-weight: 700;
-      font-size: 16.5px;
-      color: var(--ink);
-    }
-
-    .hiw-faq-chevron {
-      flex-shrink: 0;
-      width: 20px;
-      height: 20px;
-      color: var(--muted);
-      transition: transform 0.25s ease, color 0.25s ease;
-    }
-    .hiw-faq-item:hover .hiw-faq-chevron {
-      transform: rotate(180deg);
-      color: var(--blue);
-    }
-
-    .hiw-faq-answer-wrap {
-      display: grid;
-      grid-template-rows: 0fr;
-      transition: grid-template-rows 0.3s ease;
-    }
-    .hiw-faq-answer-wrap > div { overflow: hidden; }
-    .hiw-faq-item:hover .hiw-faq-answer-wrap {
-      grid-template-rows: 1fr;
-    }
-    .hiw-faq-answer {
-      padding: 0 24px 22px;
-      color: var(--muted);
-      font-size: 15px;
-      line-height: 1.6;
-    }
-
-    @media (max-width: 560px) {
-      .hiw-faq { padding: 56px 20px; }
-      .hiw-faq-q { padding: 18px 20px; font-size: 16px; }
-      .hiw-faq-answer { padding: 0 20px 20px; }
-    }
-  </style>
-
-  <div class="hiw-faq-inner">
-    <span class="hiw-faq-eyebrow">FAQ</span>
-    <h2 class="hiw-faq-head">Common Questions</h2>
-    <p class="hiw-faq-sub">Here's what most people ask before getting started.</p>
-
-    <div class="hiw-faq-item">
-      <div class="hiw-faq-q">
-        Do I need to replace my current software?
-        <svg class="hiw-faq-chevron" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg>
-      </div>
-      <div class="hiw-faq-answer-wrap"><div>
-        <p class="hiw-faq-answer">Not necessarily. We can usually build the automation around the tools you already use.</p>
-      </div></div>
-    </div>
-
-    <div class="hiw-faq-item">
-      <div class="hiw-faq-q">
-        Can a small business benefit from automation?
-        <svg class="hiw-faq-chevron" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg>
-      </div>
-      <div class="hiw-faq-answer-wrap"><div>
-        <p class="hiw-faq-answer">Yes. Automating even one repetitive, time-consuming process can make a meaningful difference.</p>
-      </div></div>
-    </div>
-
-    <div class="hiw-faq-item">
-      <div class="hiw-faq-q">
-        Will my team stay in control?
-        <svg class="hiw-faq-chevron" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg>
-      </div>
-      <div class="hiw-faq-answer-wrap"><div>
-        <p class="hiw-faq-answer">Yes. Automation handles the steps you choose, while your team keeps control of decisions, exceptions, and customer relationships.</p>
-      </div></div>
-    </div>
-
-    <div class="hiw-faq-item">
-      <div class="hiw-faq-q">
-        What processes can be automated?
-        <svg class="hiw-faq-chevron" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg>
-      </div>
-      <div class="hiw-faq-answer-wrap"><div>
-        <p class="hiw-faq-answer">Most repetitive, rules-based processes. Tell us what you want handled, and we'll confirm what's possible.</p>
-      </div></div>
-    </div>
-
-    <div class="hiw-faq-item">
-      <div class="hiw-faq-q">
-        How long does implementation take?
-        <svg class="hiw-faq-chevron" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg>
-      </div>
-      <div class="hiw-faq-answer-wrap"><div>
-        <p class="hiw-faq-answer">It depends on the tools involved and the complexity of your request. You'll get a clear project scope before development begins.</p>
-      </div></div>
-    </div>
-
-    <div class="hiw-faq-item">
-      <div class="hiw-faq-q">
-        Will you show us how it works?
-        <svg class="hiw-faq-chevron" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg>
-      </div>
-      <div class="hiw-faq-answer-wrap"><div>
-        <p class="hiw-faq-answer">Yes. We'll walk your team through the finished system so everyone knows how to use it.</p>
-      </div></div>
-    </div>
-
-  </div>
-</section></div>
-    </section><section class="s_embed_code o_colored_level text-center" data-snippet="s_embed_code" data-name="Embed Code">
-        <template class="s_embed_code_saved"><link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@700;800&amp;family=Nunito:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
-
-<section class="hiw-cta3">
-  <style>
-    .hiw-cta3 {
-      --ink: #1a1a1a;
-      --bg: #ffffff;
-      --card: #f3f4f6;
-      --blue: #1EB4E6;
-      --muted: #6b7280;
-
-      background: var(--bg);
-      padding: 64px 24px 72px;
-      font-family: 'Nunito', sans-serif;
-    }
-    .hiw-cta3 * { box-sizing: border-box; }
-
-    .hiw-cta3-box {
-      max-width: 720px;
-      margin: 0 auto;
-      background: var(--card);
-      border: 1px solid #e6e8ec;
-      border-radius: 28px;
-      padding: 64px 48px;
-      text-align: center;
-      transition: box-shadow 0.35s ease, border-color 0.35s ease, transform 0.3s ease;
-    }
-    .hiw-cta3-box:hover { box-shadow: 0 14px 32px rgba(0, 0, 0, 0.16); transform: translateY(-4px); }
-    @media (prefers-reduced-motion: reduce) {
-      .hiw-cta3-box { transition: none, transform 0.3s ease; }
-    }
-
-    .hiw-cta3-head {
-      font-family: 'Baloo 2', sans-serif;
-      font-weight: 800;
-      font-size: clamp(28px, 3.6vw, 40px);
-      line-height: 1.25;
-      color: var(--ink);
-      margin: 0 0 16px;
-    }
-    .hiw-cta3-sub {
-      color: var(--muted);
-      font-size: 16.5px;
-      line-height: 1.6;
-      max-width: 480px;
-      margin: 0 auto 36px;
-    }
-
-    .hiw-cta3-btn {
-      display: inline-block;
-      background: #193866;
-      color: #fff;
-      font-weight: 700;
-      font-size: 16px;
-      text-decoration: none;
-      padding: 16px 34px;
-      border-radius: 999px;
-      transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.25s ease;
-    }
-    .hiw-cta3-btn:hover { background: var(--blue);
-      transform: translateY(-2px); box-shadow: 0 0 0 1.5px var(--blue), 0 12px 28px var(--blue-glow); }
-
-    @media (max-width: 560px) {
-      .hiw-cta3 { padding: 64px 20px 72px; }
-      .hiw-cta3-box { padding: 44px 28px; border-radius: 22px; }
-    }
-  </style>
-
-  <div class="hiw-cta3-box">
-    <h2 class="hiw-cta3-head">Tell Us What's Slowing You Down</h2>
-    <p class="hiw-cta3-sub">We'll discuss what's possible for your business and how the automation will work, no pressure, no obligation.</p>
-    <a class="hiw-cta3-btn" href="../appointment">Book a Consultation</a>
-  </div>
-</section></template>
-        <div class="s_embed_code_embedded o_not_editable container"><link rel="preconnect" href="https://fonts.googleapis.com"/><link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@700;800&amp;family=Nunito:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/><section class="hiw-cta3">
-  <style>
-    .hiw-cta3 {
-      --ink: #1a1a1a;
-      --bg: #ffffff;
-      --card: #f3f4f6;
-      --blue: #1EB4E6;
-      --muted: #6b7280;
-
-      background: var(--bg);
-      padding: 64px 24px 72px;
-      font-family: 'Nunito', sans-serif;
-    }
-    .hiw-cta3 * { box-sizing: border-box; }
-
-    .hiw-cta3-box {
-      max-width: 720px;
-      margin: 0 auto;
-      background: var(--card);
-      border: 1px solid #e6e8ec;
-      border-radius: 28px;
-      padding: 64px 48px;
-      text-align: center;
-      transition: box-shadow 0.35s ease, border-color 0.35s ease, transform 0.3s ease;
-    }
-    .hiw-cta3-box:hover { box-shadow: 0 14px 32px rgba(0, 0, 0, 0.16); transform: translateY(-4px); }
-    @media (prefers-reduced-motion: reduce) {
-      .hiw-cta3-box { transition: none, transform 0.3s ease; }
-    }
-
-    .hiw-cta3-head {
-      font-family: 'Baloo 2', sans-serif;
-      font-weight: 800;
-      font-size: clamp(28px, 3.6vw, 40px);
-      line-height: 1.25;
-      color: var(--ink);
-      margin: 0 0 16px;
-    }
-    .hiw-cta3-sub {
-      color: var(--muted);
-      font-size: 16.5px;
-      line-height: 1.6;
-      max-width: 480px;
-      margin: 0 auto 36px;
-    }
-
-    .hiw-cta3-btn {
-      display: inline-block;
-      background: #193866;
-      color: #fff;
-      font-weight: 700;
-      font-size: 16px;
-      text-decoration: none;
-      padding: 16px 34px;
-      border-radius: 999px;
-      transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.25s ease;
-    }
-    .hiw-cta3-btn:hover { background: var(--blue);
-      transform: translateY(-2px); box-shadow: 0 0 0 1.5px var(--blue), 0 12px 28px var(--blue-glow); }
-
-    @media (max-width: 560px) {
-      .hiw-cta3 { padding: 64px 20px 72px; }
-      .hiw-cta3-box { padding: 44px 28px; border-radius: 22px; }
-    }
-  </style>
-
-  <div class="hiw-cta3-box">
-    <h2 class="hiw-cta3-head">Tell Us What's Slowing You Down</h2>
-    <p class="hiw-cta3-sub">We'll discuss what's possible for your business and how the automation will work, no pressure, no obligation.</p>
-    <a class="hiw-cta3-btn" href="../appointment">Book a Consultation</a>
-  </div>
-</section></div>
-    </section><div class="s_hr o_colored_level pb0 pt0" data-snippet="s_hr" data-name="Separator">
-        <hr class="w-100 mx-auto" style="border-top-color: var(--o-color-1);"/>
-    </div></div>
-    
         <div id="o_shared_blocks" class="oe_unremovable"></div>
                 </main>
                 <footer id="bottom" data-anchor="true" data-name="Footer" class="o_footer o_colored_level o_cc ">
