@@ -338,27 +338,8 @@
     transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
   .lj-hero-card:hover { transform: translateY(-6px); box-shadow: 0 26px 54px rgba(15, 37, 68, 0.14); }
-  .lj-hero-card-bar {
-    display: flex; align-items: center; justify-content: space-between;
-    padding: 16px 20px; border-bottom: 1px solid var(--line);
-  }
-  .lj-hero-card-dots { display: flex; gap: 6px; }
-  .lj-hero-card-dots span { width: 8px; height: 8px; border-radius: 50%; display: block; }
-  .lj-hero-card-dots span:nth-child(1) { background: var(--navy); }
-  .lj-hero-card-dots span:nth-child(2) { background: var(--cyan); }
-  .lj-hero-card-dots span:nth-child(3) { background: var(--line); }
-  .lj-hero-card-bar span.lj-hero-card-label { font-size: 12px; font-weight: 600; color: var(--muted); }
-  .lj-hero-card-body { padding: 18px; display: flex; flex-direction: column; gap: 10px; }
-  .lj-hero-row {
-    display: flex; align-items: center; gap: 14px;
-    background: var(--mist); border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px;
-  }
-  .lj-hero-row-check {
-    flex-shrink: 0; width: 32px; height: 32px; border-radius: 9px;
-    background: #16a34a; display: flex; align-items: center; justify-content: center;
-  }
-  .lj-hero-row-text strong { display: block; font-size: 14.5px; color: var(--ink); font-weight: 700; }
-  .lj-hero-row-text span { display: block; font-size: 12.5px; color: var(--muted); margin-top: 2px; }
+  .lj-hero-video-card { line-height: 0; }
+  .lj-hero-video { display: block; width: 100%; height: auto; background: var(--navy); }
 
   @media (max-width: 940px) {
     .lj-hero-grid { grid-template-columns: 1fr; }
@@ -478,33 +459,10 @@
       </div>
     </div>
     <div class="lj-hero-media">
-      <div class="lj-hero-card">
-        <div class="lj-hero-card-bar">
-          <div class="lj-hero-card-dots"><span></span><span></span><span></span></div>
-          <span class="lj-hero-card-label">Handled today</span>
-        </div>
-        <div class="lj-hero-card-body">
-          <div class="lj-hero-row">
-            <div class="lj-hero-row-check"><svg width="16" height="16" viewbox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"></path></svg></div>
-            <div class="lj-hero-row-text"><strong>Emails answered</strong><span>Auto-replied within minutes</span></div>
-          </div>
-          <div class="lj-hero-row">
-            <div class="lj-hero-row-check"><svg width="16" height="16" viewbox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"></path></svg></div>
-            <div class="lj-hero-row-text"><strong>Leads followed up</strong><span>No lead left waiting</span></div>
-          </div>
-          <div class="lj-hero-row">
-            <div class="lj-hero-row-check"><svg width="16" height="16" viewbox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"></path></svg></div>
-            <div class="lj-hero-row-text"><strong>Invoices sent</strong><span>Billed the moment work is done</span></div>
-          </div>
-          <div class="lj-hero-row">
-            <div class="lj-hero-row-check"><svg width="16" height="16" viewbox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"></path></svg></div>
-            <div class="lj-hero-row-text"><strong>Appointments booked</strong><span>Calendar fills itself</span></div>
-          </div>
-          <div class="lj-hero-row">
-            <div class="lj-hero-row-check"><svg width="16" height="16" viewbox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"></path></svg></div>
-            <div class="lj-hero-row-text"><strong>Reports generated</strong><span>Sent before you have to ask</span></div>
-          </div>
-        </div>
+      <div class="lj-hero-card lj-hero-video-card">
+        <video class="lj-hero-video" src="assets/homepage-video.mp4" width="1920" height="1080" controls playsinline preload="metadata">
+          Your browser does not support the video tag.
+        </video>
       </div>
     </div>
   </div>
