@@ -36,3 +36,7 @@ jobs:
       run: |
         aws s3 sync ./ s3://ljwebmanagement-website --delete --exclude ".git/*" --exclude ".github/*"
         # If deploying a build folder (e.g. dist/ or build/), change `./` to `./dist`
+
+    - name: Invalidate CloudFront Cache
+      run: |
+        aws cloudfront create-invalidation --distribution-id ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }} --paths "/*"
