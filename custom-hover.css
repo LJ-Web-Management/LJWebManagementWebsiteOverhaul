@@ -1,4 +1,4 @@
-/* Shared color tokens for every page's custom sections — one definition
+/* Shared color tokens for every page's custom sections, one definition
    instead of each section re-declaring its own --navy/--cyan/etc. */
 :root {
   --navy: #193866;
@@ -15,13 +15,13 @@
   --shadow: 0 18px 40px rgba(15, 37, 68, 0.09);
 }
 
-/* Site-wide type system: Sora for display/headings, Inter for body —
-   each page loads both from Google Fonts via a <link> in its own <head>
+/* Site-wide type system: Sora for display/headings, Inter for body.
+   Each page loads both from Google Fonts via a <link> in its own <head>
    (faster than an @import here, which the browser can't discover until
    this stylesheet itself has been fetched and parsed). Individual pages
    used to pick their own fonts (Lora, Nunito, Baloo 2, Playfair,
    Quicksand, Space Grotesk...) with no shared source of truth, so
-   header/footer/body drifted from section to section — these rules are
+   header/footer/body drifted from section to section, these rules are
    the shared anchor that keeps them consistent. */
 body, p, span, a, li, input, textarea, select, button {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
@@ -31,7 +31,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Odoo's default theme ("Color 1" #38383B charcoal nav, "Color 5" #202022
-   footer, black .btn-primary/.btn-outline-primary) is grayscale — replace
+   footer, black .btn-primary/.btn-outline-primary) is grayscale, replace
    with LJ Web Management's navy/cyan so header, footer, and every default
    button read as on-brand instead of black-and-white. */
 header .navbar.o_cc {
@@ -62,7 +62,7 @@ header .navbar.o_cc .navbar-toggler-icon {
 }
 /* The mobile offcanvas menu is a separate panel from the nav bar itself
    (Bootstrap portals it out), so the white-header override above never
-   reached it — it was still on Odoo's old dark charcoal theme, with the
+   reached it, it was still on Odoo's old dark charcoal theme, with the
    new navy link text from that override barely visible against it. */
 .offcanvas.o_navbar_mobile {
   background-color: #FFFFFF !important;
@@ -101,7 +101,7 @@ header .navbar.o_cc .navbar-toggler-icon {
   color: #FFFFFF !important;
 }
 
-/* Nav/footer logo is a stacked icon+wordmark lockup — the default 40px
+/* Nav/footer logo is a stacked icon+wordmark lockup, the default 40px
    Odoo nav-logo height makes the wordmark illegible, so give it more room */
 header .navbar-brand.logo img {
   height: 3.75rem;
