@@ -366,16 +366,12 @@
   /* ============ INDUSTRY GRID (landing page) ============ */
   .lj-industry-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
   .lj-industry-card {
-    display: block; background: var(--white); border: 1px solid var(--line); border-radius: 16px;
-    padding: 28px 26px; text-decoration: none; color: inherit;
+    display: flex; align-items: center; gap: 16px;
+    background: var(--white); border: 1px solid var(--line); border-radius: 16px;
+    padding: 22px 26px; text-decoration: none; color: inherit;
     transition: transform 0.2s ease, box-shadow 0.25s ease;
   }
   .lj-industry-card:hover { color: inherit; transform: translateY(-4px); box-shadow: var(--shadow); }
-  .lj-industry-card .lj-industry-icon { margin-bottom: 16px; }
-  .lj-industry-card .lj-industry-count {
-    display: block; font-family: 'Sora', sans-serif; font-weight: 700; font-size: 11.5px;
-    letter-spacing: 0.08em; text-transform: uppercase; color: var(--cyan); margin-bottom: 8px;
-  }
   .lj-industry-card h3 { font-size: 17px; margin: 0; line-height: 1.3; }
   @media (max-width: 900px) { .lj-industry-grid { grid-template-columns: repeat(2, 1fr); } }
   @media (max-width: 560px) { .lj-industry-grid { grid-template-columns: 1fr; } }
@@ -497,202 +493,162 @@
     <div class="lj-industry-grid" id="ljIndustryGrid">
       <a class="lj-industry-card" href="real-estate">
         <div class="lj-industry-icon"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8"></path><path d="M5 10v10h14V10"></path><path d="M9 20v-6h6v6"></path></svg></div>
-        <span class="lj-industry-count">5 Automations</span>
         <h3>Real Estate</h3>
       </a>
       <a class="lj-industry-card" href="healthcare">
         <div class="lj-industry-icon"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M8 12h2.5l1.5-3 2 6 1.5-3H16"></path></svg></div>
-        <span class="lj-industry-count">5 Automations</span>
         <h3>Healthcare</h3>
       </a>
       <a class="lj-industry-card" href="legal">
         <div class="lj-industry-icon"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18"></path><path d="M5 7h14"></path><path d="M5 7l-3 6a4 4 0 0 0 6 0z"></path><path d="M19 7l-3 6a4 4 0 0 0 6 0z"></path></svg></div>
-        <span class="lj-industry-count">5 Automations</span>
         <h3>Legal</h3>
       </a>
       <a class="lj-industry-card" href="home-services">
         <div class="lj-industry-icon"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 1 0-5.4 5.4L3 18v3h3l6.3-6.3a4 4 0 0 0 5.4-5.4l-2.8 2.8-2-2z"></path></svg></div>
-        <span class="lj-industry-count">5 Automations</span>
         <h3>Home Services</h3>
       </a>
       <a class="lj-industry-card" href="ecommerce-retail">
         <div class="lj-industry-icon"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="20" r="1" fill="currentColor" stroke="none"></circle><circle cx="18" cy="20" r="1" fill="currentColor" stroke="none"></circle><path d="M3 4h2l2.4 12.2a2 2 0 0 0 2 1.8h7.2a2 2 0 0 0 2-1.6L21 8H6"></path></svg></div>
-        <span class="lj-industry-count">5 Automations</span>
         <h3>E-Commerce &amp; Retail</h3>
       </a>
       <a class="lj-industry-card" href="financial-services">
         <div class="lj-industry-icon"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20"></path><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H7"></path></svg></div>
-        <span class="lj-industry-count">5 Automations</span>
         <h3>Financial Services</h3>
       </a>
       <a class="lj-industry-card" href="construction-contracting">
         <div class="lj-industry-icon"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 18a8 8 0 0 1 16 0"></path><path d="M3 18h18"></path><path d="M11 6h2v3h-2z"></path></svg></div>
-        <span class="lj-industry-count">5 Automations</span>
         <h3>Construction &amp; Contracting</h3>
       </a>
       <a class="lj-industry-card" href="restaurants-food-service">
         <div class="lj-industry-icon"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3v8a2 2 0 0 0 4 0V3"></path><path d="M8 11v10"></path><path d="M16 3v18"></path><path d="M16 3c2 0 3 1.5 3 4s-1 4-3 4"></path></svg></div>
-        <span class="lj-industry-count">5 Automations</span>
         <h3>Restaurants &amp; Food Service</h3>
       </a>
       <a class="lj-industry-card" href="education">
         <div class="lj-industry-icon"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l10 5-10 5L2 8l10-5z"></path><path d="M6 11v5c0 1.5 3 3 6 3s6-1.5 6-3v-5"></path></svg></div>
-        <span class="lj-industry-count">5 Automations</span>
         <h3>Education &amp; Training</h3>
       </a>
       <a class="lj-industry-card" href="marketing-agencies">
         <div class="lj-industry-icon"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11v2a2 2 0 0 0 2 2h1l3 5V6l-3 5H5a2 2 0 0 0-2 2z"></path><path d="M14 7v10"></path><path d="M18 5v14"></path></svg></div>
-        <span class="lj-industry-count">5 Automations</span>
         <h3>Marketing Agencies</h3>
       </a>
       <a class="lj-industry-card" href="human-resources">
         <div class="lj-industry-icon"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="3.2"></circle><path d="M2 20c0-3.8 2.7-6.5 6-6.5s6 2.7 6 6.5"></path><path d="M15 8.5a2.8 2.8 0 1 0 0-5.6"></path><path d="M22 20c0-3-1.8-5.3-4.5-6.1"></path></svg></div>
-        <span class="lj-industry-count">5 Automations</span>
         <h3>Human Resources</h3>
       </a>
       <a class="lj-industry-card" href="logistics-supply-chain">
         <div class="lj-industry-icon"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="8" width="13" height="8" rx="1"></rect><path d="M14 11h4l3 3v2h-7z"></path><circle cx="6" cy="18" r="1.6"></circle><circle cx="17" cy="18" r="1.6"></circle></svg></div>
-        <span class="lj-industry-count">5 Automations</span>
         <h3>Logistics &amp; Supply Chain</h3>
       </a>
       <a class="lj-industry-card" href="technology-saas">
         <div class="lj-industry-icon"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="13" rx="2"></rect><path d="M8 21h8"></path><path d="M12 17v4"></path><path d="m9 9-2 2 2 2"></path><path d="m15 9 2 2-2 2"></path></svg></div>
-        <span class="lj-industry-count">5 Automations</span>
         <h3>Technology &amp; SaaS</h3>
       </a>
       <a class="lj-industry-card" href="insurance">
         <div class="lj-industry-icon"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 5-3.5 7.5-7 9-3.5-1.5-7-4-7-9V6z"></path><path d="m9.5 12 1.8 1.8L15 10"></path></svg></div>
-        <span class="lj-industry-count">5 Automations</span>
         <h3>Insurance</h3>
       </a>
       <a class="lj-industry-card" href="nonprofit">
         <div class="lj-industry-icon"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.5-9.5-9C1 8 2 4.5 5.5 3.8 8 3.3 10 4.6 12 7c2-2.4 4-3.7 6.5-3.2C22 4.5 23 8 21.5 11 19 15.5 12 20 12 20z"></path></svg></div>
-        <span class="lj-industry-count">5 Automations</span>
         <h3>Nonprofit</h3>
       </a>
       <a class="lj-industry-card" href="fitness-wellness">
         <div class="lj-industry-icon"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9v6"></path><path d="M2 10v4"></path><path d="M20 9v6"></path><path d="M22 10v4"></path><path d="M6 12h12"></path><path d="M6 8v8"></path><path d="M18 8v8"></path></svg></div>
-        <span class="lj-industry-count">5 Automations</span>
         <h3>Fitness &amp; Wellness</h3>
       </a>
       <a class="lj-industry-card" href="automotive">
         <div class="lj-industry-icon"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 13l1.5-4.5A2 2 0 0 1 6.4 7h11.2a2 2 0 0 1 1.9 1.5L21 13"></path><path d="M3 13h18v4a1 1 0 0 1-1 1h-1a1 1 0 0 1-1-1v-1H6v1a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"></path><circle cx="7.5" cy="16.5" r="1.4"></circle><circle cx="16.5" cy="16.5" r="1.4"></circle></svg></div>
-        <span class="lj-industry-count">5 Automations</span>
         <h3>Automotive</h3>
       </a>
       <a class="lj-industry-card" href="professional-services">
         <div class="lj-industry-icon"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="12" rx="2"></rect><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><path d="M3 12h18"></path></svg></div>
-        <span class="lj-industry-count">5 Automations</span>
         <h3>Professional Services</h3>
       </a>
       <a class="lj-industry-card" href="manufacturing">
         <div class="lj-industry-icon"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21V10l5 3V10l5 3V8l6 4v9z"></path><path d="M3 21h18"></path></svg></div>
-        <span class="lj-industry-count">5 Automations</span>
         <h3>Manufacturing</h3>
       </a>
       <a class="lj-industry-card" href="senior-living-childcare">
         <div class="lj-industry-icon"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 16s-3.5-2.2-3.5-4.8c0-1.3 1-2.2 2.2-2.2.8 0 1.3.4 1.3.4s.5-.4 1.3-.4c1.2 0 2.2.9 2.2 2.2 0 2.6-3.5 4.8-3.5 4.8z"></path></svg></div>
-        <span class="lj-industry-count">5 Automations</span>
         <h3>Senior Living &amp; Childcare</h3>
       </a>
       <a class="lj-industry-card" href="oil-gas">
         <div class="lj-industry-icon"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c-4 5-7 8.5-7 12a7 7 0 0 0 14 0c0-3.5-3-7-7-12z"></path></svg></div>
-        <span class="lj-industry-count">5 Automations</span>
         <h3>Oil &amp; Gas</h3>
       </a>
       <a class="lj-industry-card" href="warehousing-distribution">
         <div class="lj-industry-icon"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7l9-4 9 4-9 4-9-4z"></path><path d="M3 7v10l9 4 9-4V7"></path><path d="M12 11v10"></path></svg></div>
-        <span class="lj-industry-count">5 Automations</span>
         <h3>Warehousing &amp; Distribution</h3>
       </a>
       <a class="lj-industry-card" href="agriculture-farming">
         <div class="lj-industry-icon"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22V12"></path><path d="M12 12C8 12 5 9 5 5c4 0 7 3 7 7z"></path><path d="M12 12c4 0 7-3 7-7-4 0-7 3-7 7z"></path></svg></div>
-        <span class="lj-industry-count">5 Automations</span>
         <h3>Agriculture &amp; Farming</h3>
       </a>
       <a class="lj-industry-card" href="hospitality-hotels">
         <div class="lj-industry-icon"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M2 19v-6a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v6"></path><path d="M2 19h20"></path><path d="M6 11V6a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v5"></path></svg></div>
-        <span class="lj-industry-count">5 Automations</span>
         <h3>Hospitality &amp; Hotels</h3>
       </a>
       <a class="lj-industry-card" href="architecture-engineering">
         <div class="lj-industry-icon"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20L20 4"></path><path d="M14 4h6v6"></path><path d="M4 14v6h6"></path></svg></div>
-        <span class="lj-industry-count">5 Automations</span>
         <h3>Architecture &amp; Engineering</h3>
       </a>
       <a class="lj-industry-card" href="government-public-sector">
         <div class="lj-industry-icon"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"></path><path d="M5 21V10"></path><path d="M19 21V10"></path><path d="M3 10l9-6 9 6"></path><path d="M9 21v-7h6v7"></path></svg></div>
-        <span class="lj-industry-count">5 Automations</span>
         <h3>Government &amp; Public Sector</h3>
       </a>
       <a class="lj-industry-card" href="media-publishing">
         <div class="lj-industry-icon"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M7 9h6"></path><path d="M7 13h10"></path><path d="M7 16h10"></path></svg></div>
-        <span class="lj-industry-count">5 Automations</span>
         <h3>Media &amp; Publishing</h3>
       </a>
       <a class="lj-industry-card" href="pharmaceutical-biotech">
         <div class="lj-industry-icon"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6"></path><path d="M10 3v6l-5 9a2 2 0 0 0 2 3h10a2 2 0 0 0 2-3l-5-9V3"></path></svg></div>
-        <span class="lj-industry-count">5 Automations</span>
         <h3>Pharmaceutical &amp; Biotech</h3>
       </a>
       <a class="lj-industry-card" href="telecommunications">
         <div class="lj-industry-icon"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v6"></path><path d="M8 8a4 4 0 0 1 8 0"></path><path d="M5 11a8 8 0 0 1 14 0"></path><circle cx="12" cy="20" r="1.5" fill="currentColor" stroke="none"></circle></svg></div>
-        <span class="lj-industry-count">5 Automations</span>
         <h3>Telecommunications</h3>
       </a>
       <a class="lj-industry-card" href="staffing-recruiting">
         <div class="lj-industry-icon"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="7" cy="8" r="3"></circle><circle cx="17" cy="8" r="3"></circle><path d="M2 20c0-3 2.2-5 5-5s5 2 5 5"></path><path d="M12 20c0-3 2.2-5 5-5s5 2 5 5"></path></svg></div>
-        <span class="lj-industry-count">5 Automations</span>
         <h3>Staffing &amp; Recruiting Agencies</h3>
       </a>
       <a class="lj-industry-card" href="dental-practices">
         <div class="lj-industry-icon"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4c-2 0-3 1-4.5 1S4 6 4 9c0 3 1.5 4 2 8 .3 2 1 3 2 3s1-3 1.5-5 1-3 2.5-3 2 1 2.5 3 .5 5 1.5 5 1.7-1 2-3c.5-4 2-5 2-8 0-3-2-4-3.5-4S14 4 12 4z"></path></svg></div>
-        <span class="lj-industry-count">5 Automations</span>
         <h3>Dental Practices</h3>
       </a>
       <a class="lj-industry-card" href="veterinary-practices">
         <div class="lj-industry-icon"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="7" cy="8" r="1.6" fill="currentColor" stroke="none"></circle><circle cx="11" cy="6" r="1.6" fill="currentColor" stroke="none"></circle><circle cx="15" cy="6" r="1.6" fill="currentColor" stroke="none"></circle><circle cx="18" cy="9" r="1.6" fill="currentColor" stroke="none"></circle><path d="M12 12c-3 0-6 2-6 5a3 3 0 0 0 3 3c1.5 0 2-1 3-1s1.5 1 3 1a3 3 0 0 0 3-3c0-3-3-5-6-5z"></path></svg></div>
-        <span class="lj-industry-count">5 Automations</span>
         <h3>Veterinary Practices</h3>
       </a>
       <a class="lj-industry-card" href="interior-design-home-staging">
         <div class="lj-industry-icon"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v6a1 1 0 0 0 1 1h1v2h2v-2h8v2h2v-2h1a1 1 0 0 0 1-1v-6"></path><path d="M4 12a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2"></path><path d="M7 10V7a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v3"></path></svg></div>
-        <span class="lj-industry-count">5 Automations</span>
         <h3>Interior Design &amp; Home Staging</h3>
       </a>
       <a class="lj-industry-card" href="photography-videography">
         <div class="lj-industry-icon"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"></rect><path d="M8 7l1.5-3h5L16 7"></path><circle cx="12" cy="13.5" r="3.5"></circle></svg></div>
-        <span class="lj-industry-count">5 Automations</span>
         <h3>Photography &amp; Videography</h3>
       </a>
       <a class="lj-industry-card" href="faith-based-organizations">
         <div class="lj-industry-icon"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18"></path><path d="M7 9h10"></path></svg></div>
-        <span class="lj-industry-count">5 Automations</span>
         <h3>Faith-Based Organizations</h3>
       </a>
       <a class="lj-industry-card" href="cannabis-hemp">
         <div class="lj-industry-icon"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2c0 6-4 8-4 13a4 4 0 0 0 8 0c0-5-4-7-4-13z"></path><path d="M12 8c-3 2-5 2-8 1 2 3 4 4 8 3"></path><path d="M12 8c3 2 5 2 8 1-2 3-4 4-8 3"></path></svg></div>
-        <span class="lj-industry-count">5 Automations</span>
         <h3>Cannabis &amp; Hemp</h3>
       </a>
       <a class="lj-industry-card" href="sports-recreation">
         <div class="lj-industry-icon"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3h8v3a4 4 0 0 1-8 0V3z"></path><path d="M12 10v4"></path><path d="M9 20h6"></path><path d="M10 20v-2a2 2 0 0 1 2-2 2 2 0 0 1 2 2v2"></path></svg></div>
-        <span class="lj-industry-count">5 Automations</span>
         <h3>Sports &amp; Recreation</h3>
       </a>
       <a class="lj-industry-card" href="cybersecurity">
         <div class="lj-industry-icon"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 5-3.5 7.5-7 9-3.5-1.5-7-4-7-9V6z"></path><rect x="9.5" y="10.5" width="5" height="4" rx="1"></rect><path d="M10.5 10.5V9a1.5 1.5 0 0 1 3 0v1.5"></path></svg></div>
-        <span class="lj-industry-count">5 Automations</span>
         <h3>Cybersecurity</h3>
       </a>
       <a class="lj-industry-card" href="addiction-treatment-behavioral-health">
         <div class="lj-industry-icon"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6"></path><path d="M10 22h4"></path><path d="M12 2a7 7 0 0 0-4 12.7V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.3A7 7 0 0 0 12 2z"></path></svg></div>
-        <span class="lj-industry-count">5 Automations</span>
         <h3>Addiction Treatment &amp; Behavioral Health</h3>
       </a>
       <a class="lj-industry-card" href="commercial-real-estate">
         <div class="lj-industry-icon"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="1"></rect><path d="M8 7h2"></path><path d="M14 7h2"></path><path d="M8 11h2"></path><path d="M14 11h2"></path><path d="M8 15h2"></path><path d="M14 15h2"></path><path d="M10 21v-4h4v4"></path></svg></div>
-        <span class="lj-industry-count">5 Automations</span>
         <h3>Commercial Real Estate</h3>
       </a>
     </div>
