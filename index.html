@@ -540,7 +540,7 @@
   <div class="lj-inner">
     <div class="lj-catalog-head">
       <span class="lj-eyebrow">Where We Help</span>
-      <h2>200 Automations Across 40 Industries</h2>
+      <h2>200+ Automations Across 40 Industries</h2>
       <p>Done-for-you automation built for specific roles, not generic templates. Here's a sample, browse the full catalog to find yours.</p>
     </div>
     <div class="lj-catalog-grid">
@@ -641,6 +641,23 @@
         <!--Start of Tawk.to Script-->
 <script type="text/javascript">
 var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var tawkUserOpened = false;
+window.addEventListener('blur', function(){
+    if (document.activeElement && document.activeElement.tagName === 'IFRAME') {
+        tawkUserOpened = true;
+        setTimeout(function(){ tawkUserOpened = false; }, 1500);
+    }
+});
+Tawk_API.onLoad = function(){
+    Tawk_API.minimize();
+};
+Tawk_API.onChatMaximized = function(){
+    if (!tawkUserOpened) {
+        Tawk_API.minimize();
+    }
+};
+})();
 (function(){
 var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
 s1.async=true;

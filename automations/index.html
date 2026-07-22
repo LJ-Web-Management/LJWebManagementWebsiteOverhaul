@@ -474,7 +474,7 @@
 <section class="lj-section lj-auto-hero" style="padding-bottom:0;">
   <div class="lj-auto-hero-inner">
     <span class="lj-eyebrow">Automations</span>
-    <h1>200 Automations, Built by Industry &amp; Role</h1>
+    <h1>200+ Automations, Built by Industry &amp; Role</h1>
     <p>Every automation is done-for-you and scoped to a specific job, from a real estate agent's listing syndication to a bookkeeper's expense reconciliation. Choose your industry below to see the full list, then book a consultation and we'll tailor it to your exact tools.</p>
     <div class="lj-auto-hero-actions">
       <a href="../appointment" class="lj-btn lj-btn-primary">Book a Consultation</a>
@@ -773,6 +773,23 @@
         <!--Start of Tawk.to Script-->
 <script type="text/javascript">
 var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var tawkUserOpened = false;
+window.addEventListener('blur', function(){
+    if (document.activeElement && document.activeElement.tagName === 'IFRAME') {
+        tawkUserOpened = true;
+        setTimeout(function(){ tawkUserOpened = false; }, 1500);
+    }
+});
+Tawk_API.onLoad = function(){
+    Tawk_API.minimize();
+};
+Tawk_API.onChatMaximized = function(){
+    if (!tawkUserOpened) {
+        Tawk_API.minimize();
+    }
+};
+})();
 (function(){
 var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
 s1.async=true;
