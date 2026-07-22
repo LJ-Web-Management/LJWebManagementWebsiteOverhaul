@@ -1,0 +1,38 @@
+name: Deploy Static Website to AWS S3
+
+on:
+  push:
+    branches:
+      - main  # Trigger pipeline on push to main branch
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    # --- UNCOMMENT & ADJUST IF USING A BUILD STEP (React, Vue, Vite, etc.) ---
+    # - name: Setup Node.js
+    #   uses: actions/setup-node@v4
+    #   with:
+    #     node-version: '20'
+    #
+    # - name: Install Dependencies & Build
+    #   run: |
+    #     npm ci
+    #     npm run build
+    # ------------------------------------------------------------------------
+
+    - name: Configure AWS Credentials
+      uses: aws-actions/configure-aws-credentials@v4
+      with:
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-region: us-east-2  # Replace with your S3 bucket's AWS region
+
+    - name: Sync files to S3
+      run: |
+        aws s3 sync ./ s3://ljwebmanagement-website --delete --exclude ".git/*" --exclude ".github/*"
+        # If deploying a build folder (e.g. dist/ or build/), change `./` to `./dist`
