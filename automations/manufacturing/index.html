@@ -5,14 +5,14 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
         <meta name="generator" content="Odoo"/>
-        <meta name="description" content="Done-for-you Manufacturing automations from LJ Web Management: 5 ready-to-deploy systems built for specific roles. Book a free consultation for a custom quote."/>
+        <meta name="description" content="Done-for-you Manufacturing automations from LJ Web Management: 10 ready-to-deploy systems built for specific roles. Book a free consultation for a custom quote."/>
 
         <meta property="og:type" content="website"/>
         <meta property="og:title" content="Manufacturing Automations | LJ Web Management"/>
         <meta property="og:site_name" content="LJ Web Management"/>
         <meta property="og:url" content="https://ljwebmanagement.com/automations/manufacturing"/>
         <meta property="og:image" content="https://ljwebmanagement.com/assets/social-share.png"/>
-        <meta property="og:description" content="Done-for-you Manufacturing automations from LJ Web Management: 5 ready-to-deploy systems built for specific roles. Book a free consultation for a custom quote."/>
+        <meta property="og:description" content="Done-for-you Manufacturing automations from LJ Web Management: 10 ready-to-deploy systems built for specific roles. Book a free consultation for a custom quote."/>
 
         <meta name="twitter:card" content="summary_large_image"/>
 
@@ -438,7 +438,7 @@
   <div class="lj-auto-hero-inner">
     <span class="lj-eyebrow">Automations &middot; Manufacturing</span>
     <h1>Manufacturing Automations</h1>
-    <p>5 done-for-you automations built for the roles that keep this industry running. Book a consultation and we'll tailor any of these to your exact tools.</p>
+    <p>10 done-for-you automations built for the roles that keep this industry running. Book a consultation and we'll tailor any of these to your exact tools.</p>
     <div class="lj-auto-hero-actions">
       <a href="../../appointment" class="lj-btn lj-btn-primary">Book a Consultation</a>
       <a href="../../how-it-works" class="lj-btn lj-btn-outline">See How It Works</a>
@@ -503,6 +503,61 @@
           <p>Weekly safety inspection checklists are assigned automatically to the designated inspector, completed via a mobile form on the floor, and routed to the EHS manager for review the moment they are submitted. Any failed item generates a corrective action task with an assigned owner and due date. The system also tracks every compliance certificate, permit, and training requirement across the facility, sending renewal reminders 90 and 30 days before each expiration, ensuring the facility is never surprised by an expired permit or certification during an OSHA audit.</p>
           <span class="lj-cat-tools-label">Tools Required</span>
           <div class="lj-cat-tools"><span>EHS management software (e.g., Intelex or Cority) or Jotform (inspection forms)</span><span>Zapier or Make.com</span><span>Airtable or Google Sheets (certificate and permit tracker)</span><span>Email or Slack (renewal reminders and corrective action assignments)</span></div>
+        </div>
+      </details>
+      <details class="lj-cat-item">
+        <summary>
+          <div><span class="lj-cat-role">Maintenance Manager</span><h3>Preventive Maintenance Work Order Automation</h3></div>
+          <svg class="lj-cat-chevron" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg>
+        </summary>
+        <div class="lj-cat-body">
+          <p>Running-hour data pulled from equipment PLCs (or logged manually by operators when a machine isn't networked) is checked daily against each asset's service interval, and once a machine crosses 90% of its due threshold this automation generates a maintenance work order in the CMMS, assigns it to the appropriate technician, and checks parts inventory to see whether the commonly needed filters, belts, or bearings are on the shelf. If a part is below the reorder point, a purchase order draft is created automatically so the part arrives before the service date rather than after the machine has already gone down. The maintenance manager receives a weekly view of every upcoming and overdue work order sorted by criticality, turning what used to be a wall calendar and a gut feeling into a system that catches the 30-day service window before it becomes an unplanned Tuesday-afternoon breakdown.</p>
+          <span class="lj-cat-tools-label">Tools Required</span>
+          <div class="lj-cat-tools"><span>Fiix or UpKeep (CMMS)</span><span>Epicor or Fishbowl (ERP/inventory)</span><span>Zapier or Make.com</span><span>Slack</span><span>Google Sheets</span></div>
+        </div>
+      </details>
+      <details class="lj-cat-item">
+        <summary>
+          <div><span class="lj-cat-role">Production Shift Supervisor</span><h3>Real-Time Quality Deviation Alert</h3></div>
+          <svg class="lj-cat-chevron" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg>
+        </summary>
+        <div class="lj-cat-body">
+          <p>As in-line quality checks are logged, whether from an automated gauge feeding directly into the quality system or an inspector entering readings on a tablet, each measurement is checked against the tolerance band set for that part number and station. The moment a reading falls outside the acceptable range, the shift supervisor and quality manager receive an immediate alert naming the exact measurement, the machine or station involved, and the operator on the line at that moment, rather than finding out during the next scheduled audit. Three consecutive out-of-tolerance readings on the same station automatically pause new work orders. This closes the gap between the minute a part goes out of spec and the moment someone with the authority to stop the line actually finds out.</p>
+          <span class="lj-cat-tools-label">Tools Required</span>
+          <div class="lj-cat-tools"><span>Epicor or Fishbowl</span><span>Zapier or Make.com</span><span>Slack</span><span>Twilio</span><span>Google Sheets</span></div>
+        </div>
+      </details>
+      <details class="lj-cat-item">
+        <summary>
+          <div><span class="lj-cat-role">Procurement Manager</span><h3>Lead-Time-Based Material Reorder System</h3></div>
+          <svg class="lj-cat-chevron" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg>
+        </summary>
+        <div class="lj-cat-body">
+          <p>As raw materials are consumed on the production floor and logged against each work order in the inventory system, this automation tracks usage rate against a reorder point calculated specifically for each supplier's actual lead time rather than a flat number that treats a 3-day vendor the same as a 6-week vendor. When projected consumption shows a material running out before the next scheduled delivery, a purchase order draft is generated automatically with the supplier's standard quantities and pricing pre-filled, and the procurement manager only needs to review and approve it. Materials tied to suppliers with historically unreliable lead times get an extra buffer built into their trigger point automatically. What used to be a Friday-afternoon spreadsheet review is now a live system that flags shortages 2 to 3 weeks out instead of the week production runs dry.</p>
+          <span class="lj-cat-tools-label">Tools Required</span>
+          <div class="lj-cat-tools"><span>Epicor or Fishbowl</span><span>Zapier or Make.com</span><span>Google Sheets</span><span>Slack</span><span>QuickBooks or NetSuite</span></div>
+        </div>
+      </details>
+      <details class="lj-cat-item">
+        <summary>
+          <div><span class="lj-cat-role">Operations Director</span><h3>Production Run Completion Report</h3></div>
+          <svg class="lj-cat-chevron" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg>
+        </summary>
+        <div class="lj-cat-body">
+          <p>The moment a production run is marked complete in the MES, this automation pulls the run's total output, scrap rate, downtime minutes, and total time-to-complete, and compares each figure against the target set when the run was scheduled. A summary report, highlighting any run that missed its output target by more than 5% or exceeded its scrap allowance, is compiled automatically and emailed to the plant manager within minutes of the run closing rather than waiting for the end-of-shift paperwork to be manually assembled. Runs that hit or beat every target are flagged as a "clean run" for easy reference when building best-practice documentation. The operations director starts each morning already knowing which lines need attention instead of piecing that picture together from three different shift reports.</p>
+          <span class="lj-cat-tools-label">Tools Required</span>
+          <div class="lj-cat-tools"><span>Epicor or Fishbowl</span><span>Zapier or Make.com</span><span>Google Sheets</span><span>Email</span><span>Slack</span></div>
+        </div>
+      </details>
+      <details class="lj-cat-item">
+        <summary>
+          <div><span class="lj-cat-role">Safety Coordinator</span><h3>Safety Incident Documentation &amp; OSHA Deadline Workflow</h3></div>
+          <svg class="lj-cat-chevron" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg>
+        </summary>
+        <div class="lj-cat-body">
+          <p>When a worker reports a safety incident through a simple mobile form (near miss, injury, or property damage) the safety coordinator and plant manager are notified within minutes with the location, description, and any photos attached. The report automatically opens the required documentation packet, incident details, witness statements, and corrective action log, so nothing has to be assembled from scratch after the fact. Because OSHA recordkeeping and reporting deadlines vary by severity (a recordable injury has different timelines than a fatality or hospitalization), the system reads the severity flagged on the intake form and sets the correct follow-up reminders automatically, at 24 hours, 5 days, and whatever window applies. What used to depend on someone remembering the exact regulatory deadline now runs on its own clock, and no incident sits undocumented past the window that matters.</p>
+          <span class="lj-cat-tools-label">Tools Required</span>
+          <div class="lj-cat-tools"><span>Jotform</span><span>Zapier or Make.com</span><span>Slack</span><span>Google Sheets or Airtable</span><span>Email</span></div>
         </div>
       </details>
 
