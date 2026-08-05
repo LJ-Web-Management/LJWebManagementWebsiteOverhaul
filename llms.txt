@@ -9,7 +9,7 @@ LJ Web Management is based in Lockport, Illinois, and works with businesses acro
 - [Home](https://ljwebmanagement.com/): Overview of what LJ Web Management does and how automation engagements start.
 - [How It Works](https://ljwebmanagement.com/how-it-works): Explains the process from consultation to flat quote to delivery.
 - [Automations](https://ljwebmanagement.com/automations): Browsable catalog of 400+ done-for-you automations across 44+ industries, searchable by industry.
-- [Solutions](https://ljwebmanagement.com/solutions): Platform-scale offerings, including Obsolescence Management, ERP Implementation & Integration, Managed SaaS Delivery & Support, LMS Deployment, and Restaurant POS Systems.
+- [Solutions](https://ljwebmanagement.com/solutions): Platform-scale offerings, including Custom Website Design & Development (with SEO and POS integration), Obsolescence Management, ERP Implementation & Integration, Managed SaaS Delivery & Support, LMS Deployment, and Restaurant POS Systems.
 - [Book a Consultation](https://ljwebmanagement.com/appointment): Schedule a free consultation to scope an automation project.
 - [Contact Us](https://ljwebmanagement.com/contactus): General contact information and inquiry form.
 - [Blog](https://blog.ljwebmanagement.com): Articles on business automation and related topics.
