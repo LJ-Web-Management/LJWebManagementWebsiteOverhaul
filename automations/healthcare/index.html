@@ -5,14 +5,14 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
         <meta name="generator" content="Odoo"/>
-        <meta name="description" content="Done-for-you Healthcare automations from LJ Web Management: 13 ready-to-deploy systems built for specific roles. Book a free consultation for a custom quote."/>
+        <meta name="description" content="Done-for-you Healthcare automations from LJ Web Management: 53 ready-to-deploy systems built for specific roles. Book a free consultation for a custom quote."/>
 
         <meta property="og:type" content="website"/>
         <meta property="og:title" content="Healthcare Automations | LJ Web Management"/>
         <meta property="og:site_name" content="LJ Web Management"/>
         <meta property="og:url" content="https://ljwebmanagement.com/automations/healthcare"/>
         <meta property="og:image" content="https://ljwebmanagement.com/assets/social-share.png"/>
-        <meta property="og:description" content="Done-for-you Healthcare automations from LJ Web Management: 13 ready-to-deploy systems built for specific roles. Book a free consultation for a custom quote."/>
+        <meta property="og:description" content="Done-for-you Healthcare automations from LJ Web Management: 53 ready-to-deploy systems built for specific roles. Book a free consultation for a custom quote."/>
 
         <meta name="twitter:card" content="summary_large_image"/>
 
@@ -81,6 +81,15 @@
 }
 </script>
         <link rel="stylesheet" href="../../custom-hover.css"/>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SFXD7K93JS"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-SFXD7K93JS');
+</script>
 </head>
     <body class="o_id_1843 o_website_url_pricing">
 
@@ -438,7 +447,7 @@
   <div class="lj-auto-hero-inner">
     <span class="lj-eyebrow">Automations &middot; Healthcare</span>
     <h1>Healthcare Automations</h1>
-    <p>13 done-for-you automations built for the roles that keep this industry running. Book a consultation and we'll tailor any of these to your exact tools.</p>
+    <p>53 done-for-you automations built for the roles that keep this industry running. Book a consultation and we'll tailor any of these to your exact tools.</p>
     <div class="lj-auto-hero-actions">
       <a href="../../appointment" class="lj-btn lj-btn-primary">Book a Consultation</a>
       <a href="../../how-it-works" class="lj-btn lj-btn-outline">See How It Works</a>
@@ -591,6 +600,447 @@
           <p>The moment an appointment is canceled, this automation checks the waitlist for that provider and appointment type, ranks patients by how long they've been waiting and their stated availability, and texts the top match with the open slot and a 10-minute window to claim it with a single reply. If there's no response in 10 minutes, the offer automatically cascades to the next patient on the list, continuing until the slot is filled or the list is exhausted. The scheduling coordinator sees the entire cascade and final outcome logged in one place, with no manual calling down a paper list required. Practices running this typically fill same-day cancellations that used to sit open for the rest of the day within 20 minutes of the cancellation itself.</p>
           <span class="lj-cat-tools-label">Tools Required</span>
           <div class="lj-cat-tools"><span>Practice management software (e.g., Kareo or SimplePractice)</span><span>Zapier or Make.com</span><span>Twilio (waitlist offer texts)</span><span>Airtable (waitlist ranking and log)</span><span>Slack (coordinator visibility)</span></div>
+        </div>
+      </details>
+      <details class="lj-cat-item">
+        <summary>
+          <div><span class="lj-cat-role">Patient Communications Manager</span><h3>Multi-Touch Appointment Reminder &amp; Confirmation Sequence</h3></div>
+          <svg class="lj-cat-chevron" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg>
+        </summary>
+        <div class="lj-cat-body">
+          <p>Every time an appointment is booked in the practice management system, this automation enrolls the patient in a multi-touch reminder sequence: an email confirmation the moment the visit is scheduled, a text 48 hours out, a second text 24 hours out, and a final same-day nudge two hours before arrival. Each message carries a one-tap link so the patient can confirm, reschedule, or cancel without tying up the phone lines, and every response writes straight back into the schedule through Zapier so the front desk always sees accurate, real-time status. Patients who ignore both the 48- and 24-hour texts are automatically flagged for a personal callback before the slot is treated as confirmed. Practices running this sequence typically see front-desk call volume drop by a third within the first month, freeing staff to handle patients standing in front of them instead of chasing confirmations over the phone.</p>
+          <span class="lj-cat-tools-label">Tools Required</span>
+          <div class="lj-cat-tools"><span>Practice management software (e.g., Kareo or SimplePractice)</span><span>Zapier or Make.com</span><span>Twilio (SMS reminders)</span><span>SendGrid or Mailchimp (email confirmations)</span><span>Google Calendar (schedule sync)</span></div>
+        </div>
+      </details>
+      <details class="lj-cat-item">
+        <summary>
+          <div><span class="lj-cat-role">Revenue Cycle Manager</span><h3>No-Show Recovery &amp; Rebooking Sequence</h3></div>
+          <svg class="lj-cat-chevron" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg>
+        </summary>
+        <div class="lj-cat-body">
+          <p>The instant a scheduled visit is marked as a no-show in the practice management system, this automation fires a re-engagement text within minutes, acknowledging the missed appointment without blame and offering a direct link to rebook the next available slot. If the patient hasn't rebooked within 24 hours, a follow-up email goes out with two or three specific open times pulled live from the schedule, and patients who no-show twice in a rolling 12-month window are automatically flagged to the revenue cycle manager for a personal outreach call before a no-show fee policy kicks in. Every recovered visit and every fee applied is logged automatically in a shared tracker so leadership can see the real dollar impact of missed appointments. Practices running this typically recover 15 to 20 percent of no-show visits that would otherwise have simply vanished from the schedule.</p>
+          <span class="lj-cat-tools-label">Tools Required</span>
+          <div class="lj-cat-tools"><span>Practice management software</span><span>Zapier or Make.com</span><span>Twilio (recovery texts)</span><span>Mailchimp (recovery email)</span><span>Google Sheets (no-show and fee tracker)</span></div>
+        </div>
+      </details>
+      <details class="lj-cat-item">
+        <summary>
+          <div><span class="lj-cat-role">Intake Specialist</span><h3>New Patient Intake Forms &amp; Insurance Pre-Collection</h3></div>
+          <svg class="lj-cat-chevron" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg>
+        </summary>
+        <div class="lj-cat-body">
+          <p>The moment a new patient books their first visit online, this automation immediately sends a secure digital intake packet covering demographics, medical history, and a photo upload request for the front and back of the insurance card. As soon as the card images come back, the intake specialist gets a notification to key the coverage into the practice management system ahead of the visit instead of scrambling at check-in. Patients who haven't completed the packet by 24 hours before their appointment automatically receive a reminder text with a direct link to finish it, and any patient who submits an insurance card that doesn't match an active plan on file is flagged for a pre-visit call. First-visit paperwork time typically drops from 15 minutes in the waiting room to a few minutes of verification at the desk.</p>
+          <span class="lj-cat-tools-label">Tools Required</span>
+          <div class="lj-cat-tools"><span>EHR with API access (e.g., athenahealth or DrChrono)</span><span>Zapier or Make.com</span><span>Jotform (digital intake and card upload)</span><span>Twilio (completion reminder texts)</span><span>Email (packet delivery)</span></div>
+        </div>
+      </details>
+      <details class="lj-cat-item">
+        <summary>
+          <div><span class="lj-cat-role">Front Office Supervisor</span><h3>Booking-Triggered Insurance Eligibility Pre-Check</h3></div>
+          <svg class="lj-cat-chevron" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg>
+        </summary>
+        <div class="lj-cat-body">
+          <p>As soon as a patient books an appointment online or by phone, this automation automatically pings the practice's clearinghouse to run an eligibility check against the insurance information on file, pulling back plan status, deductible remaining, and copay amount within seconds. Appointments that come back with inactive coverage or a plan mismatch are flagged immediately in a shared queue the front office supervisor reviews each morning, giving staff time to reach the patient before the visit instead of discovering a coverage gap at checkout. Clean checks are logged silently so no one wastes time re-verifying coverage that's already confirmed. Front offices running this catch the majority of coverage problems days before the patient ever walks in, instead of finding out during an awkward conversation at the counter.</p>
+          <span class="lj-cat-tools-label">Tools Required</span>
+          <div class="lj-cat-tools"><span>Clearinghouse with eligibility API (e.g., Availity or Change Healthcare)</span><span>Practice management software</span><span>Zapier or Make.com</span><span>Slack or email (coverage flag alerts)</span><span>Google Sheets (eligibility log)</span></div>
+        </div>
+      </details>
+      <details class="lj-cat-item">
+        <summary>
+          <div><span class="lj-cat-role">Quality Improvement Coordinator</span><h3>Post-Visit Satisfaction Survey &amp; Alert Routing</h3></div>
+          <svg class="lj-cat-chevron" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg>
+        </summary>
+        <div class="lj-cat-body">
+          <p>Within a few hours of every completed visit, this automation sends the patient a short two-question satisfaction survey by text or email asking how the visit went and whether anything needs follow-up. Responses that score below a set threshold are routed instantly to the quality improvement coordinator as an internal alert, complete with the patient's name and visit details, so a staff member can call back the same day before a frustrated patient leaves a public review instead. Responses that score high automatically prompt a follow-up message inviting the patient to leave a Google review, keeping the two paths completely separate. Practices running this typically catch and resolve the majority of service issues privately, well before they would have otherwise shown up online.</p>
+          <span class="lj-cat-tools-label">Tools Required</span>
+          <div class="lj-cat-tools"><span>Practice management software</span><span>Zapier or Make.com</span><span>Twilio or SendGrid (survey delivery)</span><span>Google Forms or Jotform (survey)</span><span>Slack (internal alert routing)</span></div>
+        </div>
+      </details>
+      <details class="lj-cat-item">
+        <summary>
+          <div><span class="lj-cat-role">Wellness Program Coordinator</span><h3>Preventive Care Recall Reminder Automation</h3></div>
+          <svg class="lj-cat-chevron" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg>
+        </summary>
+        <div class="lj-cat-body">
+          <p>Each night, this automation scans the patient roster against the recommended interval for annual physicals, cleanings, and standard screenings, and automatically queues an outreach message for anyone who has crossed their due date without a visit on the books. A first reminder goes out by email, a follow-up text arrives a week later if the patient hasn't scheduled, and any patient still unbooked after 30 days is handed to the wellness program coordinator as a personal outreach task. Every message includes a direct scheduling link so the patient can book in two taps rather than sitting on hold. Practices that turn this recall system on typically bring back a meaningful share of patients who would otherwise have quietly drifted out of the preventive care cycle entirely.</p>
+          <span class="lj-cat-tools-label">Tools Required</span>
+          <div class="lj-cat-tools"><span>EHR or practice management software (e.g., eClinicalWorks or Kareo)</span><span>Zapier or Make.com</span><span>Mailchimp (recall email)</span><span>Twilio (recall texts)</span><span>Google Sheets (recall dashboard)</span></div>
+        </div>
+      </details>
+      <details class="lj-cat-item">
+        <summary>
+          <div><span class="lj-cat-role">Medical Assistant</span><h3>Prescription Refill Request Routing &amp; Status Updates</h3></div>
+          <svg class="lj-cat-chevron" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg>
+        </summary>
+        <div class="lj-cat-body">
+          <p>When a patient submits a refill request through the online form, this automation automatically routes it to the correct provider's queue based on the medication and prescribing physician, and immediately sends the patient a confirmation that the request was received. As the request moves from submitted to provider review to approved, an automatic status text keeps the patient updated at each stage, and once the provider approves it, the request is transmitted to the pharmacy through the practice's e-prescribing system without a medical assistant having to manually relay the approval by phone. Requests still sitting in the queue after 24 hours automatically escalate to a reminder for the assigned provider. Refill turnaround time typically drops from a day or more of phone tag to just a few hours.</p>
+          <span class="lj-cat-tools-label">Tools Required</span>
+          <div class="lj-cat-tools"><span>EHR with e-prescribing (e.g., athenahealth or RXNT)</span><span>Zapier or Make.com</span><span>Jotform (refill request form)</span><span>Twilio (status update texts)</span><span>Email (confirmation)</span></div>
+        </div>
+      </details>
+      <details class="lj-cat-item">
+        <summary>
+          <div><span class="lj-cat-role">Office Manager</span><h3>Cancellation Waitlist Auto-Fill Texting System</h3></div>
+          <svg class="lj-cat-chevron" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg>
+        </summary>
+        <div class="lj-cat-body">
+          <p>The moment an appointment is canceled in the schedule, this automation automatically texts the next patient on the waitlist for that provider and visit type, offering the newly open slot on a strict first-come, first-served basis with a short window to claim it. If there's no reply within 10 minutes, the offer cascades automatically to the next patient on the list, continuing down the queue until someone claims the slot or the list runs out. The office manager sees the full cascade and outcome logged automatically, with no one manually working a paper waitlist by phone. Same-day cancellations that used to sit open for the rest of the day typically get refilled within 20 minutes of the original cancellation.</p>
+          <span class="lj-cat-tools-label">Tools Required</span>
+          <div class="lj-cat-tools"><span>Practice management software (e.g., Kareo or SimplePractice)</span><span>Zapier or Make.com</span><span>Twilio (waitlist offer texts)</span><span>Airtable (waitlist ranking and log)</span></div>
+        </div>
+      </details>
+      <details class="lj-cat-item">
+        <summary>
+          <div><span class="lj-cat-role">Virtual Care Coordinator</span><h3>Telehealth Link Auto-Delivery &amp; Tech-Check Reminder</h3></div>
+          <svg class="lj-cat-chevron" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg>
+        </summary>
+        <div class="lj-cat-body">
+          <p>As soon as a telehealth visit is booked, this automation generates a unique, secure video link through the practice's HIPAA-compliant platform and sends it to the patient immediately by email along with a calendar invite. A set number of minutes before the appointment, a second reminder text goes out with the same link and a one-line prompt to test camera and microphone access ahead of time, so patients aren't troubleshooting connectivity while the provider waits. The virtual care coordinator's dashboard shows link-delivery and confirmation status for every visit on the day's telehealth schedule. Practices using this typically see virtual no-show rates drop by half once patients have a working link in hand at exactly the right moment.</p>
+          <span class="lj-cat-tools-label">Tools Required</span>
+          <div class="lj-cat-tools"><span>HIPAA-compliant telehealth platform (e.g., Doxy.me or Zoom for Healthcare)</span><span>EHR or scheduling software</span><span>Zapier or Make.com</span><span>Twilio (link reminder texts)</span><span>Email (link and calendar invite delivery)</span></div>
+        </div>
+      </details>
+      <details class="lj-cat-item">
+        <summary>
+          <div><span class="lj-cat-role">Patient Engagement Specialist</span><h3>New Patient Welcome &amp; Orientation Sequence</h3></div>
+          <svg class="lj-cat-chevron" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg>
+        </summary>
+        <div class="lj-cat-body">
+          <p>Booking a first appointment automatically enrolls the new patient in a multi-touch welcome series managed by the patient engagement specialist: an initial email covering clinic policies and what to expect at the first visit, a second message a few days later walking through patient portal setup, and a third message answering the most common new-patient questions about parking, paperwork, and insurance. Patients who haven't activated their portal account by the time of their visit get an extra nudge with a direct setup link. The sequence pauses automatically once the first visit is completed, replaced by the practice's standard post-visit communications. New patients arrive already familiar with how the office runs, cutting first-visit confusion and the repetitive questions front desk staff used to field every single day.</p>
+          <span class="lj-cat-tools-label">Tools Required</span>
+          <div class="lj-cat-tools"><span>EHR or practice management software</span><span>Zapier or Make.com</span><span>Mailchimp or ActiveCampaign (welcome sequence)</span><span>Patient portal (e.g., FollowMyHealth or Healow)</span><span>Email</span></div>
+        </div>
+      </details>
+      <details class="lj-cat-item">
+        <summary>
+          <div><span class="lj-cat-role">Clinical Support Specialist</span><h3>Lab Result Ready Notification System</h3></div>
+          <svg class="lj-cat-chevron" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg>
+        </summary>
+        <div class="lj-cat-body">
+          <p>The moment new lab results are uploaded and finalized in the system, this automation automatically sends the patient a portal notification and a text letting them know results are available, along with a brief note on whether they should expect a call from the office or can simply review the results themselves online. Results flagged by the provider as needing discussion automatically route to the clinical support specialist's task queue for a callback, while routine normal results are released to the patient portal without staff intervention. Patients who haven't logged in to view flagged results within 48 hours trigger an automatic reminder text. This keeps patients informed the moment results land instead of waiting on a callback queue, while making sure nothing that needs a conversation slips through unnoticed.</p>
+          <span class="lj-cat-tools-label">Tools Required</span>
+          <div class="lj-cat-tools"><span>EHR with API access (e.g., athenahealth or eClinicalWorks)</span><span>Patient portal</span><span>Zapier or Make.com</span><span>Twilio (result-ready texts)</span><span>Email (portal notification)</span></div>
+        </div>
+      </details>
+      <details class="lj-cat-item">
+        <summary>
+          <div><span class="lj-cat-role">Prior Authorization Specialist</span><h3>Referral Authorization Turnaround Tracking</h3></div>
+          <svg class="lj-cat-chevron" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg>
+        </summary>
+        <div class="lj-cat-body">
+          <p>Once a specialist referral requiring prior authorization is logged, this automation automatically starts a turnaround clock against the payer's expected processing window and checks the authorization status daily through the clearinghouse. If an authorization is still pending once it passes the expected turnaround time, an alert routes directly to the prior authorization specialist with the payer, patient, and days-pending clearly listed, so a staff member can call the payer before the delay pushes into the patient's scheduled visit date. Approved authorizations are logged automatically and attached to the referral record, and the referring provider's office receives a status update without anyone needing to call and ask. Practices using this catch stalled authorizations days earlier than manual spreadsheet tracking ever did.</p>
+          <span class="lj-cat-tools-label">Tools Required</span>
+          <div class="lj-cat-tools"><span>Clearinghouse with prior authorization tracking (e.g., Availity)</span><span>EHR with API access</span><span>Zapier or Make.com</span><span>Airtable or Google Sheets (authorization tracker)</span><span>Slack or email (turnaround alerts)</span></div>
+        </div>
+      </details>
+      <details class="lj-cat-item">
+        <summary>
+          <div><span class="lj-cat-role">Patient Portal Administrator</span><h3>Patient Portal Registration Nudge Sequence</h3></div>
+          <svg class="lj-cat-chevron" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg>
+        </summary>
+        <div class="lj-cat-body">
+          <p>Patients who complete a visit without activating their online portal account are automatically enrolled in a short nudge sequence managed by the patient portal administrator: a first email with a direct setup link sent a few days after the visit, a follow-up text a week later if the account is still inactive, and a final reminder attached to their next appointment confirmation. Once a patient activates their account, they're automatically removed from the sequence so no one keeps getting nudged after signing up. The portal administrator gets a weekly report showing overall activation rate by provider, making it easy to see where extra front-desk encouragement is still needed. Portal adoption typically climbs substantially within a few months without staff manually calling a single patient.</p>
+          <span class="lj-cat-tools-label">Tools Required</span>
+          <div class="lj-cat-tools"><span>Patient portal (e.g., FollowMyHealth or Healow)</span><span>Zapier or Make.com</span><span>Mailchimp (nudge emails)</span><span>Twilio (nudge texts)</span><span>Google Sheets (activation reporting)</span></div>
+        </div>
+      </details>
+      <details class="lj-cat-item">
+        <summary>
+          <div><span class="lj-cat-role">Chronic Care Manager</span><h3>Chronic Care Management Check-In Automation</h3></div>
+          <svg class="lj-cat-chevron" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg>
+        </summary>
+        <div class="lj-cat-body">
+          <p>Patients enrolled in a chronic care management program are automatically placed on a scheduled check-in cadence between visits, receiving a brief text or portal message asking them to report how they're feeling, whether medications are being taken as prescribed, and whether any new symptoms have come up. Responses that indicate a concerning symptom or a missed medication are routed immediately to the chronic care manager for same-day follow-up, while routine check-ins are logged automatically to the patient's chart for the next visit. The system also tracks total time spent on care management activities, which the practice needs for accurate CCM billing each month. Patients get more consistent touchpoints between visits, and the chronic care manager spends time on the patients who actually need it instead of chasing down status on everyone.</p>
+          <span class="lj-cat-tools-label">Tools Required</span>
+          <div class="lj-cat-tools"><span>EHR with API access (e.g., athenahealth or eClinicalWorks)</span><span>Zapier or Make.com</span><span>Twilio (check-in texts)</span><span>Patient portal</span><span>Google Sheets (CCM time tracking)</span></div>
+        </div>
+      </details>
+      <details class="lj-cat-item">
+        <summary>
+          <div><span class="lj-cat-role">Billing Coordinator</span><h3>Outstanding Balance Payment Reminder Sequence</h3></div>
+          <svg class="lj-cat-chevron" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg>
+        </summary>
+        <div class="lj-cat-body">
+          <p>Once a patient's account carries an outstanding balance past the insurance adjustment period, this automation automatically enrolls them in a payment reminder sequence: a friendly email statement with a direct online payment link at 15 days past due, a text reminder at 30 days, and a final notice at 45 days before the account is flagged for the billing coordinator's manual review. Every payment made through the link automatically updates the balance and removes the patient from the sequence, so no one keeps getting reminded after they've already paid. Balances that remain unpaid past 60 days are automatically compiled into a weekly aging report for the billing coordinator. Practices running this typically collect a meaningfully higher share of outstanding balances without adding a single hour of manual billing follow-up calls.</p>
+          <span class="lj-cat-tools-label">Tools Required</span>
+          <div class="lj-cat-tools"><span>Practice management software</span><span>Zapier or Make.com</span><span>Payment processor (e.g., Stripe or a patient payment portal)</span><span>Mailchimp (statement emails)</span><span>Twilio (payment reminder texts)</span></div>
+        </div>
+      </details>
+      <details class="lj-cat-item">
+        <summary>
+          <div><span class="lj-cat-role">Scheduling Supervisor</span><h3>Provider Unavailability Auto-Reschedule Alert</h3></div>
+          <svg class="lj-cat-chevron" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg>
+        </summary>
+        <div class="lj-cat-body">
+          <p>When a provider is marked unavailable for a day, whether from illness, an emergency, or a schedule change, this automation immediately pulls every affected appointment for that day and automatically flags each patient's booking for rescheduling. Each affected patient receives a text or email within minutes offering two or three of the next available slots with that provider or a covering provider, with a direct link to pick a new time in one tap. The scheduling supervisor gets a real-time dashboard showing how many of the day's affected patients have already rebooked versus still need a personal call. What used to be an hour of front-desk staff manually calling down a printed schedule now resolves itself for the majority of patients before the office even opens.</p>
+          <span class="lj-cat-tools-label">Tools Required</span>
+          <div class="lj-cat-tools"><span>Practice management software (e.g., Kareo or SimplePractice)</span><span>Zapier or Make.com</span><span>Twilio (reschedule texts)</span><span>Email (reschedule offer)</span><span>Google Sheets (rebooking status dashboard)</span></div>
+        </div>
+      </details>
+      <details class="lj-cat-item">
+        <summary>
+          <div><span class="lj-cat-role">Pediatric Care Coordinator</span><h3>Immunization Due Date Reminder System</h3></div>
+          <svg class="lj-cat-chevron" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg>
+        </summary>
+        <div class="lj-cat-body">
+          <p>Based on each patient's date of birth and the standard immunization schedule, this automation automatically identifies children and adults who have a vaccine coming due and sends the parent or patient a reminder by text and email with the specific vaccine name and the recommended visit window. Reminders go out 30 days ahead of the due date with a second nudge at 7 days if no appointment has been booked, and the pediatric care coordinator receives a weekly summary of which patients remain unscheduled for follow-up outreach. Reminders automatically stop once the immunization is logged as administered in the chart, so no one receives a nudge for a shot they've already had. Practices running this see immunization compliance climb steadily without staff manually reviewing charts each week to find who's due.</p>
+          <span class="lj-cat-tools-label">Tools Required</span>
+          <div class="lj-cat-tools"><span>EHR with API access (e.g., athenahealth or eClinicalWorks)</span><span>Zapier or Make.com</span><span>Twilio (due-date texts)</span><span>Mailchimp (email reminders)</span><span>Google Sheets (compliance tracking)</span></div>
+        </div>
+      </details>
+      <details class="lj-cat-item">
+        <summary>
+          <div><span class="lj-cat-role">Discharge Planning Coordinator</span><h3>Post-Discharge Follow-Up Scheduling Automation</h3></div>
+          <svg class="lj-cat-chevron" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg>
+        </summary>
+        <div class="lj-cat-body">
+          <p>The moment a hospital discharge is logged for a patient, this automation automatically identifies the required follow-up visit type and window based on the discharge diagnosis, and immediately reaches out to the patient by text and email to get the follow-up appointment on the calendar. If the patient hasn't booked within 48 hours, the request escalates to the discharge planning coordinator for a personal outreach call, since missed post-discharge follow-ups are a major driver of avoidable readmissions. Once booked, the patient receives standard reminder messaging leading up to the visit just like any other appointment. Practices using this typically get the overwhelming majority of post-discharge follow-ups scheduled within the clinically recommended window instead of relying on the patient to remember and call in themselves.</p>
+          <span class="lj-cat-tools-label">Tools Required</span>
+          <div class="lj-cat-tools"><span>EHR with API access</span><span>Zapier or Make.com</span><span>Twilio (follow-up scheduling texts)</span><span>Email</span><span>Practice management software (appointment booking)</span></div>
+        </div>
+      </details>
+      <details class="lj-cat-item">
+        <summary>
+          <div><span class="lj-cat-role">Provider Relations Manager</span><h3>New Provider Introduction to Patient Panel</h3></div>
+          <svg class="lj-cat-chevron" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg>
+        </summary>
+        <div class="lj-cat-body">
+          <p>When a new provider joins the practice and is assigned an existing patient panel, this automation automatically sends every affected patient an introductory email covering the new provider's background, specialty focus, and a direct link to book their next visit. Patients who had a standing recall or follow-up reminder tied to their previous provider are automatically updated to reference the new provider rather than requiring a manual re-tag by staff. The provider relations manager gets a report showing open rate and booking rate from the introduction campaign, making it easy to see how the panel transition is landing. Patients feel informed rather than surprised the next time they call to schedule, and panel transitions that used to trigger a wave of confused phone calls happen almost silently instead.</p>
+          <span class="lj-cat-tools-label">Tools Required</span>
+          <div class="lj-cat-tools"><span>EHR or practice management software</span><span>Zapier or Make.com</span><span>Mailchimp (introduction email)</span><span>Google Sheets (panel transition tracking)</span><span>Email</span></div>
+        </div>
+      </details>
+      <details class="lj-cat-item">
+        <summary>
+          <div><span class="lj-cat-role">Compliance Officer</span><h3>Consent Form Expiration Renewal Alerts</h3></div>
+          <svg class="lj-cat-chevron" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg>
+        </summary>
+        <div class="lj-cat-body">
+          <p>Every consent document that carries an expiration date, including HIPAA acknowledgments, telehealth consents, and chronic care plans, is tracked automatically against its renewal date the moment it's signed. As a patient's next appointment approaches, this automation checks whether any of their consents will lapse before or shortly after the visit and, if so, automatically sends a renewal form ahead of time so it can be signed before the patient arrives rather than in the waiting room. Consents that lapse without a renewal on file trigger an alert to the compliance officer the same day, flagging the patient's chart until it's resolved. This keeps every active chart audit-ready at all times instead of discovering a stack of expired consents during a compliance review.</p>
+          <span class="lj-cat-tools-label">Tools Required</span>
+          <div class="lj-cat-tools"><span>EHR or document management system</span><span>Zapier or Make.com</span><span>DocuSign or Jotform (e-signature renewal forms)</span><span>Email or Twilio (renewal reminders)</span><span>Google Sheets (consent expiration tracker)</span></div>
+        </div>
+      </details>
+      <details class="lj-cat-item">
+        <summary>
+          <div><span class="lj-cat-role">Referral Coordinator</span><h3>Specialist Referral-Out Confirmation Tracking</h3></div>
+          <svg class="lj-cat-chevron" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg>
+        </summary>
+        <div class="lj-cat-body">
+          <p>When a provider refers a patient out to an external specialist, this automation automatically sends the referral packet, including relevant history and the reason for referral, directly to the specialist's office and logs the referral with a confirmation deadline. The system checks daily for confirmation that the specialist's office has scheduled the patient, and if no confirmation comes back within the set window, an alert routes to the referral coordinator to call and close the loop manually. Patients receive an automatic status text once the specialist visit is confirmed, so they know the referral is actually moving instead of wondering if it fell through a crack. Referrals that would otherwise silently stall between two separate offices get caught and resolved instead of forgotten entirely.</p>
+          <span class="lj-cat-tools-label">Tools Required</span>
+          <div class="lj-cat-tools"><span>EHR with API access (e.g., athenahealth or eClinicalWorks)</span><span>Zapier or Make.com</span><span>Fax or Email API (referral packet delivery)</span><span>Twilio (patient status texts)</span><span>Airtable (referral confirmation tracker)</span></div>
+        </div>
+      </details>
+      <details class="lj-cat-item">
+        <summary>
+          <div><span class="lj-cat-role">Medicare Program Coordinator</span><h3>Annual Wellness Visit Outreach Campaign</h3></div>
+          <svg class="lj-cat-chevron" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg>
+        </summary>
+        <div class="lj-cat-body">
+          <p>Each month, this automation automatically scans the patient roster for Medicare patients who are eligible for their annual wellness visit and haven't yet scheduled one, cross-referencing eligibility dates against the practice management system. Eligible, unscheduled patients are automatically enrolled in a targeted outreach campaign: an initial letter or email explaining the no-cost benefit, a follow-up text with a direct scheduling link two weeks later, and a phone-call task assigned to the Medicare program coordinator for anyone still unbooked after 30 days. Patients who schedule are removed from the campaign automatically. Since annual wellness visits directly affect quality reporting and reimbursement, practices running this campaign typically capture a substantially higher share of eligible visits than they would relying on patients to book on their own.</p>
+          <span class="lj-cat-tools-label">Tools Required</span>
+          <div class="lj-cat-tools"><span>Practice management software</span><span>Zapier or Make.com</span><span>Mailchimp (outreach email)</span><span>Twilio (scheduling texts)</span><span>Google Sheets (eligibility and campaign tracking)</span></div>
+        </div>
+      </details>
+      <details class="lj-cat-item">
+        <summary>
+          <div><span class="lj-cat-role">Surgical Scheduler</span><h3>Pre-Surgical Instruction &amp; Prep Reminder Delivery</h3></div>
+          <svg class="lj-cat-chevron" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg>
+        </summary>
+        <div class="lj-cat-body">
+          <p>Once a surgery is scheduled in the system, this automation automatically identifies the correct pre-operative instruction set for that procedure type and delivers it to the patient by text and email, timed precisely to the required schedule: a general overview immediately after booking, a fasting-window reminder the evening before, and a medication-hold reminder for any drugs that need to be paused ahead of the procedure. Patients confirm receipt of each instruction with a one-tap reply, and anyone who hasn't confirmed the fasting instructions by the night before automatically triggers a call task for the surgical scheduler. This removes the risk of a case being delayed or canceled the morning of surgery because a patient simply forgot or never saw the instructions, which is a costly outcome for both the patient and the surgical schedule.</p>
+          <span class="lj-cat-tools-label">Tools Required</span>
+          <div class="lj-cat-tools"><span>EHR or surgical scheduling software</span><span>Zapier or Make.com</span><span>Twilio (instruction and reminder texts)</span><span>Email (instruction delivery)</span><span>Google Sheets (confirmation tracking)</span></div>
+        </div>
+      </details>
+      <details class="lj-cat-item">
+        <summary>
+          <div><span class="lj-cat-role">Patient Relations Manager</span><h3>Provider-Specific Feedback Escalation System</h3></div>
+          <svg class="lj-cat-chevron" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg>
+        </summary>
+        <div class="lj-cat-body">
+          <p>Whenever patient feedback, whether from a post-visit survey, an online review, or a portal message, specifically names an individual provider, this automation automatically parses the mention and routes the feedback directly to that provider or their supervising manager rather than letting it sit in a shared general inbox. Positive mentions are compiled into a monthly recognition digest for the provider, while negative or concerning mentions trigger an immediate alert to the patient relations manager for a same-day personal follow-up call. Every routed piece of feedback is logged with the provider's name and outcome so patterns become visible over time instead of getting lost in an inbox no one revisits. Providers get feedback that's actually about them, and patients get a personal response instead of silence.</p>
+          <span class="lj-cat-tools-label">Tools Required</span>
+          <div class="lj-cat-tools"><span>Practice management software</span><span>Zapier or Make.com</span><span>Google Forms or Jotform (survey)</span><span>Slack or email (feedback routing)</span><span>Airtable (feedback log)</span></div>
+        </div>
+      </details>
+      <details class="lj-cat-item">
+        <summary>
+          <div><span class="lj-cat-role">Family Practice Scheduler</span><h3>Family Appointment Back-to-Back Coordination</h3></div>
+          <svg class="lj-cat-chevron" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg>
+        </summary>
+        <div class="lj-cat-body">
+          <p>When one family member books an appointment, this automation automatically checks the household record for other family members due for a visit and offers to schedule them back-to-back on the same day, sending a single text or email to the primary contact with the combined booking option. Accepting the offer automatically books every willing family member into consecutive slots with the same or a coordinating provider, and the family practice scheduler sees the combined visit noted clearly on the day's schedule so front desk staff know to expect multiple check-ins at once. Families who decline simply continue with individual scheduling as normal. Households that use this typically cut their total number of separate office trips substantially, which matters most for families juggling several children's appointments around one work schedule.</p>
+          <span class="lj-cat-tools-label">Tools Required</span>
+          <div class="lj-cat-tools"><span>Practice management software</span><span>Zapier or Make.com</span><span>Twilio (combined booking offer texts)</span><span>Email</span><span>Google Calendar (back-to-back slot coordination)</span></div>
+        </div>
+      </details>
+      <details class="lj-cat-item">
+        <summary>
+          <div><span class="lj-cat-role">Care Management Nurse</span><h3>Medication Adherence Check-In Sequence</h3></div>
+          <svg class="lj-cat-chevron" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg>
+        </summary>
+        <div class="lj-cat-body">
+          <p>Patients on medications that require close monitoring, such as anticoagulants or insulin, are automatically enrolled in a periodic check-in sequence that asks by text whether doses are being taken as prescribed and whether any side effects have come up. Responses indicating a missed dose or a concerning side effect are routed immediately to the care management nurse for same-day follow-up, while routine on-track responses are logged silently to the patient's chart between visits. The check-in cadence adjusts automatically based on medication risk level, with higher-risk medications triggering more frequent messages. This gives the care management nurse consistent visibility into how patients are actually doing with their medications between visits, instead of only finding out about a problem at the next scheduled appointment.</p>
+          <span class="lj-cat-tools-label">Tools Required</span>
+          <div class="lj-cat-tools"><span>EHR with API access (e.g., athenahealth or eClinicalWorks)</span><span>Zapier or Make.com</span><span>Twilio (adherence check-in texts)</span><span>Google Sheets (response tracking)</span><span>Slack (nurse alert routing)</span></div>
+        </div>
+      </details>
+      <details class="lj-cat-item">
+        <summary>
+          <div><span class="lj-cat-role">Marketing Coordinator</span><h3>New Patient Referral Source Tracking &amp; Reporting</h3></div>
+          <svg class="lj-cat-chevron" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg>
+        </summary>
+        <div class="lj-cat-body">
+          <p>The moment a new patient completes intake, this automation automatically captures how they found the practice, whether it was a physician referral, an insurance directory listing, a Google ad, or a friend's recommendation, by pulling the response from the intake form directly into a centralized tracking sheet. Each new patient record is automatically tagged with their source, and the data rolls up weekly into a report the marketing coordinator reviews to see which channels are actually converting into booked, paying patients rather than just generating clicks. Referring physicians identified through the source data are automatically added to a thank-you outreach list. Practices running this stop guessing at what's working and start shifting marketing budget toward the channels the data actually supports.</p>
+          <span class="lj-cat-tools-label">Tools Required</span>
+          <div class="lj-cat-tools"><span>Jotform (intake source question)</span><span>Zapier or Make.com</span><span>Google Sheets or Airtable (referral source tracking)</span><span>Practice management software</span><span>Email (referring physician outreach)</span></div>
+        </div>
+      </details>
+      <details class="lj-cat-item">
+        <summary>
+          <div><span class="lj-cat-role">Scheduling Analyst</span><h3>Complexity-Based Appointment Duration Booking</h3></div>
+          <svg class="lj-cat-chevron" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg>
+        </summary>
+        <div class="lj-cat-body">
+          <p>Based on a patient's visit history, diagnosis complexity, and the stated reason for the visit entered at booking, this automation automatically calculates and books an appointment slot of the appropriate length instead of defaulting every visit to the same standard duration. New complex cases, patients with multiple chronic conditions, or visits flagged as procedural automatically receive a longer block, while straightforward follow-ups keep the standard slot, and the scheduling analyst can review and override any automatic assignment before it's confirmed. This keeps the day's schedule realistic instead of chronically running behind because a 15-minute slot was never going to be enough for a complicated visit. Practices using this typically see same-day schedule overruns drop noticeably, since the calendar finally reflects how long visits actually take.</p>
+          <span class="lj-cat-tools-label">Tools Required</span>
+          <div class="lj-cat-tools"><span>Practice management software</span><span>Zapier or Make.com</span><span>Google Sheets (duration rules reference)</span><span>EHR with API access</span></div>
+        </div>
+      </details>
+      <details class="lj-cat-item">
+        <summary>
+          <div><span class="lj-cat-role">Privacy Compliance Specialist</span><h3>SMS Consent Capture &amp; Logging System</h3></div>
+          <svg class="lj-cat-chevron" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg>
+        </summary>
+        <div class="lj-cat-body">
+          <p>Before any patient is enrolled in text message communications of any kind, this automation automatically presents a clear opt-in request explaining what they'll receive, whether that's appointment reminders, recall messages, or billing notices, and captures their explicit consent with a timestamp before a single text is ever sent. Consent responses are logged automatically to the patient's record and synced to a central compliance log the privacy compliance specialist can audit at any time, and any patient who later replies STOP is automatically removed from all messaging workflows across the practice's tools simultaneously. Consent status is checked automatically before every outbound campaign fires, so no message ever goes to a patient without consent on file. This keeps the practice's texting program defensible and audit-ready instead of relying on staff to remember who opted in.</p>
+          <span class="lj-cat-tools-label">Tools Required</span>
+          <div class="lj-cat-tools"><span>Zapier or Make.com</span><span>Twilio (consent capture and STOP handling)</span><span>Jotform (opt-in form)</span><span>Google Sheets (compliance consent log)</span><span>Practice management software</span></div>
+        </div>
+      </details>
+      <details class="lj-cat-item">
+        <summary>
+          <div><span class="lj-cat-role">Population Health Manager</span><h3>Population Health Screening Outreach Campaign</h3></div>
+          <svg class="lj-cat-chevron" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg>
+        </summary>
+        <div class="lj-cat-body">
+          <p>This automation automatically identifies patient segments who are overdue for a specific test or screening, such as diabetic patients overdue for an A1C check or patients overdue for a colorectal cancer screening, by querying the EHR against clinical guideline intervals. Each identified segment is automatically enrolled in a targeted outreach campaign with messaging specific to that screening, a direct link to schedule, and a follow-up text for anyone who hasn't booked within two weeks. The population health manager gets a live dashboard showing outreach volume, booking rate, and remaining overdue count by segment, making gaps in care visible at a glance instead of buried in chart-by-chart review. Practices running these campaigns typically close a meaningful share of overdue screening gaps each quarter, improving both patient outcomes and quality measure performance.</p>
+          <span class="lj-cat-tools-label">Tools Required</span>
+          <div class="lj-cat-tools"><span>EHR with API access (e.g., athenahealth or eClinicalWorks)</span><span>Zapier or Make.com</span><span>Mailchimp (segment outreach email)</span><span>Twilio (follow-up texts)</span><span>Google Sheets or Airtable (population health dashboard)</span></div>
+        </div>
+      </details>
+
+      <details class="lj-cat-item">
+        <summary>
+          <div><span class="lj-cat-role">No-Show Reduction Specialist</span><h3>No-Show Risk Scoring &amp; Extra Reminder Automation</h3></div>
+          <svg class="lj-cat-chevron" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg>
+        </summary>
+        <div class="lj-cat-body">
+          <p>The automation flags patients with a documented history of missed appointments and automatically applies extra reminder touches, an additional text, a required confirmation tap, before their next slot is held, instead of every patient receiving the exact same single reminder regardless of their actual no-show risk. The no-show reduction specialist can see which patients are flagged and why, and practices running this scoring consistently recover a meaningful share of the appointment slots that used to sit empty because of the same handful of chronically no-show patients.</p>
+          <span class="lj-cat-tools-label">Tools Required</span>
+          <div class="lj-cat-tools"><span>Practice management platform (e.g., athenahealth or Kareo)</span><span>Zapier or Make.com</span><span>Twilio (SMS)</span><span>Google Sheets or Airtable (risk tracking)</span></div>
+        </div>
+      </details>
+      <details class="lj-cat-item">
+        <summary>
+          <div><span class="lj-cat-role">Chronic Care Manager</span><h3>Care Plan Task Reminder Sequence</h3></div>
+          <svg class="lj-cat-chevron" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg>
+        </summary>
+        <div class="lj-cat-body">
+          <p>Patients with a documented care plan automatically receive reminders for specific between-visit tasks, logging a blood pressure reading, completing a physical therapy exercise, refilling a maintenance medication, instead of the care plan's between-visit instructions being handed over once at the appointment and then left entirely up to the patient to remember. The chronic care manager can see task completion rates by patient, catching disengagement early enough to intervene with a phone call, and patients who receive consistent task reminders show measurably better adherence to their care plan than patients managing it entirely on their own.</p>
+          <span class="lj-cat-tools-label">Tools Required</span>
+          <div class="lj-cat-tools"><span>Practice management platform (e.g., athenahealth or Kareo)</span><span>Zapier or Make.com</span><span>Twilio (SMS)</span><span>Mailchimp or email</span></div>
+        </div>
+      </details>
+      <details class="lj-cat-item">
+        <summary>
+          <div><span class="lj-cat-role">Scheduling Coordinator</span><h3>Same-Day Cancellation Gap Fill System</h3></div>
+          <svg class="lj-cat-chevron" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg>
+        </summary>
+        <div class="lj-cat-body">
+          <p>When a same-day cancellation opens a gap in the schedule, the automation automatically texts patients on a short-notice waitlist offering the newly open slot, filling time that would otherwise sit unused for the rest of the day instead of the scheduling coordinator working the phones trying to reach someone on short notice. The first patient to confirm gets the slot automatically, and practices running this fill process consistently recover a meaningful share of same-day cancellations that used to represent pure lost revenue and idle provider time.</p>
+          <span class="lj-cat-tools-label">Tools Required</span>
+          <div class="lj-cat-tools"><span>Practice management platform (e.g., athenahealth or Kareo)</span><span>Zapier or Make.com</span><span>Twilio (SMS)</span></div>
+        </div>
+      </details>
+      <details class="lj-cat-item">
+        <summary>
+          <div><span class="lj-cat-role">Revenue Cycle Manager</span><h3>Annual Insurance Re-Verification Sweep</h3></div>
+          <svg class="lj-cat-chevron" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg>
+        </summary>
+        <div class="lj-cat-body">
+          <p>At the start of each plan year, the automation automatically re-verifies insurance eligibility for every active patient ahead of their next scheduled visit, catching a plan change, a lapsed policy, or a new deductible before the patient ever sits down in the exam room, instead of the revenue cycle manager's team discovering the coverage change only after a claim gets denied weeks later. Running this sweep proactively at the start of the year, when the largest share of plan changes actually happen, meaningfully reduces the volume of denied claims and awkward billing surprises that used to pile up every January.</p>
+          <span class="lj-cat-tools-label">Tools Required</span>
+          <div class="lj-cat-tools"><span>Availity or insurance eligibility API</span><span>Zapier or Make.com</span><span>Practice management platform (e.g., athenahealth or Kareo)</span><span>Slack (internal deadline alerts)</span></div>
+        </div>
+      </details>
+      <details class="lj-cat-item">
+        <summary>
+          <div><span class="lj-cat-role">Patient Portal Administrator</span><h3>Portal Message Response SLA Escalation Alert</h3></div>
+          <svg class="lj-cat-chevron" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg>
+        </summary>
+        <div class="lj-cat-body">
+          <p>A patient portal message that hasn't received a staff response within the practice's target time window automatically escalates to a supervisor, preventing a question or concern from being missed entirely in a shared inbox that multiple staff members assume someone else is checking. The patient portal administrator gets a daily count of messages that required escalation, useful signal for whether portal message volume has outgrown current staffing, and patients trust the portal as a real communication channel once messages reliably get answered within the promised window instead of sometimes disappearing for days.</p>
+          <span class="lj-cat-tools-label">Tools Required</span>
+          <div class="lj-cat-tools"><span>Patient portal (e.g., FollowMyHealth or Healow)</span><span>Zapier or Make.com</span><span>Slack (internal deadline alerts)</span></div>
+        </div>
+      </details>
+      <details class="lj-cat-item">
+        <summary>
+          <div><span class="lj-cat-role">Pediatric Care Coordinator</span><h3>Pediatric Well-Visit Schedule Automation</h3></div>
+          <svg class="lj-cat-chevron" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg>
+        </summary>
+        <div class="lj-cat-body">
+          <p>The automation automatically tracks each child's age-based well-visit schedule and sends reminders timed to each milestone visit, the two-week check, the twelve-month, the kindergarten physical, rather than relying entirely on parents to remember a schedule that shifts as their child grows. The pediatric care coordinator gets a running list of children who've fallen behind their expected schedule, letting outreach happen proactively instead of only noticing a gap at the next visit, whenever that happens to be, and well-visit compliance improves noticeably once the reminder timing is handled automatically rather than left to parental memory alone.</p>
+          <span class="lj-cat-tools-label">Tools Required</span>
+          <div class="lj-cat-tools"><span>Practice management platform (e.g., athenahealth or Kareo)</span><span>Zapier or Make.com</span><span>Twilio (SMS)</span><span>Mailchimp or email</span></div>
+        </div>
+      </details>
+      <details class="lj-cat-item">
+        <summary>
+          <div><span class="lj-cat-role">Health Information Manager</span><h3>Multi-Location Record Transfer Coordination</h3></div>
+          <svg class="lj-cat-chevron" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg>
+        </summary>
+        <div class="lj-cat-body">
+          <p>When a patient's records need to move between practice locations, the automation automatically routes the transfer request and confirms it was received by the destination location, instead of the health information manager relying on a phone call or a fax confirmation that may or may not actually get returned. Every transfer request is timestamped from request to confirmed receipt, giving a clean audit trail for a process that HIPAA takes seriously, and a patient transferring care between locations no longer shows up to their new appointment with records still stuck in transit somewhere between offices.</p>
+          <span class="lj-cat-tools-label">Tools Required</span>
+          <div class="lj-cat-tools"><span>Practice management platform (e.g., athenahealth or Kareo)</span><span>Zapier or Make.com</span><span>Secure fax or HIE integration</span><span>Slack (internal deadline alerts)</span></div>
+        </div>
+      </details>
+      <details class="lj-cat-item">
+        <summary>
+          <div><span class="lj-cat-role">Community Outreach Coordinator</span><h3>Health Screening Event Signup &amp; Reminder</h3></div>
+          <svg class="lj-cat-chevron" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg>
+        </summary>
+        <div class="lj-cat-body">
+          <p>Signups for a community health screening event automatically trigger a confirmation message and a reminder the day before, reducing the no-show rate at outreach events that the community outreach coordinator spent real time and budget organizing. Attendees who confirm receive the event location and what to bring, and the coordinator gets a running headcount that updates automatically as people register, replacing a paper sign-up sheet that gave no real sense of expected turnout until people either showed up or didn't.</p>
+          <span class="lj-cat-tools-label">Tools Required</span>
+          <div class="lj-cat-tools"><span>Jotform or Google Forms (event signup)</span><span>Zapier or Make.com</span><span>Twilio (SMS)</span><span>Mailchimp or email</span></div>
+        </div>
+      </details>
+      <details class="lj-cat-item">
+        <summary>
+          <div><span class="lj-cat-role">Credentialing Coordinator</span><h3>Provider Credentialing Expiration Tracker</h3></div>
+          <svg class="lj-cat-chevron" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg>
+        </summary>
+        <div class="lj-cat-body">
+          <p>The automation internally tracks each provider's credentialing status and hospital privilege renewal dates, alerting administration well ahead of any expiration, instead of the credentialing coordinator discovering a lapse only when a claim gets rejected or a provider is blocked from admitting a patient. Every credential and privilege is tracked against its specific renewal cycle, and the practice gains a clean, always-current view of exactly where every provider stands, turning what used to be an anxious annual scramble to renew everything on time into a routine, well-paced administrative process.</p>
+          <span class="lj-cat-tools-label">Tools Required</span>
+          <div class="lj-cat-tools"><span>Credentialing software (e.g., Modio or Symplr)</span><span>Zapier or Make.com</span><span>Slack (internal deadline alerts)</span><span>Google Sheets or Airtable (risk tracking)</span></div>
+        </div>
+      </details>
+      <details class="lj-cat-item">
+        <summary>
+          <div><span class="lj-cat-role">Financial Counselor</span><h3>Financial Assistance Application Routing</h3></div>
+          <svg class="lj-cat-chevron" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg>
+        </summary>
+        <div class="lj-cat-body">
+          <p>Patients who indicate financial hardship during intake automatically receive the financial assistance program application and are routed directly to a financial counselor for support, instead of a hardship note sitting in an intake form that nobody follows up on until the patient's bill is already overdue. Getting the application in front of a patient at the moment they've already disclosed the need, rather than weeks later during a collections call, meaningfully increases the share of eligible patients who actually apply and get the help they qualify for.</p>
+          <span class="lj-cat-tools-label">Tools Required</span>
+          <div class="lj-cat-tools"><span>Practice management platform (e.g., athenahealth or Kareo)</span><span>Zapier or Make.com</span><span>Jotform (financial assistance application)</span><span>Slack (internal deadline alerts)</span></div>
         </div>
       </details>
 
